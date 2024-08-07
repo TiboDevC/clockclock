@@ -11,34 +11,34 @@ extern "C" {
 #define MAX_POSITIONS 48
 
 enum anim_type_t {
-  ANIM_SYNC,
-  ANIM_ASYNC,
+    ANIM_SYNC,
+    ANIM_ASYNC,
 };
 
 enum anim_angle_type_t {
-  ANGLE_ABSOLUTE,
-  ANGLE_RELATIVE,
+    ANGLE_ABSOLUTE,
+    ANGLE_RELATIVE,
 };
 
 struct anim_pos_t {
-  uint8_t motor_id;
-  enum anim_type_t anim_type;
-  enum anim_angle_type_t anim_angle_type;
-  int16_t position_degree;
-  uint16_t time_ms;
+    int16_t position_degree;
 };
 
 struct anim_sequence_t {
-  int num_motors;
-  struct anim_pos_t anim_pos[MAX_POSITIONS];
+    struct {
+        uint8_t num_motors : 6;
+        enum anim_type_t anim_type : 1;
+        enum anim_angle_type_t anim_angle_type : 1;
+        uint16_t time_ms : 7;
+    };
+    struct anim_pos_t position[MAX_POSITIONS];
 };
 
 struct anim_set_t {
-  int num_sequences;
-  struct anim_sequence_t anim_sequence[MAX_SEQUENCES];
+    int num_sequences;
+    struct anim_sequence_t sequence[MAX_SEQUENCES];
 };
 
-int send_anim(const struct anim_pos_t* anim_pos, uint8_t num_anim);
 void print_motor_state(void);
 int process_anim(void);
 bool is_anim_done(void);
