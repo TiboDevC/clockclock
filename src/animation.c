@@ -267,6 +267,8 @@ int process_anim(void)
 		if (_ctx.current_seq < _ctx.anim->num_sequences) {
 			_ctx.current_seq++;
 			_update_current_anim();
+		} else {
+			/* Sequence is finished */
 		}
 	}
 	return 0;
