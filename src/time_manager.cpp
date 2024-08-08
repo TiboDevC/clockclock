@@ -93,3 +93,41 @@ void set_time_clock(void)
 	seq_set(_seq_numbers[minute / 10], OFFSET_COLUMN(COLUMN_NUM_2));
 	seq_set(_seq_numbers[minute % 10], OFFSET_COLUMN(COLUMN_NUM_3));
 }
+
+void rtc_print_time(void)
+{
+	const DateTime now = RTClib::now();
+
+	Serial.print(now.year(), DEC);
+	Serial.print('/');
+	Serial.print(now.month(), DEC);
+	Serial.print('/');
+	Serial.print(now.day(), DEC);
+	Serial.print(' ');
+	Serial.print(now.hour(), DEC);
+	Serial.print(':');
+	Serial.print(now.minute(), DEC);
+	Serial.print(':');
+	Serial.print(now.second(), DEC);
+	Serial.println();
+}
+
+void rtc_init(void)
+{
+	constexpr time_t tstmp{1702383132UL}; // Tue Dec 12 2023 11:12:12
+
+	DS3231 Clock;
+	Wire.begin();
+
+	Serial.println("Init DS3231");
+	delay(500);
+
+	if (Clock.getYear() < 23) {
+		Serial.println("RTC lost time, reconfigure it");
+		Clock.setEpoch(tstmp, false);
+		// set to 24h
+		Clock.setClockMode(false);
+	}
+
+	rtc_print_time();
+}
