@@ -9,7 +9,7 @@ extern "C" {
 
 void ctrl_test(void);
 void shift_reg_init(void);
-void ctrl_motors(const uint8_t* byte_array, int num_bits);
+void ctrl_motors(const uint8_t *byte_array, int num_bits);
 
 #ifdef __cplusplus
 }
