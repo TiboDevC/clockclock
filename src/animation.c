@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -225,10 +227,9 @@ void seq_set(const struct anim_sequence_t *seq, int motor_offset)
 int process_anim(void)
 {
 	static unsigned long last_time_us = 0;
-	// unsigned long time_us = micros();
-	const unsigned long time_us = MOTOR_DELAY_US * 5;
+	unsigned long time_us = micros();
 
-	if (time_us - last_time_us < MOTOR_DELAY_US) {
+	if (time_us > last_time_us && time_us - last_time_us < MOTOR_DELAY_US) {
 		return -1;
 	}
 	last_time_us = time_us;
