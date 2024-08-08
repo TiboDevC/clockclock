@@ -77,11 +77,10 @@ static const struct anim_sequence_t *_seq_numbers[] = {
 #define COLUMN_NUM_2          (2 * 2)
 #define COLUMN_NUM_3          (3 * 2)
 
-void set_time_clock(void)
+static void _time_set_clock(const DateTime *now)
 {
-	const DateTime now = RTClib::now();
-	const uint8_t hour = now.hour();
-	const uint8_t minute = now.minute();
+	const uint8_t hour = now->hour();
+	const uint8_t minute = now->minute();
 
 	Serial.print("time: ");
 	Serial.print(hour);
@@ -92,6 +91,26 @@ void set_time_clock(void)
 	seq_set(_seq_numbers[hour % 10], OFFSET_COLUMN(COLUMN_NUM_1));
 	seq_set(_seq_numbers[minute / 10], OFFSET_COLUMN(COLUMN_NUM_2));
 	seq_set(_seq_numbers[minute % 10], OFFSET_COLUMN(COLUMN_NUM_3));
+}
+
+#define CHECK_TIME_DELAY_MS 500
+void time_check(void)
+{
+	static DateTime old_time = {0};
+	static unsigned long last_time_ms = 0;
+
+	const unsigned long time_ms = millis();
+
+	if (time_ms > last_time_ms && time_ms - last_time_ms < CHECK_TIME_DELAY_MS) {
+		return;
+	}
+	last_time_ms = time_ms;
+
+	DateTime now = RTClib::now();
+	if (is_anim_done() && (now.minute() != old_time.minute() || now.hour() != old_time.hour())) {
+		_time_set_clock(&now);
+		old_time = now;
+	}
 }
 
 void rtc_print_time(void)

@@ -25,4 +25,5 @@ void setup()
 void loop()
 {
 	process_anim();
+	time_check();
 }
