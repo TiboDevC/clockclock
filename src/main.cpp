@@ -6,7 +6,7 @@
 
 void setup()
 {
-	Serial.begin(9600);
+	Serial.begin(115200);
 	Serial.println("start");
 	shift_reg_init();
 	rtc_init();
@@ -17,13 +17,16 @@ void setup()
 	ctrl_motors(shift_bit_reg, 16);
 
 	set_time_clock();
-#else
 	test_anim();
+#else
+
 #endif
+
+	set_clock_time(12, 34);
 }
 
 void loop()
 {
-	process_anim();
-	time_check();
+	step_motors();
+	// time_check();
 }
