@@ -12,7 +12,7 @@
 #define DELAY_TO_US(delay) (((unsigned long) delay * DELAY_FACTOR) + DELAY_OFFSET)
 
 #define INITIAL_DELAY        255
-#define INITIAL_SPEED        200
+#define INITIAL_SPEED        10
 #define INITIAL_ACCELERATION 1
 
 typedef uint16_t pos_t;
@@ -301,11 +301,6 @@ static void _shortest_path(const int needle_idx, const pos_t target_pos)
 			motor->step_remaining = counterclockwise;
 			motor->direction = DIRECTION_COUNTERCLOCKWISE;
 		}
-
-		/* Update the speed */
-		motor->delay_us = INITIAL_DELAY;
-		motor->delay_target_us = 0;
-		motor->last_delay = 0;
 	}
 
 #if 0
@@ -315,6 +310,14 @@ static void _shortest_path(const int needle_idx, const pos_t target_pos)
 	Serial.println(motor->current_pos);
 #endif
 	_print_motor(needle_idx, motor);
+}
+
+static void _init_motor_timing(struct motor_t *motor)
+{
+	/* Update the speed */
+	motor->delay_us = INITIAL_DELAY;
+	motor->delay_target_us = _ctx.speed;
+	motor->last_delay = 0;
 }
 
 static angle_t _sanitize_angle(angle_t angle)
@@ -351,6 +354,8 @@ static void _update_needle(const int needle_idx, angle_t angle)
 	if (TRANS_SHORTER_PATH == _ctx.transition) {
 		_shortest_path(needle_idx, target_pos);
 	}
+
+	_init_motor_timing(&_motors[needle_idx]);
 }
 
 static void _update_dial(const int digit_idx, const int dial_idx, const struct clock_dial_t *clock_dial)
