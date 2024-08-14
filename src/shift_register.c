@@ -6,6 +6,8 @@
 #define PIN_STORAGE_REGISTER_CLOCK 10
 #define PIN_SERIAL_DATA_OUTPUT     11
 
+#define NUM_PIN_PER_MOTOR 4
+
 void shift_reg_init(void)
 {
 	pinMode(PIN_SHIFT_REGISTER_CLOCK, OUTPUT);
@@ -95,7 +97,7 @@ void ctrl_motors(const uint8_t *byte_array, int num_motors)
 {
 	uint8_t last_bit_value = 0;
 	for (int motor_idx = 0; motor_idx < num_motors; motor_idx++) {
-		for (int bit_id = 0; bit_id < 4; bit_id++) {
+		for (int bit_id = 0; bit_id < NUM_PIN_PER_MOTOR; bit_id++) {
 			const uint8_t bit_value = byte_array[motor_idx] >> bit_id & 0x01;
 			if (last_bit_value != bit_value) {
 				_digitalWrite_data(bit_value);
