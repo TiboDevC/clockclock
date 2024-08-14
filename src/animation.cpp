@@ -262,6 +262,15 @@ static struct full_clock_t _get_clock_state_from_time(int h, int m)
 	Serial.print(h);
 	Serial.print(":");
 	Serial.println(m);
+	Serial.print("d0: ");
+	Serial.println(d0);
+	Serial.print("d1: ");
+	Serial.println(d1);
+	Serial.print("d2: ");
+	Serial.println(d2);
+	Serial.print("d3: ");
+	Serial.println(d3);
+
 	struct full_clock_t clock_state = {_digits[d0], _digits[d1], _digits[d2], _digits[d3]};
 	return clock_state;
 }
@@ -299,7 +308,12 @@ static void _shortest_path(const int needle_idx, const pos_t target_pos)
 		motor->last_delay = 0;
 	}
 
-	Serial.println(target_pos);
+#if 0
+	Serial.print("Target position: ");
+	Serial.print(target_pos);
+	Serial.print("/");
+	Serial.println(motor->current_pos);
+#endif
 	_print_motor(needle_idx, motor);
 }
 
@@ -323,13 +337,16 @@ static pos_t _adjust_pos(pos_t pos)
 
 static void _update_needle(const int needle_idx, angle_t angle)
 {
-	angle = _sanitize_angle(angle);
-	Serial.print("angle: ");
+#if 0
+	Serial.print("Needle: ");
+	Serial.print(needle_idx);
+	Serial.print(", angle: ");
 	Serial.println(angle);
+#endif
+
+	angle = _sanitize_angle(angle);
 	pos_t target_pos = ANGLE_TO_STEPS(angle);
 	target_pos = _adjust_pos(target_pos);
-	Serial.print("pos: ");
-	Serial.println(target_pos);
 
 	if (TRANS_SHORTER_PATH == _ctx.transition) {
 		_shortest_path(needle_idx, target_pos);
