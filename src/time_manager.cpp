@@ -1,10 +1,5 @@
-#include <stddef.h>
-
 #include "DS3231.h"
-
 #include "animation.h"
-
-#define NUM_ELEM_STRUCT(elem) (sizeof(elem) / sizeof(elem[0]))
 
 #define CHECK_TIME_DELAY_MS 500
 void time_check(void)
@@ -22,6 +17,7 @@ void time_check(void)
 	DateTime now = RTClib::now();
 	if ((now.minute() != old_time.minute() || now.hour() != old_time.hour())) {
 		old_time = now;
+		set_clock_time(now.hour(), now.minute());
 	}
 }
 
