@@ -9,6 +9,7 @@
 #define DELAY_OFFSET         1500 /* min delay in micro second to switch to next motor sequence */
 #define ANGLE_TO_STEPS(target_angle) \
 	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
+#define DELAY_TO_US(delay) (((unsigned long) delay * DELAY_FACTOR) + DELAY_OFFSET)
 
 #define INITIAL_DELAY        200
 #define INITIAL_SPEED        200
@@ -112,8 +113,13 @@ static int _check_delay(const struct motor_t *motor, unsigned long time_us)
 {
 	if (0 != motor->step_remaining) {
 		if (motor->last_delay > time_us ||
-		    time_us - motor->last_delay >
-		        (((unsigned long) motor->delay_us * DELAY_FACTOR) + DELAY_OFFSET)) {
+		    time_us - motor->last_delay > DELAY_TO_US(motor->delay_us)) {
+#if 0
+			Serial.print("Delay: ");
+			Serial.print(motor->delay_us);
+			Serial.print(", ");
+			Serial.println(DELAY_TO_US(motor->delay_us));
+#endif
 			return 0;
 		}
 	}
@@ -123,9 +129,9 @@ static int _check_delay(const struct motor_t *motor, unsigned long time_us)
 static void _update_delay(struct motor_t *motor)
 {
 	if (motor->delay_target_us > motor->delay_us) {
-		motor->delay_us -= _ctx.acceleration;
-	} else if (motor->delay_target_us < motor->delay_us) {
 		motor->delay_us += _ctx.acceleration;
+	} else if (motor->delay_target_us < motor->delay_us) {
+		motor->delay_us -= _ctx.acceleration;
 	}
 }
 
@@ -288,7 +294,8 @@ static void _shortest_path(const int needle_idx, const pos_t target_pos)
 		}
 
 		/* Update the speed */
-		motor->delay_target_us = INITIAL_DELAY;
+		motor->delay_us = INITIAL_DELAY;
+		motor->delay_target_us = 0;
 		motor->last_delay = 0;
 	}
 
