@@ -128,6 +128,11 @@ static int _check_delay(const struct motor_t *motor, unsigned long time_us)
 
 static void _update_delay(struct motor_t *motor)
 {
+	if (motor->step_remaining / _ctx.acceleration < INITIAL_DELAY) {
+		/* Update target if it's time to decelerate */
+		motor->delay_target_us = INITIAL_DELAY;
+	}
+
 	if (motor->delay_target_us > motor->delay_us) {
 		motor->delay_us += _ctx.acceleration;
 	} else if (motor->delay_target_us < motor->delay_us) {
