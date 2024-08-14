@@ -307,7 +307,7 @@ static angle_t _sanitize_angle(angle_t angle)
 static pos_t _adjust_pos(pos_t pos)
 {
 	/* Adjusts the target step to always arrive at the first motor step sequence */
-	pos_t modulo = 4 - pos % 4; /*  4 = number of steps in the motor sequence */
+	pos_t modulo = pos % 4 == 0 ? 0 : 4 - pos % 4; /*  4 = number of steps in the motor sequence */
 	pos += modulo;
 	pos %= NUM_STEPS_PER_ROT;
 
