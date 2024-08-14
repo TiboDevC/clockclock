@@ -269,8 +269,15 @@ static void _shortest_path(const int needle_idx, const pos_t target_pos)
 		return;
 	} else {
 		/* Figure out the shortest path */
-		const pos_t clockwise = target_pos;
-		const pos_t counterclockwise = NUM_STEPS_PER_ROT - target_pos;
+		pos_t clockwise;
+		pos_t counterclockwise;
+		if (target_pos > motor->current_pos) {
+			clockwise = target_pos - motor->current_pos;
+			counterclockwise = NUM_STEPS_PER_ROT - (target_pos - motor->current_pos);
+		} else {
+			clockwise = NUM_STEPS_PER_ROT - (motor->current_pos - target_pos);
+			counterclockwise = motor->current_pos - target_pos;
+		}
 
 		if (clockwise < counterclockwise) {
 			motor->step_remaining = clockwise;
