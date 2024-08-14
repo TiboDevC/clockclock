@@ -77,6 +77,9 @@ static void _print_motor(const int motor_id, const motor_t *motor)
 	Serial.print(motor->delay_us);
 	Serial.print("/");
 	Serial.print(motor->delay_target_us);
+	Serial.print("(");
+	Serial.print(DELAY_TO_US(motor->delay_us));
+	Serial.print("ms)");
 	Serial.print(", last_us: ");
 	Serial.print(motor->last_delay);
 	Serial.print(", step: ");
