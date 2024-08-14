@@ -41,7 +41,7 @@ void rtc_print_time(void)
 
 void rtc_init(void)
 {
-	constexpr time_t tstmp{1702383132UL}; // Tue Dec 12 2023 11:12:12
+	constexpr time_t tstmp{1702383132UL}; // Tue Dec 12 2023 12:12:12
 
 	DS3231 Clock;
 	Wire.begin();
