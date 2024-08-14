@@ -110,12 +110,13 @@ static void _update_pos(struct motor_t *motor)
 
 static int _check_delay(const struct motor_t *motor, unsigned long time_us)
 {
-	if (0 != motor->step_remaining)
+	if (0 != motor->step_remaining) {
 		if (motor->last_delay > time_us ||
 		    time_us - motor->last_delay >
 		        (((unsigned long) motor->delay_us * DELAY_FACTOR) + DELAY_OFFSET)) {
 			return 0;
 		}
+	}
 	return -1;
 }
 
