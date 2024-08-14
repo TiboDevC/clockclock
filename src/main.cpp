@@ -23,10 +23,14 @@ void setup()
 #endif
 
 	set_clock_time(12, 34);
+	Serial.println("Start!");
 }
 
 void loop()
 {
+	const unsigned long time_us_0 = micros();
 	step_motors();
-	// time_check();
+	time_check();
+	const unsigned long time_us_1 = micros();
+	Serial.println(time_us_1 - time_us_0);
 }
