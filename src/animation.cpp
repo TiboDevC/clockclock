@@ -147,7 +147,7 @@ void step_motors()
 			_motors[motor_id].last_delay = time_us;
 		}
 
-		_print_motor(motor_id, &_motors[motor_id]);
+		// _print_motor(motor_id, &_motors[motor_id]);
 	}
 
 	ctrl_motors(_steps, NUM_MOTORS);
