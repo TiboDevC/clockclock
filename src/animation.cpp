@@ -232,22 +232,12 @@ static const struct clock_digit_t digit_fun = {.clocks = {
 static const clock_digit_t _digits[10] = {
     digit_0, digit_1, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9};
 
-typeof(_ctx.speed) get_speed()
-{
-	return _ctx.speed;
-}
-
-void set_speed(typeof(_ctx.speed) value)
+void set_speed(uint8_t value)
 {
 	_ctx.speed = value;
 }
 
-typeof(_ctx.acceleration) get_acceleration()
-{
-	return _ctx.acceleration;
-}
-
-void set_acceleration(typeof(_ctx.acceleration) value)
+void set_acceleration(uint8_t value)
 {
 	_ctx.acceleration = value;
 }
