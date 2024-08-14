@@ -4,8 +4,6 @@
 #include "shift_register.h"
 
 #define NUM_MOTORS           48
-#define NUM_MOTOR_WIRES      4
-#define NUM_BITS_MOTOR_STEPS (NUM_MOTORS * NUM_MOTOR_WIRES)
 #define NUM_STEPS_PER_ROT    (4096)
 #define DELAY_FACTOR         5
 #define DELAY_OFFSET         1500 /* min delay in micro second to switch to next motor sequence */
@@ -63,7 +61,7 @@ static struct {
 
 static struct motor_t _motors[NUM_MOTORS] = {};
 
-static uint8_t _steps[(NUM_MOTOR_WIRES * NUM_MOTORS) / sizeof(uint8_t) + 1] = {0};
+static uint8_t _steps[NUM_MOTORS] = {0};
 
 static void _print_motor(const int motor_id, const motor_t *motor)
 {
@@ -87,11 +85,7 @@ static void _print_motor(const int motor_id, const motor_t *motor)
 
 static void _set_motor_bits(int motor_id, int step_id)
 {
-	const int bit_shift = (motor_id % 2) * 4;
-	const int bit_mask = (motor_id % 2) == 0 ? 0b00001111 : 0b11110000;
-	const int motor_step = (_motor_steps[step_id] << bit_shift) & bit_mask;
-	_steps[motor_id / 2] &= ~bit_mask;
-	_steps[motor_id / 2] |= motor_step;
+	_steps[motor_id] = _motor_steps[step_id];
 }
 
 static void _update_pos(struct motor_t *motor)
@@ -149,7 +143,7 @@ void step_motors()
 		_print_motor(motor_id, &_motors[motor_id]);
 	}
 
-	ctrl_motors(_steps, NUM_BITS_MOTOR_STEPS);
+	ctrl_motors(_steps, NUM_MOTORS);
 }
 
 
