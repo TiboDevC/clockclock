@@ -2,27 +2,20 @@
 
 #include "Arduino.h"
 
-#define PIN_MASTER_RESET           2
-#define PIN_SHIFT_REGISTER_CLOCK   3
-#define PIN_STORAGE_REGISTER_CLOCK 4
-#define PIN_OUTPUT_ENABLE          5
-#define PIN_SERIAL_DATA_OUTPUT     6
+#define PIN_SHIFT_REGISTER_CLOCK   9
+#define PIN_STORAGE_REGISTER_CLOCK 10
+#define PIN_SERIAL_DATA_OUTPUT     11
 
 void shift_reg_init(void)
 {
-	pinMode(PIN_MASTER_RESET, OUTPUT);
 	pinMode(PIN_SHIFT_REGISTER_CLOCK, OUTPUT);
 	pinMode(PIN_STORAGE_REGISTER_CLOCK, OUTPUT);
-	pinMode(PIN_OUTPUT_ENABLE, OUTPUT);
 	pinMode(PIN_SERIAL_DATA_OUTPUT, OUTPUT);
 
 	digitalWrite(PIN_SHIFT_REGISTER_CLOCK, LOW);
 	digitalWrite(PIN_STORAGE_REGISTER_CLOCK, LOW);
 
-	digitalWrite(PIN_MASTER_RESET, LOW);
-	digitalWrite(PIN_OUTPUT_ENABLE, LOW);
 	delay(10);
-	digitalWrite(PIN_MASTER_RESET, HIGH);
 	delay(10);
 }
 

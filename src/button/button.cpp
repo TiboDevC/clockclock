@@ -2,11 +2,11 @@
 
 #include "button.hpp"
 
-#define PIN_BUTTON_MODE     PD6
-#define PIN_BUTTON_ENCODER  PD4
-#define PIN_BUTTON_SHUTDOWN PD5
-#define PIN_ENCODER_0       PD2
-#define PIN_ENCODER_1       PD3
+#define PIN_BUTTON_MODE     6
+#define PIN_BUTTON_ENCODER  4
+#define PIN_BUTTON_SHUTDOWN 5
+#define PIN_ENCODER_0       2
+#define PIN_ENCODER_1       3
 
 #define BT_PRESSED   HIGH
 #define BT_UNPRESSED LOW
