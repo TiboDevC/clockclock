@@ -25,5 +25,6 @@ void button_check();
 void button_get_state(struct button_t *button, enum button_type_t button_type);
 void button_reset();
 unsigned long button_last_press();
+int8_t button_get_encoder_count();
 
 #endif /* SOFT_BUTTON_HPP */

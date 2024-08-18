@@ -110,3 +110,8 @@ unsigned long button_last_press()
 {
 	return _last_press_ms;
 }
+
+int8_t button_get_encoder_count()
+{
+	return _encoder_count;
+}

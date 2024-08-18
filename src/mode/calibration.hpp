@@ -1,0 +1,6 @@
+#ifndef SOFT_CALIBRATION_HPP
+#define SOFT_CALIBRATION_HPP
+
+
+
+#endif /* SOFT_CALIBRATION_HPP */

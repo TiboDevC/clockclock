@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include <stdint.h>
 
+#include "cfg.hpp"
 #include "shift_register.h"
 
-#define NUM_MOTORS        48
 #define NUM_STEPS_PER_ROT (4096)
 #define DELAY_FACTOR      10
 #define DELAY_OFFSET      1500 /* min delay in micro second to switch to next motor sequence */
@@ -386,4 +386,24 @@ void set_clock_time(int h, int m)
 	}
 	const struct full_clock_t full_clock = _get_clock_state_from_time(h, m);
 	_update_clock(&full_clock);
+}
+
+void increment_needle_pos(const int motor_idx, int16_t increment)
+{
+	if (increment > 0) {
+		_motors[motor_idx].step_remaining += increment;
+	} else {
+		if (increment * -1 > _motors[motor_idx].step_remaining) {
+			if (DIRECTION_CLOCKWISE == _motors[motor_idx].direction) {
+				_motors[motor_idx].direction = DIRECTION_COUNTERCLOCKWISE;
+			} else {
+				_motors[motor_idx].direction = DIRECTION_CLOCKWISE;
+			}
+			_motors[motor_idx].step_remaining =
+			    increment + ((int16_t) _motors[motor_idx].step_remaining);
+		} else {
+			_motors[motor_idx].step_remaining =
+			    ((int16_t) _motors[motor_idx].step_remaining) + increment;
+		}
+	}
 }
