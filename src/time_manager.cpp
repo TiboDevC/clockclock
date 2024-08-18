@@ -2,9 +2,20 @@
 #include "animation.h"
 
 #define CHECK_TIME_DELAY_MS 500
-void time_check(void)
+
+void display_time(void)
 {
 	static DateTime old_time = {0};
+
+	DateTime now = RTClib::now();
+	if ((now.minute() != old_time.minute() || now.hour() != old_time.hour())) {
+		old_time = now;
+		set_clock_time(now.hour(), now.minute());
+	}
+}
+
+void time_check(void)
+{
 	static unsigned long last_time_ms = 0;
 
 	const unsigned long time_ms = millis();
@@ -14,11 +25,7 @@ void time_check(void)
 	}
 	last_time_ms = time_ms;
 
-	DateTime now = RTClib::now();
-	if ((now.minute() != old_time.minute() || now.hour() != old_time.hour())) {
-		old_time = now;
-		set_clock_time(now.hour(), now.minute());
-	}
+	display_time();
 }
 
 void rtc_print_time(void)
