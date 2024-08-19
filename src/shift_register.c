@@ -95,6 +95,7 @@ static void _shift_register_high()
 
 void ctrl_motors(const uint8_t *byte_array, int num_motors)
 {
+	/* TODO replace this function with SPI transfer to make it more consistent and faster */
 	uint8_t last_bit_value = 0;
 	for (int motor_idx = 0; motor_idx < num_motors; motor_idx++) {
 		for (int bit_id = 0; bit_id < NUM_PIN_PER_MOTOR; bit_id++) {
