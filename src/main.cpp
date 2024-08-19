@@ -26,7 +26,7 @@ void setup()
 
 #endif
 
-	set_clock_time(12, 34);
+	display_time();
 	Serial.println("Start!");
 }
 
