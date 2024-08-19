@@ -37,7 +37,7 @@ void loop()
 	button_check();
 	mode_check();
 
-	step_motors();
+	loop_motors();
 
 	const unsigned long time_us_1 = micros();
 	Serial.print("Loop timing (us): ");

@@ -155,7 +155,7 @@ static void _update_delay(struct motor_t *motor)
 	}
 }
 
-void step_motors()
+void loop_motors()
 {
 	const unsigned long time_us = micros();
 
