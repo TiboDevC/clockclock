@@ -11,6 +11,7 @@
 	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
 #define DELAY_TO_US(delay) (((unsigned long) delay * DELAY_FACTOR) + DELAY_OFFSET)
 
+#define MAX_DELAY            255
 #define INITIAL_DELAY        255
 #define INITIAL_SPEED        10
 #define INITIAL_ACCELERATION 1
@@ -134,12 +135,23 @@ static void _update_delay(struct motor_t *motor)
 	if (motor->step_remaining / _ctx.acceleration < INITIAL_DELAY) {
 		/* Update target if it's time to decelerate */
 		motor->delay_target_us = INITIAL_DELAY;
+	} else {
+		/* Otherwise, set it to target speed */
+		motor->delay_target_us = _ctx.speed;
 	}
 
 	if (motor->delay_target_us > motor->delay_us) {
-		motor->delay_us += _ctx.acceleration;
+		if (MAX_DELAY - _ctx.acceleration > motor->delay_us) {
+			motor->delay_us = MAX_DELAY;
+		} else {
+			motor->delay_us += _ctx.acceleration;
+		}
 	} else if (motor->delay_target_us < motor->delay_us) {
-		motor->delay_us -= _ctx.acceleration;
+		if (_ctx.acceleration > motor->delay_us) {
+			motor->delay_us = 0;
+		} else {
+			motor->delay_us -= _ctx.acceleration;
+		}
 	}
 }
 
@@ -352,8 +364,6 @@ static void _update_needle(const int needle_idx, angle_t angle)
 	if (TRANS_SHORTER_PATH == _ctx.transition) {
 		_shortest_path(needle_idx, target_pos);
 	}
-
-	_init_motor_timing(&_motors[needle_idx]);
 }
 
 static void _update_dial(const int digit_idx, const int dial_idx, const struct clock_dial_t *clock_dial)
@@ -376,6 +386,13 @@ static void _update_clock(const struct full_clock_t *full_clock)
 {
 	for (int digit_idx = 0; digit_idx < NUM_DIGIT; digit_idx++) {
 		_update_digits(digit_idx, &full_clock->digit[digit_idx]);
+	}
+}
+
+void animation_init()
+{
+	for (int motor_idx = 0; motor_idx < NUM_MOTORS; motor_idx++) {
+		_init_motor_timing(&_motors[motor_idx]);
 	}
 }
 

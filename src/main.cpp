@@ -13,6 +13,7 @@ void setup()
 	shift_reg_init();
 	rtc_init();
 	button_init();
+	animation_init();
 
 #if 0
 	ctrl_test();
