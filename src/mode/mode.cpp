@@ -2,6 +2,7 @@
 
 #include "button/button.hpp"
 #include "calibration.hpp"
+#include "motor/motor_motion.h"
 #include "time_manager.hpp"
 
 enum mode_t {
@@ -20,6 +21,7 @@ static void _init_mode()
 
 	if (MODE_CALIB == _mode) {
 		/* Reset calib state */
+		motion_mode_set_calib();
 	} else if (MODE_CLOCK_CONFIG == _mode) {
 		/* Reset config state */
 	} else if (MODE_CLOCK_DISPLAY == _mode) {
@@ -46,6 +48,7 @@ static void _update_mode()
 
 	if (new_mode != _mode) {
 		_mode = new_mode;
+		motion_mode_set_normal();
 		_init_mode();
 	}
 }

@@ -23,6 +23,11 @@ enum direction_t : uint8_t {
 	DIRECTION_COUNTERCLOCKWISE,
 };
 
+enum motion_mode_t : uint8_t {
+	MOTION_NORMAL,
+	MOTION_CALIB,
+};
+
 enum motor_step_t : uint8_t {
 	MOTOR_STEP_0,
 	MOTOR_STEP_1,
@@ -59,7 +64,11 @@ static struct {
 	uint8_t acceleration;
 	uint8_t speed;
 	enum transition_t transition;
-} _ctx = {.acceleration = INITIAL_ACCELERATION, .speed = INITIAL_SPEED, .transition = TRANS_SHORTER_PATH};
+	enum motion_mode_t motion_mode;
+} _ctx = {.acceleration = INITIAL_ACCELERATION,
+          .speed = INITIAL_SPEED,
+          .transition = TRANS_SHORTER_PATH,
+          .motion_mode = MOTION_NORMAL};
 
 static struct motor_t _motors[NUM_MOTORS] = {};
 
@@ -102,10 +111,14 @@ static void _update_pos(struct motor_t *motor)
 		motor->step_remaining--;
 
 		if (DIRECTION_CLOCKWISE == motor->direction) {
-			motor->current_pos++;
+			if (MOTION_CALIB != _ctx.motion_mode) {
+				motor->current_pos++;
+			}
 			motor->step = (enum motor_step_t)((uint8_t) (motor->step + 1) % MOTOR_STEP_OFF);
 		} else {
-			motor->current_pos--;
+			if (MOTION_CALIB != _ctx.motion_mode) {
+				motor->current_pos--;
+			}
 			motor->step = (enum motor_step_t)((uint8_t) (motor->step - 1) % MOTOR_STEP_OFF);
 		}
 
@@ -423,4 +436,14 @@ void increment_needle_pos(const int motor_idx, int16_t increment)
 			    ((int16_t) _motors[motor_idx].step_remaining) + increment;
 		}
 	}
+}
+
+void motion_mode_set_calib()
+{
+	_ctx.motion_mode = MOTION_CALIB;
+}
+
+void motion_mode_set_normal()
+{
+	_ctx.motion_mode = MOTION_NORMAL;
 }
