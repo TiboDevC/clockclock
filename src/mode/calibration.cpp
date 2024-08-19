@@ -10,11 +10,11 @@ static struct {
 
 void loop_calib()
 {
-	struct button_t button = {};
+	struct button_t bt_encoder = {};
 
-	button_get_state(&button, BUTTON_ENCODER);
+	button_get_state(&bt_encoder, BUTTON_ENCODER);
 
-	if (NO_PRESS != button.press) {
+	if (NO_PRESS != bt_encoder.press) {
 		_ctx.motor_idx++;
 		_ctx.motor_idx %= NUM_MOTORS;
 	}
