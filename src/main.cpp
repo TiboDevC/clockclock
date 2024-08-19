@@ -1,9 +1,9 @@
 #include <Arduino.h>
 
-#include "animation.h"
 #include "button/button.hpp"
 #include "mode/mode.hpp"
-#include "shift_register.h"
+#include "motor/motor_motion.h"
+#include "motor/shift_register.h"
 #include "time_manager.hpp"
 
 void setup()

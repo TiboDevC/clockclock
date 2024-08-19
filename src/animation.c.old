@@ -5,8 +5,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include "animation.h"
-#include "shift_register.h"
+#include "motor/motor_motion.h"
+#include "motor/shift_register.h"
 
 /* motor_controller.c */
 

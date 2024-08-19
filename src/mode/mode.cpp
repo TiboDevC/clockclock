@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
 #include "button/button.hpp"
+#include "calibration.hpp"
 #include "time_manager.hpp"
 
 enum mode_t {
@@ -58,6 +59,7 @@ void mode_check()
 		time_check();
 		break;
 	case MODE_CLOCK_CONFIG:
+		loop_calib();
 		break;
 	case MODE_CALIB:
 		break;

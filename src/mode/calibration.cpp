@@ -1,8 +1,8 @@
 #include <stdint.h>
 
-#include "animation.h"
 #include "button/button.hpp"
 #include "cfg.hpp"
+#include "motor/motor_motion.h"
 
 static struct {
 	uint8_t motor_idx;

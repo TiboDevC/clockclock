@@ -1,5 +1,5 @@
 #include "DS3231.h"
-#include "animation.h"
+#include "motor/motor_motion.h"
 
 #define CHECK_TIME_DELAY_MS 500
 
