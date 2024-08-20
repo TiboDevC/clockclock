@@ -18,6 +18,7 @@ static mode_t _mode = MODE_CLOCK_DISPLAY;
 static void _init_mode()
 {
 	button_reset();
+	motion_mode_set_normal();
 
 	if (MODE_CALIB == _mode) {
 		/* Reset calib state */
@@ -48,7 +49,6 @@ static void _update_mode()
 
 	if (new_mode != _mode) {
 		_mode = new_mode;
-		motion_mode_set_normal();
 		_init_mode();
 	}
 }
