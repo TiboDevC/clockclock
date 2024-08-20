@@ -278,22 +278,15 @@ void set_acceleration(uint8_t value)
 
 static struct full_clock_t _get_clock_state_from_time(int h, int m)
 {
-	const int d0 = h / 10;
-	const int d1 = h - d0 * 10;
-	const int d2 = m / 10;
-	const int d3 = m - d2 * 10;
 	Serial.print("Set time: ");
 	Serial.print(h);
 	Serial.print(":");
 	Serial.println(m);
-	Serial.print("d0: ");
-	Serial.println(d0);
-	Serial.print("d1: ");
-	Serial.println(d1);
-	Serial.print("d2: ");
-	Serial.println(d2);
-	Serial.print("d3: ");
-	Serial.println(d3);
+
+	const int d0 = h / 10;
+	const int d1 = h - d0 * 10;
+	const int d2 = m / 10;
+	const int d3 = m - d2 * 10;
 
 	struct full_clock_t clock_state = {_digits[d0], _digits[d1], _digits[d2], _digits[d3]};
 	return clock_state;
@@ -306,25 +299,25 @@ static void _shortest_path(const int needle_idx, const pos_t target_pos)
 	if (target_pos == motor->current_pos) {
 		/* Already at the correct position */
 		return;
-	} else {
-		/* Figure out the shortest path */
-		pos_t clockwise;
-		pos_t counterclockwise;
-		if (target_pos > motor->current_pos) {
-			clockwise = target_pos - motor->current_pos;
-			counterclockwise = NUM_STEPS_PER_ROT - (target_pos - motor->current_pos);
-		} else {
-			clockwise = NUM_STEPS_PER_ROT - (motor->current_pos - target_pos);
-			counterclockwise = motor->current_pos - target_pos;
-		}
+	}
 
-		if (clockwise < counterclockwise) {
-			motor->step_remaining = clockwise;
-			motor->direction = DIRECTION_CLOCKWISE;
-		} else {
-			motor->step_remaining = counterclockwise;
-			motor->direction = DIRECTION_COUNTERCLOCKWISE;
-		}
+	/* Figure out the shortest path */
+	pos_t clockwise;
+	pos_t counterclockwise;
+	if (target_pos > motor->current_pos) {
+		clockwise = target_pos - motor->current_pos;
+		counterclockwise = NUM_STEPS_PER_ROT - (target_pos - motor->current_pos);
+	} else {
+		clockwise = NUM_STEPS_PER_ROT - (motor->current_pos - target_pos);
+		counterclockwise = motor->current_pos - target_pos;
+	}
+
+	if (clockwise < counterclockwise) {
+		motor->step_remaining = clockwise;
+		motor->direction = DIRECTION_CLOCKWISE;
+	} else {
+		motor->step_remaining = counterclockwise;
+		motor->direction = DIRECTION_COUNTERCLOCKWISE;
 	}
 
 #if 0
