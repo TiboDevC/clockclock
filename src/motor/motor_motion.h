@@ -7,5 +7,6 @@ void increment_needle_pos(const int motor_idx, int16_t increment);
 void animation_init();
 void motion_mode_set_calib();
 void motion_mode_set_normal();
+void motion_set_motor_neutral();
 
 #endif /* CLOCKCLOCK_ANIMATION_2_H */

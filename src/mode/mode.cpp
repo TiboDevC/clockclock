@@ -9,6 +9,7 @@ enum mode_t {
 	MODE_CLOCK_DISPLAY,
 	MODE_CLOCK_CONFIG,
 	MODE_CALIB,
+	MODE_SHUTDOWN,
 };
 
 static mode_t _mode = MODE_CLOCK_DISPLAY;
@@ -27,23 +28,31 @@ static void _init_mode()
 		/* Reset config state */
 	} else if (MODE_CLOCK_DISPLAY == _mode) {
 		display_time();
+	} else if (MODE_SHUTDOWN == _mode) {
+		/* Set motors to neutral position */
+		motion_set_motor_neutral();
 	}
 }
 
 static void _update_mode()
 {
-	struct button_t button = {};
+	struct button_t bt_mode = {};
+	struct button_t bt_shutdown = {};
 	const unsigned long time_ms = millis();
 	const unsigned long last_press_ms = button_last_press();
 	enum mode_t new_mode = _mode;
 
-	button_get_state(&button, BUTTON_MODE);
+	button_get_state(&bt_shutdown, BUTTON_SHUTDOWN);
+	button_get_state(&bt_mode, BUTTON_MODE);
 
-	if (LONG_PRESS == button.press) {
+	if (LONG_PRESS == bt_shutdown.press) {
+		new_mode = MODE_SHUTDOWN;
+	} else if (LONG_PRESS == bt_mode.press) {
 		new_mode = MODE_CALIB;
-	} else if (SHORT_PRESS == button.press) {
+	} else if (SHORT_PRESS == bt_mode.press) {
 		new_mode = MODE_CLOCK_CONFIG;
-	} else if (time_ms < last_press_ms || time_ms - last_press_ms > MODE_TIMEOUT_MS) {
+	} else if (MODE_SHUTDOWN != _mode &&
+	           (time_ms < last_press_ms || time_ms - last_press_ms > MODE_TIMEOUT_MS)) {
 		new_mode = MODE_CLOCK_DISPLAY;
 	}
 
@@ -61,10 +70,10 @@ void loop_mode()
 	case MODE_CLOCK_DISPLAY:
 		time_check();
 		break;
-	case MODE_CLOCK_CONFIG:
+	case MODE_CALIB:
 		loop_calib();
 		break;
-	case MODE_CALIB:
+	default:
 		break;
 	}
 }
