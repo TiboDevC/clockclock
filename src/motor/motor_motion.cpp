@@ -441,6 +441,12 @@ void increment_needle_pos(const int motor_idx, int16_t increment)
 void motion_mode_set_calib()
 {
 	_ctx.motion_mode = MOTION_CALIB;
+
+	/* Set all motors to position 0 */
+	for (int motor_idx = 0; motor_idx < NUM_MOTORS; motor_idx++) {
+		_update_needle(motor_idx, 0);
+		_motors[motor_idx].current_pos = 0;
+	}
 }
 
 void motion_mode_set_normal()
