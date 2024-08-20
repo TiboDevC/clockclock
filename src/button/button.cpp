@@ -23,7 +23,7 @@ struct button_cfg_t {
 
 static struct button_cfg_t _buttons[BUTTON_MAX] = {
     {.pin = PIN_BUTTON_MODE}, {.pin = PIN_BUTTON_ENCODER}, {.pin = PIN_BUTTON_SHUTDOWN}};
-static unsigned long _last_press_ms = 0;
+static unsigned long _last_action_ms = 0;
 static int8_t _encoder_count = 0;
 static volatile uint8_t _last_encoder_0;
 
@@ -82,10 +82,11 @@ void button_check()
 				} else {
 					bt->press = NO_PRESS;
 				}
+			} else {
+				_buttons->last_press_ms = time_ms;
 			}
 			bt->last_state = input;
-			_buttons->last_press_ms = time_ms;
-			_last_press_ms = time_ms;
+			_last_action_ms = time_ms;
 		}
 	}
 }
@@ -108,7 +109,7 @@ void button_reset()
 
 unsigned long button_last_press()
 {
-	return _last_press_ms;
+	return _last_action_ms;
 }
 
 int8_t button_get_encoder_count()
