@@ -35,7 +35,7 @@ void loop()
 	const unsigned long time_us_0 = micros();
 
 	button_check();
-	mode_check();
+	loop_mode();
 
 	loop_motors();
 

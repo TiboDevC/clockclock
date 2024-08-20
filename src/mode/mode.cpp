@@ -53,7 +53,7 @@ static void _update_mode()
 	}
 }
 
-void mode_check()
+void loop_mode()
 {
 	_update_mode();
 
