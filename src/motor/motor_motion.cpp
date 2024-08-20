@@ -72,7 +72,7 @@ static struct {
 
 static struct motor_t _motors[NUM_MOTORS] = {};
 
-static uint8_t _steps[NUM_MOTORS] = {0};
+static uint8_t _steps[NUM_MOTORS / 2] = {0}; /* 4 bits per motors */
 
 static void _print_motor(const int motor_id, const motor_t *motor)
 {
@@ -99,7 +99,8 @@ static void _print_motor(const int motor_id, const motor_t *motor)
 
 static void _set_motor_bits(int motor_id, int step_id)
 {
-	_steps[motor_id] = _motor_steps[step_id];
+	_steps[motor_id / 2] &= ~(0xF << ((motor_id % 2) * 4));
+	_steps[motor_id / 2] = _motor_steps[step_id] << ((motor_id % 2) * 4);
 }
 
 static void _update_pos(struct motor_t *motor)
@@ -183,7 +184,7 @@ void loop_motors()
 		// _print_motor(motor_id, &_motors[motor_id]);
 	}
 
-	ctrl_motors(_steps, NUM_MOTORS);
+	ctrl_motors(_steps, sizeof(_steps));
 }
 
 
