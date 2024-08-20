@@ -336,6 +336,25 @@ static void _shortest_path(const int needle_idx, const pos_t target_pos)
 	_print_motor(needle_idx, motor);
 }
 
+static void _clockwise_path(const int needle_idx, const pos_t target_pos)
+{
+	motor_t *motor = &_motors[needle_idx];
+
+	if (target_pos == motor->current_pos) {
+		/* Already at the correct position */
+		return;
+	}
+
+	if (target_pos > motor->step_remaining) {
+		motor->step_remaining = target_pos - motor->step_remaining;
+	} else {
+		motor->step_remaining = NUM_STEPS_PER_ROT - motor->current_pos + target_pos;
+	}
+	motor->direction = DIRECTION_CLOCKWISE;
+
+	_print_motor(needle_idx, motor);
+}
+
 static void _init_motor_timing(struct motor_t *motor)
 {
 	/* Update the speed */
@@ -377,6 +396,8 @@ static void _update_needle(const int needle_idx, angle_t angle)
 
 	if (TRANS_SHORTER_PATH == _ctx.transition) {
 		_shortest_path(needle_idx, target_pos);
+	} else if (TRANS_CLOCKWISE == _ctx.transition) {
+		_clockwise_path(needle_idx, target_pos);
 	}
 }
 
