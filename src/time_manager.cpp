@@ -65,3 +65,14 @@ void rtc_init(void)
 
 	rtc_print_time();
 }
+
+void rtc_increment_time_min(int16_t min)
+{
+	DS3231 Clock;
+	const DateTime now = RTClib::now();
+
+	const time_t new_time = now.unixtime() + min;
+	Clock.setEpoch(new_time, false);
+	Serial.print("Set time: ");
+	Serial.println(new_time);
+}

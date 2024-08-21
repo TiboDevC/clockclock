@@ -2,6 +2,7 @@
 
 #include "button/button.hpp"
 #include "calibration.hpp"
+#include "cfg_time.hpp"
 #include "motor/motor_motion.h"
 #include "time_manager.hpp"
 
@@ -85,6 +86,9 @@ void loop_mode()
 		break;
 	case MODE_CALIB:
 		loop_calib();
+		break;
+	case MODE_CLOCK_CONFIG:
+		loop_cfg_time();
 		break;
 	default:
 		break;
