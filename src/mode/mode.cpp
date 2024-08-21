@@ -5,6 +5,14 @@
 #include "motor/motor_motion.h"
 #include "time_manager.hpp"
 
+#ifdef DEBUG_MODE
+#define DBG_MODE(...)    Serial.print(__VA_ARGS__)
+#define DBG_MODE_LN(...) Serial.println(__VA_ARGS__)
+#else
+#define DBG_MODE(...)
+#define DBG_MODE_LN(...)
+#endif
+
 enum mode_t {
 	MODE_CLOCK_DISPLAY,
 	MODE_CLOCK_CONFIG,
@@ -25,13 +33,17 @@ static void _init_mode()
 		/* Reset calib state */
 		calib_init();
 		motion_mode_set_calib();
+		DBG_MODE_LN("MODE_CALIB");
 	} else if (MODE_CLOCK_CONFIG == _mode) {
 		/* Reset config state */
+		DBG_MODE_LN("MODE_CLOCK_CONFIG");
 	} else if (MODE_CLOCK_DISPLAY == _mode) {
 		display_time();
+		DBG_MODE_LN("MODE_CLOCK_DISPLAY");
 	} else if (MODE_SHUTDOWN == _mode) {
 		/* Set motors to neutral position */
 		motion_set_motor_neutral();
+		DBG_MODE_LN("MODE_SHUTDOWN");
 	}
 }
 
