@@ -2,6 +2,14 @@
 
 #include "button.hpp"
 
+#ifdef DEBUG_BT
+#define DBG_BT(...)    Serial.print(__VA_ARGS__)
+#define DBG_BT_LN(...) Serial.println(__VA_ARGS__)
+#else
+#define DBG_BT(...)
+#define DBG_BT_LN(...)
+#endif
+
 #define PIN_BUTTON_MODE     6
 #define PIN_BUTTON_ENCODER  4
 #define PIN_BUTTON_SHUTDOWN 5
@@ -89,8 +97,8 @@ void button_check()
 
 				if (press_duration >= BT_SHORT_PRESS_MS && !bt->long_press_reported) {
 					bt->press = SHORT_PRESS;
-					Serial.print(button_idx);
-					Serial.println(": Short press");
+					DBG_BT(button_idx);
+					DBG_BT_LN(": Short press");
 				} else {
 					bt->press = NO_PRESS;
 				}
@@ -104,8 +112,8 @@ void button_check()
 			if (press_duration >= BT_LONG_PRESS_MS) {
 				bt->press = LONG_PRESS;
 				bt->long_press_reported = true;
-				Serial.print(button_idx);
-				Serial.println(": Long press");
+				DBG_BT(button_idx);
+				DBG_BT_LN(": Long press");
 			}
 		}
 	}
