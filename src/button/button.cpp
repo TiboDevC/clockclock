@@ -134,5 +134,10 @@ unsigned long button_last_press()
 
 int8_t button_get_encoder_count()
 {
-	return _encoder_count;
+	if (_encoder_count != 0) {
+		_last_action_ms = millis();
+	}
+	const int8_t encoder_count = _encoder_count;
+	_encoder_count = 0;
+	return encoder_count;
 }
