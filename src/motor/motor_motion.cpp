@@ -5,6 +5,14 @@
 #include "cfg.hpp"
 #include "shift_register.h"
 
+#ifdef DEBUG_MOTION
+#define DBG_MOTION(...)    Serial.print(__VA_ARGS__)
+#define DBG_MOTION_LN(...) Serial.println(__VA_ARGS__)
+#else
+#define DBG_MOTION(...)
+#define DBG_MOTION_LN(...)
+#endif
+
 #define NUM_STEPS_PER_ROT (4096)
 #define DELAY_FACTOR      10
 #define DELAY_OFFSET      1500 /* min delay in micro second to switch to next motor sequence */
@@ -77,25 +85,25 @@ static uint8_t _steps[NUM_MOTORS / 2] = {0}; /* 4 bits per motors */
 
 static void _print_motor(const int motor_id, const motor_t *motor)
 {
-	Serial.print(motor_id);
-	Serial.print(": ");
-	Serial.print(motor->step_remaining);
-	Serial.print("/");
-	Serial.print(motor->current_pos);
-	Serial.print(", dir: ");
-	Serial.print(motor->direction);
-	Serial.print(", delay: ");
-	Serial.print(motor->delay_us);
-	Serial.print("/");
-	Serial.print(motor->delay_target_us);
-	Serial.print("(");
-	Serial.print(DELAY_TO_US(motor->delay_us));
-	Serial.print("ms)");
-	Serial.print(", last_us: ");
-	Serial.print(motor->last_delay);
-	Serial.print(", step: ");
-	Serial.print(motor->step);
-	Serial.println();
+	DBG_MOTION(motor_id);
+	DBG_MOTION(": ");
+	DBG_MOTION(motor->step_remaining);
+	DBG_MOTION("/");
+	DBG_MOTION(motor->current_pos);
+	DBG_MOTION(", dir: ");
+	DBG_MOTION(motor->direction);
+	DBG_MOTION(", delay: ");
+	DBG_MOTION(motor->delay_us);
+	DBG_MOTION("/");
+	DBG_MOTION(motor->delay_target_us);
+	DBG_MOTION("(");
+	DBG_MOTION(DELAY_TO_US(motor->delay_us));
+	DBG_MOTION("ms)");
+	DBG_MOTION(", last_us: ");
+	DBG_MOTION(motor->last_delay);
+	DBG_MOTION(", step: ");
+	DBG_MOTION(motor->step);
+	DBG_MOTION_LN("");
 }
 
 static void _set_motor_bits(int motor_id, int step_id)
@@ -134,10 +142,10 @@ static int _check_delay(const struct motor_t *motor, unsigned long time_us)
 		if (motor->last_delay > time_us ||
 		    time_us - motor->last_delay > DELAY_TO_US(motor->delay_us)) {
 #if 0
-			Serial.print("Delay: ");
-			Serial.print(motor->delay_us);
-			Serial.print(", ");
-			Serial.println(DELAY_TO_US(motor->delay_us));
+			DBG_MOTION("Delay: ");
+			DBG_MOTION(motor->delay_us);
+			DBG_MOTION(", ");
+			DBG_MOTION_LN(DELAY_TO_US(motor->delay_us));
 #endif
 			return 0;
 		}
@@ -279,10 +287,10 @@ void set_acceleration(uint8_t value)
 
 static struct full_clock_t _get_clock_state_from_time(int h, int m)
 {
-	Serial.print("Set time: ");
-	Serial.print(h);
-	Serial.print(":");
-	Serial.println(m);
+	DBG_MOTION("Set time: ");
+	DBG_MOTION(h);
+	DBG_MOTION(":");
+	DBG_MOTION_LN(m);
 
 	const int d0 = h / 10;
 	const int d1 = h - d0 * 10;
@@ -322,10 +330,10 @@ static void _shortest_path(const int needle_idx, const pos_t target_pos)
 	}
 
 #if 0
-	Serial.print("Target position: ");
-	Serial.print(target_pos);
-	Serial.print("/");
-	Serial.println(motor->current_pos);
+	DBG_MOTION("Target position: ");
+	DBG_MOTION(target_pos);
+	DBG_MOTION("/");
+	DBG_MOTION_LN(motor->current_pos);
 #endif
 	_print_motor(needle_idx, motor);
 }
@@ -378,10 +386,10 @@ static pos_t _adjust_pos(pos_t pos)
 static void _update_needle(const int needle_idx, angle_t angle)
 {
 #if 0
-	Serial.print("Needle: ");
-	Serial.print(needle_idx);
-	Serial.print(", angle: ");
-	Serial.println(angle);
+	DBG_MOTION("Needle: ");
+	DBG_MOTION(needle_idx);
+	DBG_MOTION(", angle: ");
+	DBG_MOTION_LN(angle);
 #endif
 
 	angle = _sanitize_angle(angle);
@@ -430,6 +438,11 @@ void set_clock_time(int h, int m)
 	if (h < 0 || h > 99 || m < 0 || m > 99) {
 		return;
 	}
+	DBG_MOTION("Display ");
+	DBG_MOTION(h);
+	DBG_MOTION(":");
+	DBG_MOTION(m);
+	DBG_MOTION_LN();
 	const struct full_clock_t full_clock = _get_clock_state_from_time(h, m);
 	_update_clock(&full_clock);
 }
