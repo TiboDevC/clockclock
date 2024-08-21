@@ -113,7 +113,7 @@ void button_check()
 
 void button_get_state(struct button_t *button, enum button_type_t button_type)
 {
-	if (NULL == button || BUTTON_MAX >= button_type) {
+	if (NULL == button || button_type >= BUTTON_MAX) {
 		return;
 	}
 	button->press = _buttons[button_type].press;
