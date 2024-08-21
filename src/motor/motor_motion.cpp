@@ -109,7 +109,7 @@ static void _print_motor(const int motor_id, const motor_t *motor)
 static void _set_motor_bits(int motor_id, int step_id)
 {
 	_steps[motor_id / 2] &= ~(0xF << ((motor_id % 2) * 4));
-	_steps[motor_id / 2] = _motor_steps[step_id] << ((motor_id % 2) * 4);
+	_steps[motor_id / 2] |= _motor_steps[step_id] << ((motor_id % 2) * 4);
 }
 
 static void _update_pos(struct motor_t *motor)
