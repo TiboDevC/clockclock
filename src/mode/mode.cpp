@@ -23,6 +23,7 @@ static void _init_mode()
 
 	if (MODE_CALIB == _mode) {
 		/* Reset calib state */
+		calib_init();
 		motion_mode_set_calib();
 	} else if (MODE_CLOCK_CONFIG == _mode) {
 		/* Reset config state */

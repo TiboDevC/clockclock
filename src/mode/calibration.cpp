@@ -8,6 +8,13 @@ static struct {
 	uint8_t motor_idx;
 } _ctx = {};
 
+void calib_init()
+{
+	_ctx.motor_idx = 0;
+	/* Reset rotary encoder count */
+	button_get_encoder_count();
+}
+
 void loop_calib()
 {
 	struct button_t bt_encoder = {};
