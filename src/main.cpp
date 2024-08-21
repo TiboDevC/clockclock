@@ -8,7 +8,7 @@
 
 void setup()
 {
-	Serial.begin(9600);
+	Serial.begin(115200);
 	Serial.println("start");
 	shift_reg_init();
 	rtc_init();
