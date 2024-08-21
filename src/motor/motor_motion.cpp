@@ -81,7 +81,7 @@ static struct {
 
 static struct motor_t _motors[NUM_MOTORS] = {};
 
-static uint8_t _steps[NUM_MOTORS / 2] = {0}; /* 4 bits per motors */
+static uint8_t _steps[SHIFT_REG_SIZE] = {0}; /* 4 bits per motors */
 
 static void _print_motor(const int motor_id, const motor_t *motor)
 {

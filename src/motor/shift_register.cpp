@@ -1,5 +1,6 @@
 #include <stdint.h>
 
+#include "cfg.hpp"
 #include <Arduino.h>
 #include <SPI.h>
 
@@ -51,7 +52,11 @@ void ctrl_test(void)
 
 void ctrl_motors(const uint8_t *byte_array, int byte_array_size)
 {
+	/* The Arduino library read SPI and writes it into the input buffer.
+	 * So we need another buffer to not corrupt the original one. */
+	uint8_t buf[SHIFT_REG_SIZE];
+	memcpy(buf, byte_array, byte_array_size);
 	digitalWrite(PIN_CLOCK_STORAGE_REGISTER, LOW);
-	SPI.transfer((void *) byte_array, byte_array_size);
+	SPI.transfer((void *) buf, byte_array_size);
 	digitalWrite(PIN_CLOCK_STORAGE_REGISTER, HIGH);
 }
