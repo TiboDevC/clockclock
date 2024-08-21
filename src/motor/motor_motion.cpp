@@ -138,17 +138,14 @@ static void _update_pos(struct motor_t *motor)
 
 static int _check_delay(const struct motor_t *motor, unsigned long time_us)
 {
-	if (0 != motor->step_remaining) {
-		if (motor->last_delay > time_us ||
-		    time_us - motor->last_delay > DELAY_TO_US(motor->delay_us)) {
+	if (motor->last_delay > time_us || time_us - motor->last_delay > DELAY_TO_US(motor->delay_us)) {
 #if 0
 			DBG_MOTION("Delay: ");
 			DBG_MOTION(motor->delay_us);
 			DBG_MOTION(", ");
 			DBG_MOTION_LN(DELAY_TO_US(motor->delay_us));
 #endif
-			return 0;
-		}
+		return 0;
 	}
 	return -1;
 }
