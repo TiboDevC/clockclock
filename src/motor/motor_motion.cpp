@@ -1,5 +1,6 @@
-#include <Arduino.h>
 #include <stdint.h>
+
+#include <Arduino.h>
 
 #include "cfg.hpp"
 #include "shift_register.h"
@@ -53,11 +54,11 @@ struct motor_t {
 };
 
 static const int _motor_steps[MOTOR_STEP_MAX] = {
-    0b1000,
-    0b0100,
-    0b0010,
-    0b0001,
-    0b0000,
+    0b1000, /* MOTOR_STEP_0 */
+    0b0100, /* MOTOR_STEP_1 */
+    0b0010, /* MOTOR_STEP_2 */
+    0b0001, /* MOTOR_STEP_3 */
+    0b0000, /* MOTOR_STEP_OFF */
 };
 
 static struct {
