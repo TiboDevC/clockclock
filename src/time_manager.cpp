@@ -1,6 +1,14 @@
 #include "DS3231.h"
 #include "motor/motor_motion.h"
 
+#ifdef DEBUG_TIME_MGMT
+#define DBG_TIME_MGMT(...)    Serial.print(__VA_ARGS__)
+#define DBG_TIME_MGMT_LN(...) Serial.println(__VA_ARGS__)
+#else
+#define DBG_TIME_MGMT(...)
+#define DBG_TIME_MGMT_LN(...)
+#endif
+
 #define CHECK_TIME_DELAY_MS 500
 
 void display_time(void)
@@ -30,6 +38,7 @@ void time_check(void)
 
 void rtc_print_time(void)
 {
+#ifdef DEBUG_TIME_MGMT
 	const DateTime now = RTClib::now();
 
 	Serial.print(now.year(), DEC);
@@ -44,6 +53,7 @@ void rtc_print_time(void)
 	Serial.print(':');
 	Serial.print(now.second(), DEC);
 	Serial.println();
+#endif /* DEBUG_TIME_MGMT */
 }
 
 void rtc_init(void)
@@ -53,11 +63,11 @@ void rtc_init(void)
 	DS3231 Clock;
 	Wire.begin();
 
-	Serial.println("Init DS3231");
+	DBG_TIME_MGMT_LN("Init DS3231");
 	delay(500);
 
 	if (Clock.getYear() < 23) {
-		Serial.println("RTC lost time, reconfigure it");
+		DBG_TIME_MGMT_LN("RTC lost time, reconfigure it");
 		Clock.setEpoch(tstmp, false);
 		// set to 24h
 		Clock.setClockMode(false);
@@ -73,6 +83,6 @@ void rtc_increment_time_min(int16_t min)
 
 	const time_t new_time = now.unixtime() + min;
 	Clock.setEpoch(new_time, false);
-	Serial.print("Set time: ");
-	Serial.println(new_time);
+	DBG_TIME_MGMT("Set time: ");
+	DBG_TIME_MGMT_LN(new_time);
 }
