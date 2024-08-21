@@ -8,8 +8,10 @@
 
 void setup()
 {
+#ifdef DEBUG
 	Serial.begin(115200);
 	Serial.println("start");
+#endif /* Debug */
 	shift_reg_init();
 	rtc_init();
 	button_init();
@@ -27,7 +29,9 @@ void setup()
 #endif
 
 	display_time();
+#ifdef DEBUG
 	Serial.println("Start!");
+#endif /* Debug */
 }
 
 void loop()
