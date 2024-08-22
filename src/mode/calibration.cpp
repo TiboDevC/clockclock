@@ -36,7 +36,7 @@ void loop_calib()
 
 	const int8_t increment_count = button_get_encoder_count();
 	if (0 != increment_count) {
-		increment_needle_pos(_ctx.motor_idx, increment_count);
+		increment_motor_pos(_ctx.motor_idx, increment_count);
 		DBG_CALIB("Increment ");
 		DBG_CALIB(_ctx.motor_idx);
 		DBG_CALIB(" of ");

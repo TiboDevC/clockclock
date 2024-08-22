@@ -206,14 +206,14 @@ void loop_motors()
  * }
  */
 
-#define NUM_NEEDLE_PER_DIAL 2
-#define NUM_DIAL_PER_DIGIT  6
-#define NUM_DIGIT           4
+#define NUM_MOTOR_PER_DIAL 2
+#define NUM_DIAL_PER_DIGIT 6
+#define NUM_DIGIT          4
 
 typedef uint16_t angle_t;
 
 struct clock_dial_t {
-	angle_t angle[NUM_NEEDLE_PER_DIAL];
+	angle_t angle[NUM_MOTOR_PER_DIAL];
 };
 
 struct clock_digit_t {
@@ -298,9 +298,9 @@ static struct full_clock_t _get_clock_state_from_time(int h, int m)
 	return clock_state;
 }
 
-static void _shortest_path(const int needle_idx, const pos_t target_pos)
+static void _shortest_path(const int motor_idx, const pos_t target_pos)
 {
-	motor_t *motor = &_motors[needle_idx];
+	motor_t *motor = &_motors[motor_idx];
 
 	if (target_pos == motor->current_pos) {
 		/* Already at the correct position */
@@ -332,12 +332,12 @@ static void _shortest_path(const int needle_idx, const pos_t target_pos)
 	DBG_MOTION("/");
 	DBG_MOTION_LN(motor->current_pos);
 #endif
-	_print_motor(needle_idx, motor);
+	_print_motor(motor_idx, motor);
 }
 
-static void _clockwise_path(const int needle_idx, const pos_t target_pos)
+static void _clockwise_path(const int motor_idx, const pos_t target_pos)
 {
-	motor_t *motor = &_motors[needle_idx];
+	motor_t *motor = &_motors[motor_idx];
 
 	if (target_pos == motor->current_pos) {
 		/* Already at the correct position */
@@ -351,7 +351,7 @@ static void _clockwise_path(const int needle_idx, const pos_t target_pos)
 	}
 	motor->direction = DIRECTION_CLOCKWISE;
 
-	_print_motor(needle_idx, motor);
+	_print_motor(motor_idx, motor);
 }
 
 static void _init_motor_timing(struct motor_t *motor)
@@ -380,11 +380,11 @@ static pos_t _adjust_pos(pos_t pos)
 	return pos;
 }
 
-static void _update_needle(const int needle_idx, angle_t angle)
+static void _update_motor_pos(const int motor_idx, angle_t angle)
 {
 #if 0
-	DBG_MOTION("Needle: ");
-	DBG_MOTION(needle_idx);
+	DBG_MOTION("Motor: ");
+	DBG_MOTION(motor_idx);
 	DBG_MOTION(", angle: ");
 	DBG_MOTION_LN(angle);
 #endif
@@ -394,18 +394,18 @@ static void _update_needle(const int needle_idx, angle_t angle)
 	target_pos = _adjust_pos(target_pos);
 
 	if (TRANS_SHORTER_PATH == _ctx.transition) {
-		_shortest_path(needle_idx, target_pos);
+		_shortest_path(motor_idx, target_pos);
 	} else if (TRANS_CLOCKWISE == _ctx.transition) {
-		_clockwise_path(needle_idx, target_pos);
+		_clockwise_path(motor_idx, target_pos);
 	}
 }
 
 static void _update_dial(const int digit_idx, const int dial_idx, const struct clock_dial_t *clock_dial)
 {
-	for (int needle_idx = 0; needle_idx < NUM_NEEDLE_PER_DIAL; needle_idx++) {
-		_update_needle(digit_idx * NUM_DIAL_PER_DIGIT * NUM_NEEDLE_PER_DIAL +
-		                   dial_idx * NUM_NEEDLE_PER_DIAL + needle_idx,
-		               clock_dial->angle[needle_idx]);
+	for (int motor_idx = 0; motor_idx < NUM_MOTOR_PER_DIAL; motor_idx++) {
+		_update_motor_pos(digit_idx * NUM_DIAL_PER_DIGIT * NUM_MOTOR_PER_DIAL +
+		                      dial_idx * NUM_MOTOR_PER_DIAL + motor_idx,
+		                  clock_dial->angle[motor_idx]);
 	}
 }
 
@@ -444,7 +444,7 @@ void set_clock_time(int h, int m)
 	_update_clock(&full_clock);
 }
 
-void increment_needle_pos(const int motor_idx, int16_t increment)
+void increment_motor_pos(const int motor_idx, int16_t increment)
 {
 	if (increment > 0) {
 		_motors[motor_idx].step_remaining += increment;
@@ -470,7 +470,7 @@ void motion_mode_set_calib()
 
 	/* Set all motors to position 0 */
 	for (int motor_idx = 0; motor_idx < NUM_MOTORS; motor_idx++) {
-		_update_needle(motor_idx, 0);
+		_update_motor_pos(motor_idx, 0);
 		_motors[motor_idx].current_pos = 0;
 	}
 }
@@ -484,6 +484,6 @@ void motion_set_motor_neutral()
 {
 	/* Set all motors to position 0 */
 	for (int motor_idx = 0; motor_idx < NUM_MOTORS; motor_idx++) {
-		_update_needle(motor_idx, 0);
+		_update_motor_pos(motor_idx, 0);
 	}
 }
