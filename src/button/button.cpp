@@ -133,6 +133,7 @@ void button_reset()
 	for (int button_idx = 0; button_idx < BUTTON_MAX; button_idx++) {
 		_buttons[button_idx].press = NO_PRESS;
 	}
+	_encoder_count = 0;
 }
 
 unsigned long button_last_press()
