@@ -40,7 +40,7 @@ void loop()
 	const unsigned long time_us_0 = micros();
 #endif /* DEBUG */
 
-	button_check();
+	loop_buttons();
 	loop_mode();
 
 	loop_motors();

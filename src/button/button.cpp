@@ -79,7 +79,7 @@ void button_init()
 	_last_encoder_0 = digitalRead(PIN_ENCODER_0);
 }
 
-void button_check()
+void loop_buttons()
 {
 	const unsigned long time_ms = millis();
 

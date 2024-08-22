@@ -21,7 +21,7 @@ struct button_t {
 };
 
 void button_init();
-void button_check();
+void loop_buttons();
 void button_get_state(struct button_t *button, enum button_type_t button_type);
 void button_reset();
 unsigned long button_last_press();
