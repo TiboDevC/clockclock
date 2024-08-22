@@ -21,8 +21,6 @@ static struct {
 void calib_init()
 {
 	_ctx.motor_idx = 0;
-	/* Reset rotary encoder count */
-	button_get_encoder_count();
 }
 
 void loop_calib()
