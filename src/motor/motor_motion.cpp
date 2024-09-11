@@ -167,13 +167,15 @@ static void _update_delay(struct motor_t *motor)
 		if (MAX_DELAY - _ctx.acceleration > motor->delay_us) {
 			motor->delay_us = MAX_DELAY;
 		} else {
-			motor->delay_us += _ctx.acceleration;
+			motor->delay_us =
+			    (((uint16_t) motor->delay_us) * 2 + ((uint16_t) _ctx.acceleration)) / 2;
 		}
 	} else if (motor->delay_target_us < motor->delay_us) {
 		if (_ctx.acceleration > motor->delay_us) {
 			motor->delay_us = 0;
 		} else {
-			motor->delay_us -= _ctx.acceleration;
+			motor->delay_us =
+			    (((uint16_t) motor->delay_us) * 2 - ((uint16_t) _ctx.acceleration)) / 2;
 		}
 	}
 }
