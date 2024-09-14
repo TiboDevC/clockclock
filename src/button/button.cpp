@@ -10,9 +10,9 @@
 #define DBG_BT_LN(...)
 #endif
 
-#define PIN_BUTTON_MODE     6
 #define PIN_BUTTON_ENCODER  4
 #define PIN_BUTTON_SHUTDOWN 5
+#define PIN_BUTTON_MODE     6
 #define PIN_ENCODER_0       2 /* Interrupt pin 0 */
 #define PIN_ENCODER_1       3 /* Interrupt pin 1 */
 
@@ -67,9 +67,9 @@ static void _encoder_int()
 
 void button_init()
 {
-	pinMode(PIN_BUTTON_MODE, INPUT);
 	pinMode(PIN_BUTTON_ENCODER, INPUT_PULLUP);
 	pinMode(PIN_BUTTON_SHUTDOWN, INPUT);
+	pinMode(PIN_BUTTON_MODE, INPUT);
 	pinMode(PIN_ENCODER_0, INPUT);
 	pinMode(PIN_ENCODER_1, INPUT);
 
