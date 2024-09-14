@@ -67,9 +67,9 @@ static void _encoder_int()
 
 void button_init()
 {
-	pinMode(PIN_BUTTON_MODE, INPUT_PULLUP);
+	pinMode(PIN_BUTTON_MODE, INPUT);
 	pinMode(PIN_BUTTON_ENCODER, INPUT_PULLUP);
-	pinMode(PIN_BUTTON_SHUTDOWN, INPUT_PULLUP);
+	pinMode(PIN_BUTTON_SHUTDOWN, INPUT);
 	pinMode(PIN_ENCODER_0, INPUT);
 	pinMode(PIN_ENCODER_1, INPUT);
 
