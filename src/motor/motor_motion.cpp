@@ -14,8 +14,8 @@
 #endif
 
 #define NUM_STEPS_PER_ROT (4096)
-#define DELAY_FACTOR      10
-#define DELAY_OFFSET      1500 /* min delay in micro second to switch to next motor sequence */
+#define DELAY_FACTOR      15
+#define DELAY_OFFSET      2000 /* min delay in micro second to switch to next motor sequence */
 #define ANGLE_TO_STEPS(target_angle) \
 	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
 #define DELAY_TO_US(delay) (((unsigned long) delay * DELAY_FACTOR) + DELAY_OFFSET)
