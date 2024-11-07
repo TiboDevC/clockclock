@@ -4,8 +4,8 @@
 #include <Arduino.h>
 #include <SPI.h>
 
-#define PIN_CLOCK_SHIFT_REGISTER   13 /* SPI clock pin */
-#define PIN_CLOCK_STORAGE_REGISTER 10 /* SPI SS pin */
+#define PIN_CLOCK_SHIFT_REGISTER   13 /* SHCP / SPI clock pin */
+#define PIN_CLOCK_STORAGE_REGISTER 10 /* STCP / SPI SS pin */
 #define PIN_SERIAL_DATA_OUTPUT     11 /* SPI MOSI pin */
 
 void shift_reg_init(void)
