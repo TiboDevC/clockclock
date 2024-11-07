@@ -62,10 +62,10 @@ struct motor_t {
 };
 
 static const int _motor_steps[MOTOR_STEP_MAX] = {
-    0b1000, /* MOTOR_STEP_0 */
-    0b0100, /* MOTOR_STEP_1 */
-    0b0010, /* MOTOR_STEP_2 */
-    0b0001, /* MOTOR_STEP_3 */
+    0b1100, /* MOTOR_STEP_0 */
+    0b0110, /* MOTOR_STEP_1 */
+    0b0011, /* MOTOR_STEP_2 */
+    0b1001, /* MOTOR_STEP_3 */
     0b0000, /* MOTOR_STEP_OFF */
 };
 
