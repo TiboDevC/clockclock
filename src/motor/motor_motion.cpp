@@ -447,22 +447,30 @@ void set_clock_time(int h, int m)
 	_update_clock(&full_clock);
 }
 
+#define POSITIVE_ DIRECTION_CLOCKWISE
+#define NEGATIVE_ DIRECTION_COUNTERCLOCKWISE
+
 void increment_motor_pos(const int motor_idx, int16_t increment)
 {
-	if (increment > 0) {
+	if (increment > 0 && POSITIVE_ == _motors[motor_idx].direction) {
 		_motors[motor_idx].step_remaining += increment;
-	} else {
-		if (increment * -1 > _motors[motor_idx].step_remaining) {
-			if (DIRECTION_CLOCKWISE == _motors[motor_idx].direction) {
-				_motors[motor_idx].direction = DIRECTION_COUNTERCLOCKWISE;
-			} else {
-				_motors[motor_idx].direction = DIRECTION_CLOCKWISE;
-			}
-			_motors[motor_idx].step_remaining =
-			    increment + ((int16_t) _motors[motor_idx].step_remaining);
+	} else if (increment < 0 && NEGATIVE_ == _motors[motor_idx].direction) {
+		const pos_t increment_pos = increment * -1;
+		_motors[motor_idx].step_remaining += increment_pos;
+	} else if (increment > 0) {
+		if (increment > _motors[motor_idx].step_remaining) {
+			_motors[motor_idx].direction = POSITIVE_;
+			_motors[motor_idx].step_remaining = increment - _motors[motor_idx].step_remaining;
 		} else {
-			_motors[motor_idx].step_remaining =
-			    ((int16_t) _motors[motor_idx].step_remaining) + increment;
+			_motors[motor_idx].step_remaining = _motors[motor_idx].step_remaining - increment;
+		}
+	} else {
+		const pos_t increment_pos = increment * -1;
+		if (increment_pos > _motors[motor_idx].step_remaining) {
+			_motors[motor_idx].direction = NEGATIVE_;
+			_motors[motor_idx].step_remaining = increment_pos - _motors[motor_idx].step_remaining;
+		} else {
+			_motors[motor_idx].step_remaining = _motors[motor_idx].step_remaining - increment_pos;
 		}
 	}
 }
