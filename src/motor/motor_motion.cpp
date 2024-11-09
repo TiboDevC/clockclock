@@ -77,7 +77,7 @@ static struct {
 	enum motion_mode_t motion_mode;
 } _ctx = {.acceleration = INITIAL_ACCELERATION,
           .speed = INITIAL_SPEED,
-          .transition = TRANS_SHORTER_PATH,
+          .transition = TRANS_CLOCKWISE,
           .motion_mode = MOTION_NORMAL};
 
 static struct motor_t _motors[NUM_MOTORS] = {};
