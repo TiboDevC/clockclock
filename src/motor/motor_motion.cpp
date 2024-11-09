@@ -18,7 +18,7 @@
 #define DELAY_OFFSET      2000 /* min delay in micro second to switch to next motor sequence */
 #define ANGLE_TO_STEPS(target_angle) \
 	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
-#define STEP_TO_ANGLE(target_step) (((uint32_t) target_step * 360ul )/ NUM_STEPS_PER_ROT)
+#define STEP_TO_ANGLE(target_step) (((uint32_t) target_step * 360ul) / NUM_STEPS_PER_ROT)
 #define DELAY_TO_US(delay)         (((unsigned long) delay * DELAY_FACTOR) + DELAY_OFFSET)
 
 #define MAX_DELAY            255
