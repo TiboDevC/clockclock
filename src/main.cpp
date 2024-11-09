@@ -36,18 +36,18 @@ void setup()
 
 void loop()
 {
-#ifdef DEBUG
+#if 0
 	const unsigned long time_us_0 = micros();
-#endif /* DEBUG */
+#endif /* 0 */
 
 	loop_buttons();
 	loop_mode();
 
 	loop_motors();
 
-#ifdef DEBUG
+#if 0
 	const unsigned long time_us_1 = micros();
 	Serial.print("Loop timing (us): ");
 	Serial.println(time_us_1 - time_us_0);
-#endif /* DEBUG */
+#endif /* 0 */
 }
