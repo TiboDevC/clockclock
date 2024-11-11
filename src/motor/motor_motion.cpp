@@ -23,8 +23,8 @@
 
 #define MAX_DELAY            255
 #define INITIAL_DELAY        255
-#define INITIAL_SPEED        10
-#define INITIAL_ACCELERATION 1
+#define INITIAL_SPEED        500
+#define INITIAL_ACCELERATION 200
 
 enum transition_t : uint8_t {
 	TRANS_SHORTER_PATH,
@@ -32,8 +32,8 @@ enum transition_t : uint8_t {
 };
 
 static struct {
-	uint8_t acceleration;
-	uint8_t speed;
+	uint32_t acceleration;
+	uint32_t speed;
 	enum transition_t transition;
 } _ctx = {.acceleration = INITIAL_ACCELERATION, .speed = INITIAL_SPEED, .transition = TRANS_CLOCKWISE};
 
