@@ -58,19 +58,19 @@ void Motor::step4(const long step)
 	if (isRunning()) {
 		switch (step & 0x3) {
 		case 0: // 1010
-			sequence = 0b0101;
-			break;
-
-		case 1: // 0110
 			sequence = 0b0110;
 			break;
 
+		case 1: // 0110
+			sequence = 0b0011;
+			break;
+
 		case 2: // 0101
-			sequence = 0b1010;
+			sequence = 0b1001;
 			break;
 
 		case 3: // 1001
-			sequence = 0b1001;
+			sequence = 0b1100;
 			break;
 		}
 	}
