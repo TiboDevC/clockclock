@@ -15,7 +15,7 @@ void setup()
 	shift_reg_init();
 	rtc_init();
 	button_init();
-	animation_init();
+	motor_init();
 
 #if 0
 	ctrl_test();
@@ -43,7 +43,7 @@ void loop()
 	loop_buttons();
 	loop_mode();
 
-	loop_motors();
+	motor_loop();
 
 #if 0
 	const unsigned long time_us_1 = micros();

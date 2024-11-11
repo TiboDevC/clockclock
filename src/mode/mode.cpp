@@ -28,12 +28,10 @@ static clock_mode_t _mode = MODE_CLOCK_DISPLAY;
 static void _init_mode()
 {
 	button_reset();
-	motion_mode_set_normal();
 
 	if (MODE_CALIB == _mode) {
 		/* Reset calib state */
 		calib_init();
-		motion_mode_set_calib();
 		DBG_MODE_LN("MODE_CALIB");
 	} else if (MODE_CLOCK_CONFIG == _mode) {
 		/* Reset config state */
@@ -43,8 +41,19 @@ static void _init_mode()
 		DBG_MODE_LN("MODE_CLOCK_DISPLAY");
 	} else if (MODE_SHUTDOWN == _mode) {
 		/* Set motors to neutral position */
-		motion_set_motor_neutral();
+		motor_goto_zero();
 		DBG_MODE_LN("MODE_SHUTDOWN");
+	}
+}
+
+static void _exit_mode()
+{
+	if (MODE_CALIB == _mode) {
+		/* After the timeout, all motors should be not running anymore */
+		motor_set_0_position();
+	} else if (MODE_CLOCK_CONFIG == _mode) {
+	} else if (MODE_CLOCK_DISPLAY == _mode) {
+	} else if (MODE_SHUTDOWN == _mode) {
 	}
 }
 
@@ -71,6 +80,7 @@ static void _update_mode()
 	}
 
 	if (new_mode != _mode) {
+		_exit_mode();
 		_mode = new_mode;
 		_init_mode();
 	}

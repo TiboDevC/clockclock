@@ -1,5 +1,5 @@
 #include "DS3231.h"
-#include "motor/motor_motion.h"
+#include "motor/motion.hpp"
 
 #ifdef DEBUG_TIME_MGMT
 #define DBG_TIME_MGMT(...)    Serial.print(__VA_ARGS__)
@@ -8,6 +8,10 @@
 #define DBG_TIME_MGMT(...)
 #define DBG_TIME_MGMT_LN(...)
 #endif
+
+/*
+ * SDA/SCL pin defined in `variants/esp32c3/pins_arduino.h`
+ * */
 
 #define CHECK_TIME_DELAY_MS 500
 

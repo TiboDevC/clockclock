@@ -1,12 +1,14 @@
-#include <stdint.h>
+#include <cstdint>
 
-#include "cfg.hpp"
 #include <Arduino.h>
 #include <SPI.h>
 
-#define PIN_CLOCK_SHIFT_REGISTER   13 /* SHCP / SPI clock pin */
-#define PIN_CLOCK_STORAGE_REGISTER 10 /* STCP / SPI SS pin */
-#define PIN_SERIAL_DATA_OUTPUT     11 /* SPI MOSI pin */
+#include "cfg.hpp"
+
+/* https://docs.espressif.com/projects/esp-idf/en/v5.3.1/esp32c3/api-reference/peripherals/spi_master.html */
+#define PIN_CLOCK_SHIFT_REGISTER   SCK  /* SHCP / SPI clock pin */
+#define PIN_CLOCK_STORAGE_REGISTER SS   /* STCP / SPI SS pin */
+#define PIN_SERIAL_DATA_OUTPUT     MOSI /* SPI MOSI pin */
 
 void shift_reg_init(void)
 {
@@ -50,13 +52,13 @@ void ctrl_test(void)
 	}
 }
 
-void ctrl_motors(const uint8_t *byte_array, int byte_array_size)
+void ctrl_motors(const std::array<uint8_t, SHIFT_REG_SIZE> &byte_array)
 {
 	/* The Arduino library read SPI and writes it into the input buffer.
 	 * So we need another buffer to not corrupt the original one. */
 	uint8_t buf[SHIFT_REG_SIZE];
-	memcpy(buf, byte_array, byte_array_size);
+	memcpy(buf, byte_array.data(), byte_array.size());
 	digitalWrite(PIN_CLOCK_STORAGE_REGISTER, LOW);
-	SPI.transfer((void *) buf, byte_array_size);
+	SPI.transfer((void *) buf, byte_array.size());
 	digitalWrite(PIN_CLOCK_STORAGE_REGISTER, HIGH);
 }
