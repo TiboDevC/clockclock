@@ -11,8 +11,8 @@
 #endif
 
 #define PIN_BUTTON_ENCODER  0
-#define PIN_BUTTON_SHUTDOWN 1
-#define PIN_BUTTON_MODE     4
+#define PIN_BUTTON_SHUTDOWN 10
+#define PIN_BUTTON_MODE     1
 #define PIN_ENCODER_0       2 /* Interrupt pin 0 */
 #define PIN_ENCODER_1       3 /* Interrupt pin 1 */
 
