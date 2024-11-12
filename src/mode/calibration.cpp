@@ -6,7 +6,7 @@
 #include "cfg.hpp"
 #include "motor/motor_motion.h"
 
-#define ENCODER_FACTOR 10
+#define ENCODER_FACTOR 5
 
 #ifdef DEBUG_CALIB
 #define DBG_CALIB(...)    Serial.print(__VA_ARGS__)
@@ -39,6 +39,7 @@ void loop_calib()
 	int16_t increment_count = button_get_encoder_count();
 	if (0 != increment_count) {
 		increment_count *= ENCODER_FACTOR;
+		increment_count += motor_distance_to_go(_ctx.motor_idx);
 		motor_move_to_relative(_ctx.motor_idx, increment_count);
 		DBG_CALIB("Increment ");
 		DBG_CALIB(_ctx.motor_idx);
