@@ -84,35 +84,35 @@ void Motor::step8(const long step)
 	if (isRunning()) {
 		switch (step & 0x7) {
 		case 0: // 1000
-			sequence = 0b0001;
+			sequence = 0b1100;
 			break;
 
 		case 1: // 1010
-			sequence = 0b0101;
-			break;
-
-		case 2: // 0010
 			sequence = 0b0100;
 			break;
 
-		case 3: // 0110
+		case 2: // 0010
 			sequence = 0b0110;
 			break;
 
-		case 4: // 0100
+		case 3: // 0110
 			sequence = 0b0010;
 			break;
 
+		case 4: // 0100
+			sequence = 0b0011;
+			break;
+
 		case 5: // 0101
-			sequence = 0b1010;
+			sequence = 0b0001;
 			break;
 
 		case 6: // 0001
-			sequence = 0b1000;
+			sequence = 0b1001;
 			break;
 
 		case 7: // 1001
-			sequence = 0b1001;
+			sequence = 0b1000;
 			break;
 		}
 	}
