@@ -23,7 +23,7 @@
 
 #define MAX_DELAY            255
 #define INITIAL_DELAY        255
-#define INITIAL_SPEED        500
+#define INITIAL_SPEED        400
 #define INITIAL_ACCELERATION 200
 
 enum transition_t : uint8_t {
