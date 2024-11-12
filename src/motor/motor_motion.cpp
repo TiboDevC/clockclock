@@ -18,8 +18,8 @@
 	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
 #define STEP_TO_ANGLE(target_step) (((uint32_t) target_step * 360ul) / NUM_STEPS_PER_ROT)
 
-#define INITIAL_SPEED        400
-#define INITIAL_ACCELERATION 200
+#define MOTOR_MAX_SPEED 400
+#define MOTOR_ACC       200
 
 enum transition_t : uint8_t {
 	TRANS_SHORTER_PATH,
@@ -30,7 +30,7 @@ static struct {
 	uint32_t acceleration;
 	uint32_t speed;
 	enum transition_t transition;
-} _ctx = {.acceleration = INITIAL_ACCELERATION, .speed = INITIAL_SPEED, .transition = TRANS_CLOCKWISE};
+} _ctx = {.acceleration = MOTOR_ACC, .speed = MOTOR_MAX_SPEED, .transition = TRANS_CLOCKWISE};
 
 static std::array<uint8_t, SHIFT_REG_SIZE> _steps;
 
