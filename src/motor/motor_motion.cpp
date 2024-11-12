@@ -6,11 +6,11 @@
 #include "shift_register.h"
 
 #ifdef DEBUG_MOTION
-#define DBG_MOTION(...)    Serial.print(__VA_ARGS__)
-#define DBG_MOTION_LN(...) Serial.println(__VA_ARGS__)
+#define DBG_MOTOR_MOTION(...)    Serial.print(__VA_ARGS__)
+#define DBG_MOTOR_MOTION_LN(...) Serial.println(__VA_ARGS__)
 #else
-#define DBG_MOTION(...)
-#define DBG_MOTION_LN(...)
+#define DBG_MOTOR_MOTION(...)
+#define DBG_MOTOR_MOTION_LN(...)
 #endif
 
 #define NUM_STEPS_PER_ROT (4096)
