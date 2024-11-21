@@ -10,7 +10,7 @@
 #define PIN_CLOCK_STORAGE_REGISTER SS   /* STCP / SPI SS pin */
 #define PIN_SERIAL_DATA_OUTPUT     MOSI /* SPI MOSI pin */
 
-void shift_reg_init(void)
+void shift_reg_init()
 {
 	pinMode(PIN_CLOCK_SHIFT_REGISTER, OUTPUT);
 	pinMode(PIN_CLOCK_STORAGE_REGISTER, OUTPUT);
@@ -26,7 +26,7 @@ void shift_reg_init(void)
 	SPI.setBitOrder(MSBFIRST);
 }
 
-void ctrl_test(void)
+void ctrl_test()
 {
 	int bit = 0;
 	digitalWrite(PIN_CLOCK_SHIFT_REGISTER, LOW);
