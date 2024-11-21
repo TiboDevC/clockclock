@@ -23,6 +23,7 @@ static struct {
 void calib_init()
 {
 	_ctx.motor_idx = 0;
+	motors_goto_zero();
 }
 
 void loop_calib()
