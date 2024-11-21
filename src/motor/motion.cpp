@@ -226,9 +226,15 @@ static void _update_motor_pos(const int motor_idx, angle_t angle_absolute)
 static void _update_dial(const int digit_idx, const int dial_idx, const struct clock_dial_t *clock_dial)
 {
 	for (int motor_idx = 0; motor_idx < NUM_MOTOR_PER_DIAL; motor_idx++) {
-		_update_motor_pos(digit_idx * NUM_DIAL_PER_DIGIT * NUM_MOTOR_PER_DIAL +
-		                      dial_idx * NUM_MOTOR_PER_DIAL + motor_idx,
-		                  clock_dial->angle_absolute[motor_idx]);
+		int motor_id = digit_idx * NUM_DIAL_PER_DIGIT * NUM_MOTOR_PER_DIAL +
+		               dial_idx * NUM_MOTOR_PER_DIAL + motor_idx;
+		_update_motor_pos(motor_id, clock_dial->angle_absolute[motor_idx]);
+#if 0
+		DBG_MOTION(motor_id);
+		DBG_MOTION(": ");
+		DBG_MOTION(clock_dial->angle_absolute[motor_idx]);
+		DBG_MOTION_LN();
+#endif
 	}
 }
 
