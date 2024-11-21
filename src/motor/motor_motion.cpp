@@ -154,7 +154,7 @@ void motor_loop()
 	ctrl_motors(_steps);
 }
 
-void motor_goto_zero()
+void motors_goto_zero()
 {
 	/* Set all motors to position 0 */
 	for (auto &motor : _motors) {

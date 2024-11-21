@@ -41,7 +41,7 @@ static void _init_mode()
 		DBG_MODE_LN("MODE_CLOCK_DISPLAY");
 	} else if (MODE_SHUTDOWN == _mode) {
 		/* Set motors to neutral position */
-		motor_goto_zero();
+		motors_goto_zero();
 		DBG_MODE_LN("MODE_SHUTDOWN");
 	}
 }

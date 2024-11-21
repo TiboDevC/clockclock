@@ -4,7 +4,7 @@
 #include "AccelStepper.h"
 void motor_init();
 void motor_loop();
-void motor_goto_zero();
+void motors_goto_zero();
 void motor_set_0_position();
 void motor_move_to_relative(const int motor_idx, int16_t increment);
 void motor_move_to_absolute(const int motor_idx, int16_t increment);
