@@ -19,13 +19,6 @@ void setup()
 
 #if 0
 	ctrl_test();
-	uint8_t shift_bit_reg[] = {0b11001100, 0b10001010};
-	ctrl_motors(shift_bit_reg, 16);
-
-	set_time_clock();
-	test_anim();
-#else
-
 #endif
 
 	display_time();

@@ -13,20 +13,11 @@
 #define DBG_MOTION_LN(...)
 #endif
 
-#define NUM_STEPS_PER_ROT (4096)
-#define DELAY_FACTOR      15
-#define DELAY_OFFSET      2000 /* min delay in micro second to switch to next motor sequence */
 #define ANGLE_TO_STEPS(target_angle) \
 	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
 #define STEP_TO_ANGLE(target_step) (((uint32_t) target_step * 360ul) / NUM_STEPS_PER_ROT)
-#define DELAY_TO_US(delay)         (((unsigned long) delay * DELAY_FACTOR) + DELAY_OFFSET)
 
 typedef uint16_t pos_t;
-
-enum direction_t : uint8_t {
-	DIRECTION_CLOCKWISE,
-	DIRECTION_COUNTERCLOCKWISE,
-};
 
 enum transition_t : uint8_t {
 	TRANS_SHORTER_PATH,
