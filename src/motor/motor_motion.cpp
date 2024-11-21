@@ -27,10 +27,10 @@ static struct {
 
 static std::array<uint8_t, SHIFT_REG_SIZE> _steps;
 
-static void _set_motor_bits(int motor_id, int sequence)
+static void _set_motor_bits(const int motor_id, const int sequence)
 {
-	_steps[motor_id / 2] &= ~(0xF << ((motor_id % 2) * 4));
-	_steps[motor_id / 2] |= sequence << ((motor_id % 2) * 4);
+	_steps.at(motor_id / 2) &= ~(0xF << ((motor_id % 2) * 4));
+	_steps.at(motor_id / 2) |= sequence << ((motor_id % 2) * 4);
 }
 
 Motor::Motor()
