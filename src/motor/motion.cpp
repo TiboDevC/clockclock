@@ -2,6 +2,7 @@
 
 #include "Arduino.h"
 
+#include "cfg.hpp"
 #include "motion.hpp"
 #include "motor_motion.h"
 
@@ -55,7 +56,7 @@ struct full_clock_t {
 };
 
 static struct {
-	enum transition_t transition;
+	transition_t transition;
 } _ctx = {.transition = TRANS_CLOCKWISE};
 
 static const struct clock_digit_t digit_0 = {
