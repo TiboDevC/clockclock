@@ -1,5 +1,3 @@
-#include <stdint.h>
-
 #include <HardwareSerial.h>
 
 #include "button/button.hpp"
