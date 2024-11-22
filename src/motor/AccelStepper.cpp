@@ -40,6 +40,15 @@ void AccelStepper::move(long relative)
 // returns true if a step occurred
 boolean AccelStepper::runSpeed()
 {
+	// Disable the motor if it is not running and make sure the last step is done
+	if (not isRunning() and _isPoweredOn) {
+		const unsigned long time = micros();
+		if (time - _lastStepTime > 50000) {
+			disableOutputs();
+		}
+		_isPoweredOn = false;
+	}
+
 	// Dont do anything unless we actually have a step interval
 	if (!_stepInterval)
 		return false;
@@ -357,6 +366,7 @@ void AccelStepper::step(long step)
 		step8(step);
 		break;
 	}
+	_isPoweredOn = true;
 }
 
 long AccelStepper::stepForward()

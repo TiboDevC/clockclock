@@ -668,6 +668,9 @@ private:
 	/// Whether the _pins is inverted or not
 	uint8_t        _pinInverted[4];
 
+	/// Wether the motor is powered on or not
+	boolean        _isPoweredOn;
+
 	/// The current absolution position in steps.
 	long           _currentPos;    // Steps
 
