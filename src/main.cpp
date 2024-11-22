@@ -21,6 +21,22 @@ void setup()
 	ctrl_test();
 #endif
 
+#if 0
+	unsigned long last_time_ms = 0;
+
+	while (1) {
+		const unsigned long time_ms = millis();
+
+		if (time_ms > last_time_ms && time_ms - last_time_ms >= 10000) {
+			last_time_ms = time_ms;
+			motor_test();
+			Serial.print("Loop ");
+			Serial.println(time_ms);
+		}
+
+		motor_loop();
+	}
+#endif
 	display_time();
 #ifdef DEBUG
 	Serial.println("Start!");

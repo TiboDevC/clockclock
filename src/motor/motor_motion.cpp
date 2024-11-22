@@ -189,3 +189,20 @@ long motor_distance_to_go(const int motor_idx)
 {
 	return _motors.at(motor_idx).distanceToGo();
 }
+
+void motor_test()
+{
+	/* Set all motors to position 0 */
+	if (not _motors.at(44).isRunning()) {
+		_motors.at(44).move(NUM_STEPS_PER_ROT);
+	}
+	/*
+	int i = 0;
+	for (auto &motor : _motors) {
+	        if ((i + 1) % 2) {
+	                motor.move(NUM_STEPS_PER_ROT);
+	        }
+	        i++;
+	}
+	*/
+}
