@@ -4,6 +4,11 @@
 	(generator_version "8.0")
 	(uuid "3f287bcd-e224-46d0-bb88-59081879a047")
 	(paper "A4")
+	(title_block
+		(title "Power supply")
+		(date "2024-11-23")
+		(rev "1")
+	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
 			(pin_numbers hide)
@@ -320,25 +325,37 @@
 			)
 		)
 	)
-	(wire
-		(pts
-			(xy 133.35 68.58) (xy 133.35 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9296b113-8fd5-48d4-95a6-6a8d127a2a41")
+	(junction
+		(at 96.52 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7ae29a9f-d389-4abe-a645-a05ca3d2564d")
+	)
+	(junction
+		(at 96.52 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9f1f405e-f19f-4595-8a4d-0494be32ed75")
 	)
 	(wire
 		(pts
-			(xy 96.52 83.82) (xy 96.52 87.63)
+			(xy 96.52 85.09) (xy 96.52 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a8d80ede-f0f7-4258-93f5-b228d11ffe08")
+		(uuid "06bc2ed1-cc20-45f6-aaba-3769a154b72f")
+	)
+	(wire
+		(pts
+			(xy 107.95 67.31) (xy 96.52 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d751b39-8d30-411f-b3af-2faba9844bb2")
 	)
 	(wire
 		(pts
@@ -348,11 +365,41 @@
 			(width 0)
 			(type default)
 		)
+		(uuid "59f3761b-8804-46a2-8cf3-2a192b375e37")
+	)
+	(wire
+		(pts
+			(xy 96.52 83.82) (xy 96.52 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8d80ede-f0f7-4258-93f5-b228d11ffe08")
+	)
+	(wire
+		(pts
+			(xy 96.52 62.23) (xy 96.52 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
 		(uuid "b4010c59-c2e9-4900-9fec-6ef648f4ca62")
+	)
+	(wire
+		(pts
+			(xy 107.95 85.09) (xy 96.52 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7049f42-d60d-42b5-973d-9d7595e40323")
 	)
 	(global_label "GND"
 		(shape input)
-		(at 96.52 85.09 0)
+		(at 107.95 85.09 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -362,7 +409,7 @@
 		)
 		(uuid "5e62d6a8-a509-4e0a-80c5-e81d54fc5bf5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 103.3757 85.09 0)
+			(at 114.8057 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -372,9 +419,9 @@
 			)
 		)
 	)
-	(hierarchical_label "VCC_USB"
+	(global_label "VCC"
 		(shape input)
-		(at 133.35 71.12 0)
+		(at 107.95 67.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -382,19 +429,40 @@
 			)
 			(justify left)
 		)
-		(uuid "52ffe6c2-01cc-439f-ad2d-0306c8b49ebf")
+		(uuid "ea73cf50-5559-4438-87c9-b94b4501506c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 114.5638 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
-	(hierarchical_label "VCC_MCU"
-		(shape input)
-		(at 96.52 68.58 0)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 96.52 67.31 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify left bottom)
 		)
-		(uuid "92e0e00d-15d8-4837-bdfb-0bf23c021d08")
+		(uuid "ed4205ae-dc26-444c-ba6d-3bd3fd537c9d")
+		(property "Netclass" "power"
+			(at 93.98 66.6115 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
@@ -406,7 +474,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "468013cf-a85e-4b28-8df8-9ac9f3a4e239")
-		(property "Reference" "GND1"
+		(property "Reference" "GND_DCDC1"
 			(at 99.06 92.2021 0)
 			(effects
 				(font
@@ -458,7 +526,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/8c6a74a5-4238-4c38-a1b6-74fe6b2385f9"
-					(reference "GND1")
+					(reference "GND_DCDC1")
 					(unit 1)
 				)
 			)
@@ -474,7 +542,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6d9130d6-d542-4938-8358-1f8873613736")
-		(property "Reference" "C53"
+		(property "Reference" "C49"
 			(at 100.33 76.1999 90)
 			(effects
 				(font
@@ -580,7 +648,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/8c6a74a5-4238-4c38-a1b6-74fe6b2385f9"
-					(reference "C53")
+					(reference "C49")
 					(unit 1)
 				)
 			)
@@ -588,75 +656,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 133.35 68.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c1836427-423e-4657-900a-f90ea2bc6290")
-		(property "Reference" "VCC_USB1"
-			(at 135.89 65.2779 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "M+"
-			(at 135.89 66.5479 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 138.43 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 138.43 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 133.35 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3f82c6c6-9cc8-49c1-b112-77ba329c0a45")
-		)
-		(instances
-			(project "driver_board"
-				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/8c6a74a5-4238-4c38-a1b6-74fe6b2385f9"
-					(reference "VCC_USB1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 96.52 67.31 0)
+		(at 96.52 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -664,8 +664,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c93c99c4-7786-497c-9447-3c5f867ee65b")
-		(property "Reference" "VCC_MCU1"
-			(at 99.06 62.7379 0)
+		(property "Reference" "VCC_DCDC1"
+			(at 99.06 58.9279 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -674,7 +674,7 @@
 			)
 		)
 		(property "Value" "M+"
-			(at 99.06 65.2779 0)
+			(at 99.06 60.1979 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -684,7 +684,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 101.6 67.31 0)
+			(at 101.6 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -693,7 +693,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 101.6 67.31 0)
+			(at 101.6 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -702,7 +702,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 96.52 67.31 0)
+			(at 96.52 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -716,7 +716,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/8c6a74a5-4238-4c38-a1b6-74fe6b2385f9"
-					(reference "VCC_MCU1")
+					(reference "VCC_DCDC1")
 					(unit 1)
 				)
 			)

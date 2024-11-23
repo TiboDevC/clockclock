@@ -51,13 +51,7 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [
-        {
-          "gap": 0.0,
-          "via_gap": 0.0,
-          "width": 0.0
-        }
-      ],
+      "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -177,9 +171,7 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [
-        0.0
-      ],
+      "track_widths": [],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -206,12 +198,7 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [
-        {
-          "diameter": 0.0,
-          "drill": 0.0
-        }
-      ],
+      "via_dimensions": [],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -444,7 +431,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "driver_board.kicad_pro",
+    "filename": "motor_board.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -465,263 +452,21 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 1,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "power",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.3,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "signal",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "wire_width": 6
       }
     ],
     "meta": {
       "version": 3
     },
     "net_colors": null,
-    "netclass_assignments": {
-      "/motor_driver0/VCC_MOTOR": "power",
-      "/motor_driver10/VCC_MOTOR": "power",
-      "/motor_driver12/VCC_MOTOR": "power",
-      "/motor_driver18/VCC_MOTOR": "power",
-      "/motor_power_supply1/M+": "VCC_MOTOR",
-      "/motor_power_supply2/M+": "VCC_MOTOR",
-      "/motor_power_supply3/M+": "VCC_MOTOR",
-      "Net-(IC11-OUT1)": "power",
-      "Net-(IC11-OUT2)": "power",
-      "Net-(IC11-OUT3)": "power",
-      "Net-(IC11-OUT4)": "power",
-      "Net-(IC12-OUT1)": "power",
-      "Net-(IC12-OUT2)": "power",
-      "Net-(IC12-OUT3)": "power",
-      "Net-(IC12-OUT4)": "power",
-      "Net-(IC14-OUT1)": "power",
-      "Net-(IC14-OUT2)": "power",
-      "Net-(IC14-OUT3)": "power",
-      "Net-(IC14-OUT4)": "power",
-      "Net-(IC15-OUT1)": "power",
-      "Net-(IC15-OUT2)": "power",
-      "Net-(IC15-OUT3)": "power",
-      "Net-(IC15-OUT4)": "power",
-      "Net-(IC17-OUT1)": "power",
-      "Net-(IC17-OUT2)": "power",
-      "Net-(IC17-OUT3)": "power",
-      "Net-(IC17-OUT4)": "power",
-      "Net-(IC18-OUT1)": "power",
-      "Net-(IC18-OUT2)": "power",
-      "Net-(IC18-OUT3)": "power",
-      "Net-(IC18-OUT4)": "power",
-      "Net-(IC2-OUT1)": "power",
-      "Net-(IC2-OUT2)": "power",
-      "Net-(IC2-OUT3)": "power",
-      "Net-(IC2-OUT4)": "power",
-      "Net-(IC20-OUT1)": "power",
-      "Net-(IC20-OUT2)": "power",
-      "Net-(IC20-OUT3)": "power",
-      "Net-(IC20-OUT4)": "power",
-      "Net-(IC21-OUT1)": "power",
-      "Net-(IC21-OUT2)": "power",
-      "Net-(IC21-OUT3)": "power",
-      "Net-(IC21-OUT4)": "power",
-      "Net-(IC23-OUT1)": "power",
-      "Net-(IC23-OUT2)": "power",
-      "Net-(IC23-OUT3)": "power",
-      "Net-(IC23-OUT4)": "power",
-      "Net-(IC24-OUT1)": "power",
-      "Net-(IC24-OUT2)": "power",
-      "Net-(IC24-OUT3)": "power",
-      "Net-(IC24-OUT4)": "power",
-      "Net-(IC26-OUT1)": "power",
-      "Net-(IC26-OUT2)": "power",
-      "Net-(IC26-OUT3)": "power",
-      "Net-(IC26-OUT4)": "power",
-      "Net-(IC27-OUT1)": "power",
-      "Net-(IC27-OUT2)": "power",
-      "Net-(IC27-OUT3)": "power",
-      "Net-(IC27-OUT4)": "power",
-      "Net-(IC29-OUT1)": "power",
-      "Net-(IC29-OUT2)": "power",
-      "Net-(IC29-OUT3)": "power",
-      "Net-(IC29-OUT4)": "power",
-      "Net-(IC3-OUT1)": "power",
-      "Net-(IC3-OUT2)": "power",
-      "Net-(IC3-OUT3)": "power",
-      "Net-(IC3-OUT4)": "power",
-      "Net-(IC30-OUT1)": "power",
-      "Net-(IC30-OUT2)": "power",
-      "Net-(IC30-OUT3)": "power",
-      "Net-(IC30-OUT4)": "power",
-      "Net-(IC32-OUT1)": "power",
-      "Net-(IC32-OUT2)": "power",
-      "Net-(IC32-OUT3)": "power",
-      "Net-(IC32-OUT4)": "power",
-      "Net-(IC33-OUT1)": "power",
-      "Net-(IC33-OUT2)": "power",
-      "Net-(IC33-OUT3)": "power",
-      "Net-(IC33-OUT4)": "power",
-      "Net-(IC35-OUT1)": "power",
-      "Net-(IC35-OUT2)": "power",
-      "Net-(IC35-OUT3)": "power",
-      "Net-(IC35-OUT4)": "power",
-      "Net-(IC36-OUT1)": "power",
-      "Net-(IC36-OUT2)": "power",
-      "Net-(IC36-OUT3)": "power",
-      "Net-(IC36-OUT4)": "power",
-      "Net-(IC38-OUT1)": "power",
-      "Net-(IC38-OUT2)": "power",
-      "Net-(IC38-OUT3)": "power",
-      "Net-(IC38-OUT4)": "power",
-      "Net-(IC39-OUT1)": "power",
-      "Net-(IC39-OUT2)": "power",
-      "Net-(IC39-OUT3)": "power",
-      "Net-(IC39-OUT4)": "power",
-      "Net-(IC41-OUT1)": "power",
-      "Net-(IC41-OUT2)": "power",
-      "Net-(IC41-OUT3)": "power",
-      "Net-(IC41-OUT4)": "power",
-      "Net-(IC42-OUT1)": "power",
-      "Net-(IC42-OUT2)": "power",
-      "Net-(IC42-OUT3)": "power",
-      "Net-(IC42-OUT4)": "power",
-      "Net-(IC44-OUT1)": "power",
-      "Net-(IC44-OUT2)": "power",
-      "Net-(IC44-OUT3)": "power",
-      "Net-(IC44-OUT4)": "power",
-      "Net-(IC45-OUT1)": "power",
-      "Net-(IC45-OUT2)": "power",
-      "Net-(IC45-OUT3)": "power",
-      "Net-(IC45-OUT4)": "power",
-      "Net-(IC47-OUT1)": "power",
-      "Net-(IC47-OUT2)": "power",
-      "Net-(IC47-OUT3)": "power",
-      "Net-(IC47-OUT4)": "power",
-      "Net-(IC48-OUT1)": "power",
-      "Net-(IC48-OUT2)": "power",
-      "Net-(IC48-OUT3)": "power",
-      "Net-(IC48-OUT4)": "power",
-      "Net-(IC5-OUT1)": "power",
-      "Net-(IC5-OUT2)": "power",
-      "Net-(IC5-OUT3)": "power",
-      "Net-(IC5-OUT4)": "power",
-      "Net-(IC50-OUT1)": "power",
-      "Net-(IC50-OUT2)": "power",
-      "Net-(IC50-OUT3)": "power",
-      "Net-(IC50-OUT4)": "power",
-      "Net-(IC51-OUT1)": "power",
-      "Net-(IC51-OUT2)": "power",
-      "Net-(IC51-OUT3)": "power",
-      "Net-(IC51-OUT4)": "power",
-      "Net-(IC53-OUT1)": "power",
-      "Net-(IC53-OUT2)": "power",
-      "Net-(IC53-OUT3)": "power",
-      "Net-(IC53-OUT4)": "power",
-      "Net-(IC54-OUT1)": "power",
-      "Net-(IC54-OUT2)": "power",
-      "Net-(IC54-OUT3)": "power",
-      "Net-(IC54-OUT4)": "power",
-      "Net-(IC56-OUT1)": "power",
-      "Net-(IC56-OUT2)": "power",
-      "Net-(IC56-OUT3)": "power",
-      "Net-(IC56-OUT4)": "power",
-      "Net-(IC57-OUT1)": "power",
-      "Net-(IC57-OUT2)": "power",
-      "Net-(IC57-OUT3)": "power",
-      "Net-(IC57-OUT4)": "power",
-      "Net-(IC59-OUT1)": "power",
-      "Net-(IC59-OUT2)": "power",
-      "Net-(IC59-OUT3)": "power",
-      "Net-(IC59-OUT4)": "power",
-      "Net-(IC6-OUT1)": "power",
-      "Net-(IC6-OUT2)": "power",
-      "Net-(IC6-OUT3)": "power",
-      "Net-(IC6-OUT4)": "power",
-      "Net-(IC60-OUT1)": "power",
-      "Net-(IC60-OUT2)": "power",
-      "Net-(IC60-OUT3)": "power",
-      "Net-(IC60-OUT4)": "power",
-      "Net-(IC62-OUT1)": "power",
-      "Net-(IC62-OUT2)": "power",
-      "Net-(IC62-OUT3)": "power",
-      "Net-(IC62-OUT4)": "power",
-      "Net-(IC63-OUT1)": "power",
-      "Net-(IC63-OUT2)": "power",
-      "Net-(IC63-OUT3)": "power",
-      "Net-(IC63-OUT4)": "power",
-      "Net-(IC65-OUT1)": "power",
-      "Net-(IC65-OUT2)": "power",
-      "Net-(IC65-OUT3)": "power",
-      "Net-(IC65-OUT4)": "power",
-      "Net-(IC66-OUT1)": "power",
-      "Net-(IC66-OUT2)": "power",
-      "Net-(IC66-OUT3)": "power",
-      "Net-(IC66-OUT4)": "power",
-      "Net-(IC68-OUT1)": "power",
-      "Net-(IC68-OUT2)": "power",
-      "Net-(IC68-OUT3)": "power",
-      "Net-(IC68-OUT4)": "power",
-      "Net-(IC69-OUT1)": "power",
-      "Net-(IC69-OUT2)": "power",
-      "Net-(IC69-OUT3)": "power",
-      "Net-(IC69-OUT4)": "power",
-      "Net-(IC71-OUT1)": "power",
-      "Net-(IC71-OUT2)": "power",
-      "Net-(IC71-OUT3)": "power",
-      "Net-(IC71-OUT4)": "power",
-      "Net-(IC72-OUT1)": "power",
-      "Net-(IC72-OUT2)": "power",
-      "Net-(IC72-OUT3)": "power",
-      "Net-(IC72-OUT4)": "power",
-      "Net-(IC8-OUT1)": "power",
-      "Net-(IC8-OUT2)": "power",
-      "Net-(IC8-OUT3)": "power",
-      "Net-(IC8-OUT4)": "power",
-      "Net-(IC9-OUT1)": "power",
-      "Net-(IC9-OUT2)": "power",
-      "Net-(IC9-OUT3)": "power",
-      "Net-(IC9-OUT4)": "power",
-      "Net-(JP1-B)": "power",
-      "VCC": "power",
-      "VCC_MOTOR": "power"
-    },
-    "netclass_patterns": [
-      {
-        "netclass": "power",
-        "pattern": "/vcc_motor"
-      }
-    ]
+    "netclass_assignments": null,
+    "netclass_patterns": []
   },
   "pcbnew": {
     "last_paths": {
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "gerber/",
+      "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -831,112 +576,8 @@
   },
   "sheets": [
     [
-      "f74582a2-e122-4df8-8bf1-319684e69fbe",
+      "fe6a7538-a3d9-4027-9983-e027b2a46836",
       "Root"
-    ],
-    [
-      "81b72853-db4a-435b-a101-2d4a5729a607",
-      "motor_driver0"
-    ],
-    [
-      "b6dbef3c-59a4-417d-9805-2b3c0886345e",
-      "motor_driver1"
-    ],
-    [
-      "4aecfc80-b507-4e3a-9014-cbd720ff1980",
-      "motor_driver2"
-    ],
-    [
-      "139340e2-704b-4f11-8f36-78173d5ff297",
-      "motor_driver3"
-    ],
-    [
-      "3b5368a0-d7c1-49e5-b592-54e26f9ab0f3",
-      "motor_driver4"
-    ],
-    [
-      "ebd563aa-1f82-4f6c-b14d-9a42f69511f5",
-      "motor_driver5"
-    ],
-    [
-      "89777332-f368-41a1-9c8f-851eab9528aa",
-      "motor_driver6"
-    ],
-    [
-      "56b777f7-590b-4db9-98ba-01b4469f76a0",
-      "motor_driver7"
-    ],
-    [
-      "019d0959-b2d7-40e3-bcde-64e1ae2cba0e",
-      "motor_driver8"
-    ],
-    [
-      "2a294713-3d44-472d-bef5-1abebc44687b",
-      "motor_driver9"
-    ],
-    [
-      "282cdb59-849b-4e51-8c8f-1fe6c219b1fb",
-      "motor_driver10"
-    ],
-    [
-      "4e7aa681-599e-48a1-98d2-7ee6054e5f59",
-      "motor_driver11"
-    ],
-    [
-      "a400a4d6-6192-4140-abeb-d6a24bd6de75",
-      "motor_driver12"
-    ],
-    [
-      "df528100-2030-49f1-9994-1873f4eef095",
-      "motor_driver13"
-    ],
-    [
-      "2cf84e43-4693-4fa1-9c81-3a9b8ea0e81d",
-      "motor_driver14"
-    ],
-    [
-      "7dc83951-ec33-43c3-bde4-66d42045d964",
-      "motor_driver15"
-    ],
-    [
-      "8883ee82-ab86-423f-82e3-45262d780789",
-      "motor_driver16"
-    ],
-    [
-      "ba6783a9-5f18-4ba3-bf4a-68f3d5ab25d5",
-      "motor_driver17"
-    ],
-    [
-      "40623bad-c69b-4bd5-9ceb-53d6668d70b8",
-      "motor_driver18"
-    ],
-    [
-      "76de9e72-945f-4ebb-9874-9ce85584a0de",
-      "motor_driver19"
-    ],
-    [
-      "89d3c48e-4351-4670-8958-8dac1a233ddb",
-      "motor_driver20"
-    ],
-    [
-      "78e7cfaa-5631-45d6-871f-16f53a7d5fa5",
-      "motor_driver21"
-    ],
-    [
-      "b9750902-6d86-4ac3-914e-9fa250b2f468",
-      "motor_driver22"
-    ],
-    [
-      "960e810c-e3ab-40ca-82a2-02972a9f7d71",
-      "motor_driver23"
-    ],
-    [
-      "4bcac3d6-680b-4b29-8743-c3c7298e2548",
-      "control_board"
-    ],
-    [
-      "8c6a74a5-4238-4c38-a1b6-74fe6b2385f9",
-      "power_supply"
     ]
   ],
   "text_variables": {}
