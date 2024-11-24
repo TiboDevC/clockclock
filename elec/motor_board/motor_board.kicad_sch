@@ -4,320 +4,12 @@
 	(generator_version "8.0")
 	(uuid "fe6a7538-a3d9-4027-9983-e027b2a46836")
 	(paper "A4")
+	(title_block
+		(title "Motor board")
+		(date "2024-11-24")
+		(rev "1")
+	)
 	(lib_symbols
-		(symbol "Connector_Generic:Conn_02x04_Counter_Clockwise"
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 1.27 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_02x04_Counter_Clockwise"
-				(at 1.27 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_2x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_02x04_Counter_Clockwise_1_1"
-				(rectangle
-					(start -1.27 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 3.81)
-					(end 3.81 -6.35)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start 3.81 -4.953)
-					(end 2.54 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.81 -2.413)
-					(end 2.54 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.81 0.127)
-					(end 2.54 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.81 2.667)
-					(end 2.54 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "Pin_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 -5.08 180)
-					(length 3.81)
-					(name "Pin_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 -2.54 180)
-					(length 3.81)
-					(name "Pin_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 0 180)
-					(length 3.81)
-					(name "Pin_7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 2.54 180)
-					(length 3.81)
-					(name "Pin_8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Connector_Generic:Conn_02x05_Counter_Clockwise"
 			(pin_names
 				(offset 1.016) hide)
@@ -689,30 +381,29 @@
 				)
 			)
 		)
-		(symbol "Mechanical:MountingHole_Pad"
+		(symbol "Diode:1N4148"
 			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim yes)
-			(in_bom no)
+			(pin_names hide)
+			(exclude_from_sim no)
+			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "H"
-				(at 0 6.35 0)
+			(property "Reference" "D"
+				(at 0 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "MountingHole_Pad"
-				(at 0 4.445 0)
+			(property "Value" "1N4148"
+				(at 0 -2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
 				(at 0 0 0)
 				(effects
 					(font
@@ -721,7 +412,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -730,7 +421,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Mounting Hole with connection"
+			(property "Description" "100V 0.15A standard switching diode, DO-35"
 				(at 0 0 0)
 				(effects
 					(font
@@ -739,7 +430,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "mounting hole"
+			(property "Sim.Device" "D"
 				(at 0 0 0)
 				(effects
 					(font
@@ -748,7 +439,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "MountingHole*Pad*"
+			(property "Sim.Pins" "1=K 2=A"
 				(at 0 0 0)
 				(effects
 					(font
@@ -757,12 +448,55 @@
 					(hide yes)
 				)
 			)
-			(symbol "MountingHole_Pad_0_1"
-				(circle
-					(center 0 1.27)
-					(radius 1.27)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?35*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "1N4148_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
 					(stroke
-						(width 1.27)
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -770,11 +504,11 @@
 					)
 				)
 			)
-			(symbol "MountingHole_Pad_1_1"
-				(pin input line
-					(at 0 -2.54 90)
+			(symbol "1N4148_1_1"
+				(pin passive line
+					(at -3.81 0 0)
 					(length 2.54)
-					(name "1"
+					(name "K"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -782,6 +516,24 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -960,50 +712,36 @@
 				)
 			)
 		)
-		(symbol "Samacsys:BZX55C18-TR"
-			(pin_names hide)
+		(symbol "perso:BKA30D-R5"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "Z"
-				(at 10.16 8.89 0)
+			(property "Reference" "BKA30D-R5"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 				)
 			)
-			(property "Value" "BZX55C18-TR"
-				(at 10.16 6.35 0)
+			(property "Value" ""
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 				)
 			)
-			(property "Footprint" "Samacsys:DIOAD950W60L350D150"
-				(at 10.16 -93.65 0)
+			(property "Footprint" "perso:BKA30D-R5"
+				(at -0.254 1.524 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-DGA23/1546848.pdf"
-				(at 10.16 -193.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Description" "Zener Diodes 18 Volt 0.5W 5%"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1012,140 +750,38 @@
 					(hide yes)
 				)
 			)
-			(property "Height" ""
-				(at 10.16 -393.65 0)
+			(property "Description" ""
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 					(hide yes)
 				)
 			)
-			(property "Mouser Part Number" "78-BZX55C18"
-				(at 10.16 -493.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/BZX55C18-TR?qs=WLTup5mM6hi%252BGtbXzZkRfQ%3D%3D"
-				(at 10.16 -593.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "Vishay"
-				(at 10.16 -693.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "BZX55C18-TR"
-				(at 10.16 -793.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(symbol "BZX55C18-TR_1_1"
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 5.08 0)
-					)
+			(symbol "BKA30D-R5_1_1"
+				(rectangle
+					(start -6.35 -3.81)
+					(end 6.35 -16.51)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
-				(polyline
-					(pts
-						(xy 4.064 -2.54) (xy 5.08 -2.032)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.032) (xy 5.08 -2.032)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.032) (xy 6.096 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 0) (xy 10.16 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 0) (xy 10.16 2.54) (xy 10.16 -2.54) (xy 5.08 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin passive line
-					(at 0 0 0)
+				(pin input line
+					(at -6.35 -6.35 0)
 					(length 2.54)
-					(name "K"
+					(name "A1"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "1"
+					(number "A1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1153,17 +789,125 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 15.24 0 180)
+				(pin input line
+					(at -6.35 -8.89 0)
 					(length 2.54)
-					(name "A"
+					(name "A2"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "2"
+					(number "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -6.35 -11.43 0)
+					(length 2.54)
+					(name "A3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -6.35 -13.97 0)
+					(length 2.54)
+					(name "A4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -6.35 180)
+					(length 2.54)
+					(name "B1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -8.89 180)
+					(length 2.54)
+					(name "B2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -11.43 180)
+					(length 2.54)
+					(name "B3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -13.97 180)
+					(length 2.54)
+					(name "B4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1271,90 +1015,124 @@
 		)
 	)
 	(junction
-		(at 181.61 76.2)
+		(at 147.32 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6daf1f79-0b33-4e6d-a7d9-d10e98dac86e")
+		(uuid "321cbad6-37b7-4011-88e6-1c20b1c74d17")
 	)
 	(junction
-		(at 180.34 45.72)
+		(at 162.56 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d8829272-72a0-4eea-a2de-933ae30b072b")
+		(uuid "be40e38f-fd0a-4c0a-8cb6-14e842cbd899")
+	)
+	(no_connect
+		(at 104.14 97.79)
+		(uuid "2003cc71-1e43-4668-9ba0-3aca606bb074")
 	)
 	(wire
 		(pts
-			(xy 201.93 49.53) (xy 201.93 43.18)
+			(xy 104.14 87.63) (xy 91.44 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "006b6f08-af1c-42f2-89df-c87d17cd1a84")
+		(uuid "0a0c0343-6477-40f2-a370-8ffd8c3fcd45")
 	)
 	(wire
 		(pts
-			(xy 173.99 45.72) (xy 180.34 45.72)
+			(xy 144.78 88.9) (xy 148.59 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0d0c14d3-6a2b-409f-a748-8489782aa1d9")
+		(uuid "1e2585a1-b1bc-4df5-9dad-3a88b88d4c5a")
 	)
 	(wire
 		(pts
-			(xy 187.96 45.72) (xy 187.96 43.18)
+			(xy 148.59 93.98) (xy 147.32 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "282f5e2b-4019-4a9e-880e-1d6d7d12c4a4")
+		(uuid "31f9b253-9f85-44e3-9bd4-be52b0870c38")
 	)
 	(wire
 		(pts
-			(xy 180.34 45.72) (xy 187.96 45.72)
+			(xy 148.59 91.44) (xy 147.32 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "33d33c0e-0dc9-4685-a47a-ee818047e820")
+		(uuid "3d62ab9e-1424-46d4-b2ab-a5ce8ed7d4cb")
 	)
 	(wire
 		(pts
-			(xy 115.57 86.36) (xy 115.57 85.09)
+			(xy 147.32 93.98) (xy 147.32 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "357057b6-b06f-416f-a0f5-3ad2ba4890d4")
+		(uuid "3ef63a5a-e3df-4a74-b399-6da3a47f04d0")
 	)
 	(wire
 		(pts
-			(xy 181.61 76.2) (xy 187.96 76.2)
+			(xy 161.29 91.44) (xy 162.56 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "388e5ca0-a2f0-4bc9-b2a1-5cb901eaada4")
+		(uuid "5a92af77-5c6a-424a-aad1-22714bf9c5f7")
 	)
 	(wire
 		(pts
-			(xy 115.57 85.09) (xy 127 85.09)
+			(xy 147.32 92.71) (xy 144.78 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "45482ca6-008b-48df-8ed1-492f306660e4")
+		(uuid "642326f3-67f0-4337-9590-6eae26103dbf")
 	)
 	(wire
 		(pts
-			(xy 182.88 97.79) (xy 191.77 97.79)
+			(xy 133.35 121.92) (xy 135.89 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64c4364a-833f-434f-b1a8-56a1451ede01")
+	)
+	(wire
+		(pts
+			(xy 120.65 121.92) (xy 125.73 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69c481dc-c564-471a-a3d6-5cf3ec917bc6")
+	)
+	(wire
+		(pts
+			(xy 165.1 88.9) (xy 161.29 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b4b06ae-1eb0-456a-904e-c1a9269d31c7")
+	)
+	(wire
+		(pts
+			(xy 143.51 121.92) (xy 152.4 121.92)
 		)
 		(stroke
 			(width 0)
@@ -1364,96 +1142,107 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 80.01) (xy 160.02 73.66)
+			(xy 162.56 91.44) (xy 162.56 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6f183b1e-564a-4ae5-87f3-d78371a4d671")
+		(uuid "6d977a30-fb6e-4854-a292-cd8dc17b4ba4")
 	)
 	(wire
 		(pts
-			(xy 180.34 49.53) (xy 180.34 45.72)
+			(xy 162.56 93.98) (xy 162.56 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "791fa05d-7efa-42ff-b1a2-1e8a6cb3a3be")
+		(uuid "7721b6e0-295a-46f5-85a8-98b3f843a0ba")
 	)
 	(wire
 		(pts
-			(xy 187.96 76.2) (xy 187.96 73.66)
+			(xy 161.29 96.52) (xy 165.1 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "950a074f-5094-4d3c-b38a-14ebe8a84664")
+		(uuid "8c3d5b85-b94a-43b8-82e8-e4315a674958")
 	)
 	(wire
 		(pts
-			(xy 173.99 76.2) (xy 181.61 76.2)
+			(xy 162.56 92.71) (xy 165.1 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a795d30a-451f-49c4-bd88-3a850aea5e2b")
+		(uuid "92334877-a79f-4e42-9162-24a0a2ccb605")
 	)
 	(wire
 		(pts
-			(xy 181.61 80.01) (xy 181.61 76.2)
+			(xy 161.29 93.98) (xy 162.56 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b9701ce0-02f1-4246-98aa-b5f13834f4b4")
+		(uuid "caeccb28-02e5-4cf0-813d-aae8f52680b7")
 	)
 	(wire
 		(pts
-			(xy 160.02 49.53) (xy 160.02 43.18)
+			(xy 147.32 91.44) (xy 147.32 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d01e2354-6d00-4759-94a2-625a3a3b980f")
+		(uuid "df852336-e3a2-4af1-af8d-8b446b80e091")
 	)
 	(wire
 		(pts
-			(xy 173.99 73.66) (xy 173.99 76.2)
+			(xy 144.78 96.52) (xy 148.59 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dee233ce-dc72-47b6-81b0-b9781f939a5e")
+		(uuid "e442e9c3-6381-4b18-9f98-004a4291d74d")
 	)
 	(wire
 		(pts
-			(xy 173.99 43.18) (xy 173.99 45.72)
+			(xy 91.44 87.63) (xy 91.44 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e9ea7a4c-e458-43ab-84b6-90b7197e02d0")
+		(uuid "fc13bcf3-1131-45c7-ab21-3eb3267fd711")
 	)
-	(wire
-		(pts
-			(xy 201.93 80.01) (xy 201.93 73.66)
+	(text "Two diodes to protect the sensor due to all Hall sensors outputs\nbeing connected together + drop the voltage from 5V to ~3.6V"
+		(exclude_from_sim no)
+		(at 140.462 128.016 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(uuid "97b4b9c3-9876-48f0-801a-bf43e2125929")
+	)
+	(label "M0_1"
+		(at 144.78 88.9 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
 		)
-		(uuid "f3aaa706-c374-4e3c-9048-5cfbd1873df6")
+		(uuid "0b0ed315-62f0-42af-9feb-1e62c13d51e2")
 	)
 	(label "M0_4"
-		(at 201.93 49.53 0)
+		(at 116.84 92.71 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1461,10 +1250,10 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0221b671-b1f7-4ae1-a94d-ffcf2ee4060e")
+		(uuid "0d280fa3-240a-49fd-850f-59840bc19f0f")
 	)
-	(label "M0_1"
-		(at 160.02 49.53 0)
+	(label "M1_1"
+		(at 165.1 88.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1472,21 +1261,10 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "18ce9ac3-a0e8-43e6-a24b-1b1baa7edd0a")
-	)
-	(label "M1_4"
-		(at 139.7 92.71 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1923781e-f526-4447-bb39-12e426c41e4e")
+		(uuid "1a90f954-2ba0-461e-86cd-7163bb29fa46")
 	)
 	(label "M0_23"
-		(at 127 92.71 180)
+		(at 104.14 95.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1494,10 +1272,32 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "260b19e9-c0c0-47ac-85fc-d438ee0d2dd3")
+		(uuid "1efba511-086f-4f7d-a358-333d8bd2c32a")
 	)
-	(label "M0_23"
-		(at 180.34 49.53 0)
+	(label "M0_1"
+		(at 104.14 90.17 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2b5fe99e-5b26-4843-ae37-f6d19e260241")
+	)
+	(label "HALL_OUT"
+		(at 120.65 121.92 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "479919c8-8543-4dd3-b0e9-3dedc316b576")
+	)
+	(label "HALL_OUT"
+		(at 116.84 97.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1505,10 +1305,10 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "27bc7d6a-476f-49b4-bdfe-2a537995bc6f")
+		(uuid "5f990aaa-aba1-46ea-a46f-2369916d0144")
 	)
 	(label "M1_23"
-		(at 181.61 80.01 0)
+		(at 165.1 92.71 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1516,10 +1316,21 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2ddfb379-fb24-4bb8-bd90-f7ee5f54d42e")
+		(uuid "6e4ed390-a80f-446f-9a3f-48bc7730ac75")
+	)
+	(label "M0_4"
+		(at 144.78 96.52 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8505ab82-251f-4bb9-a7ef-4f726fac8bf7")
 	)
 	(label "M1_4"
-		(at 201.93 80.01 0)
+		(at 165.1 96.52 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1527,10 +1338,10 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2e103512-7e75-481a-af6c-05ca6bac8171")
+		(uuid "a24dd7a0-36d7-4c7c-8961-40c8b291bd01")
 	)
-	(label "M1_1"
-		(at 160.02 80.01 0)
+	(label "M1_4"
+		(at 116.84 95.25 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1538,43 +1349,10 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8f206822-5ef4-4e9a-b598-47a350b7d596")
-	)
-	(label "M0_1"
-		(at 127 87.63 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "93e7e1b0-5ac9-433c-9372-aea97649faf2")
-	)
-	(label "VCC_HALL"
-		(at 127 90.17 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "95317176-1c25-42c9-8bff-bde67b29eaeb")
-	)
-	(label "M1_1"
-		(at 139.7 85.09 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9f9c632f-2ff5-4976-a946-5e32dbe6003a")
+		(uuid "a3e1b7c5-fe5f-4a53-ac42-d80c061b9393")
 	)
 	(label "GND"
-		(at 191.77 95.25 180)
+		(at 152.4 119.38 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1585,7 +1363,7 @@
 		(uuid "abd568a0-331a-44e4-b163-dcd1be705ceb")
 	)
 	(label "M1_23"
-		(at 139.7 87.63 0)
+		(at 116.84 90.17 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1593,21 +1371,10 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ca592479-8abe-42dc-952c-1db978ab3d32")
-	)
-	(label "M0_4"
-		(at 139.7 90.17 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d1b412b8-87e7-4706-9281-7c807e08d069")
+		(uuid "c2662094-39dd-40ec-af08-d92c551b57b3")
 	)
 	(label "VCC_HALL"
-		(at 191.77 92.71 180)
+		(at 152.4 116.84 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1617,258 +1384,67 @@
 		)
 		(uuid "d7a4512d-5586-4abc-80a8-71fb344ee99e")
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 187.96 71.12 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
+	(label "VCC_HALL"
+		(at 104.14 92.71 180)
 		(fields_autoplaced yes)
-		(uuid "02bcb677-3672-4a17-8ecb-cf5d100f25dd")
-		(property "Reference" "M1_3"
-			(at 190.5 68.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right bottom)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 190.5 71.1199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
+		(uuid "dca1fe70-153c-41bc-b4ff-d006ed75b8a4")
+	)
+	(label "M0_23"
+		(at 144.78 92.71 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right bottom)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 187.96 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
+		(uuid "e81b9075-9493-4fda-83a2-e7d495435584")
+	)
+	(label "M1_1"
+		(at 116.84 87.63 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Datasheet" "~"
-			(at 187.96 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 187.96 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6d31d5b1-c957-4cd7-8ce9-b63022decb42")
-		)
-		(instances
-			(project "motor_board"
-				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "M1_3")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "f93e5ca5-8186-4ae0-8013-511c0698393e")
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 173.99 71.12 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "45a81957-e3d3-41cf-9307-d4a1724302e2")
-		(property "Reference" "M1_2"
-			(at 176.53 68.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 176.53 71.1199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 173.99 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 173.99 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 173.99 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b3f273c6-cba7-429b-87e0-217c74cba7ca")
-		)
-		(instances
-			(project "motor_board"
-				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "M1_2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 160.02 40.64 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "498d84c1-7dec-459b-ace1-cd6d656c24dc")
-		(property "Reference" "M0_1"
-			(at 162.56 38.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 162.56 40.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 160.02 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 160.02 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 160.02 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7e1a2128-460b-41cb-8b90-b5195368c1fc")
-		)
-		(instances
-			(project ""
-				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "M0_1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Samacsys:BZX55C18-TR")
-		(at 167.64 97.79 0)
+		(lib_id "Diode:1N4148")
+		(at 129.54 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "4c9fe6cc-af9c-4788-8710-d6373551f43d")
-		(property "Reference" "Z1"
-			(at 175.26 90.17 0)
+		(uuid "6e61a08a-0025-4d0d-a367-fa04a5a505d3")
+		(property "Reference" "D2"
+			(at 129.54 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "BZX55C3V3"
-			(at 175.26 92.71 0)
+		(property "Value" "1N4148"
+			(at 129.54 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Samacsys:DIOAD950W60L350D150"
-			(at 177.8 191.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-DGA23/1546848.pdf"
-			(at 177.8 291.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zener Diodes 18 Volt 0.5W 5%"
-			(at 167.64 97.79 0)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P5.08mm_Vertical_AnodeUp"
+			(at 129.54 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1876,134 +1452,52 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 177.8 491.44 0)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 129.54 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "78-BZX55C18"
-			(at 177.8 591.44 0)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 129.54 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/BZX55C18-TR?qs=WLTup5mM6hi%252BGtbXzZkRfQ%3D%3D"
-			(at 177.8 691.44 0)
+		(property "Sim.Device" "D"
+			(at 129.54 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Vishay"
-			(at 177.8 791.44 0)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 129.54 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 				(hide yes)
 			)
-		)
-		(property "Manufacturer_Part_Number" "BZX55C18-TR"
-			(at 177.8 891.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4def455d-9a2c-4ce8-a10f-1ac1bfed7942")
 		)
 		(pin "2"
-			(uuid "a07607a4-9830-4269-9ddd-53132533f15d")
-		)
-		(instances
-			(project ""
-				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "Z1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 187.96 40.64 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6c87952e-8b78-4258-819b-4d7734c47e32")
-		(property "Reference" "M0_3"
-			(at 190.5 38.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 190.5 40.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 187.96 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 187.96 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 187.96 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
+			(uuid "bee22f4b-d7b5-4234-b949-9a50e0290b62")
 		)
 		(pin "1"
-			(uuid "f39628ad-9e26-4df3-8079-11f490efe7f2")
+			(uuid "70902eef-4d0c-48d4-95e2-38002ccaff74")
 		)
 		(instances
 			(project "motor_board"
 				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "M0_3")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -2011,7 +1505,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x05_Counter_Clockwise")
-		(at 132.08 67.31 0)
+		(at 109.22 92.71 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2020,15 +1514,15 @@
 		(fields_autoplaced yes)
 		(uuid "77528a4d-9975-4dc7-bb17-cf7d84fe88e7")
 		(property "Reference" "J2"
-			(at 133.35 55.88 0)
+			(at 110.49 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "Conn_02x05_Counter_Clockwise"
-			(at 133.35 58.42 0)
+		(property "Value" "connector to driver board"
+			(at 110.49 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2036,7 +1530,7 @@
 			)
 		)
 		(property "Footprint" "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical"
-			(at 132.08 67.31 0)
+			(at 109.22 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2045,7 +1539,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 67.31 0)
+			(at 109.22 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2054,7 +1548,7 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x05, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 132.08 67.31 0)
+			(at 109.22 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2102,45 +1596,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 201.93 40.64 0)
+		(lib_id "perso:BKA30D-R5")
+		(at 154.94 82.55 0)
 		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
+		(exclude_from_sim no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8253726a-1c42-4f66-bf02-c18311515c38")
-		(property "Reference" "M0_4"
-			(at 204.47 38.0999 0)
+		(uuid "b5c3181b-73e6-4fc1-93b9-6f6a32488d76")
+		(property "Reference" "BKA30D-R1"
+			(at 154.94 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 204.47 40.6399 0)
+		(property "Value" "~"
+			(at 154.94 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 201.93 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 201.93 40.64 0)
+		(property "Footprint" "perso:BKA30D-R5"
+			(at 154.686 81.026 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2148,8 +1630,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole with connection"
-			(at 201.93 40.64 0)
+		(property "Datasheet" ""
+			(at 154.94 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2157,13 +1639,43 @@
 				(hide yes)
 			)
 		)
-		(pin "1"
-			(uuid "e4674a15-d83e-489f-a17a-8e06a97e6944")
+		(property "Description" ""
+			(at 154.94 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "B4"
+			(uuid "8b1b1dff-dfd1-46ee-b63d-349cbb7ec743")
+		)
+		(pin "B3"
+			(uuid "34214a3d-3a2e-4782-83f6-369c62dae74a")
+		)
+		(pin "A1"
+			(uuid "338eda45-0549-4210-a3a0-b44ae86024be")
+		)
+		(pin "A2"
+			(uuid "db20c412-c0e6-4534-86d6-33d830e08959")
+		)
+		(pin "B1"
+			(uuid "1f140193-b410-47b7-8105-c12f6676eb7b")
+		)
+		(pin "B2"
+			(uuid "8ce6d6cd-cad2-44f7-8259-e05d8177a14d")
+		)
+		(pin "A3"
+			(uuid "f1ab6191-1921-4ffc-999e-9a2872523038")
+		)
+		(pin "A4"
+			(uuid "08e59639-a216-4dbe-8ee3-8772f25b052a")
 		)
 		(instances
-			(project "motor_board"
+			(project ""
 				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "M0_4")
+					(reference "BKA30D-R1")
 					(unit 1)
 				)
 			)
@@ -2171,7 +1683,7 @@
 	)
 	(symbol
 		(lib_id "Samacsys:A1101EUA-T")
-		(at 191.77 92.71 0)
+		(at 152.4 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2180,7 +1692,7 @@
 		(fields_autoplaced yes)
 		(uuid "b6fa8a31-6c3f-426a-be02-8d2782ef70af")
 		(property "Reference" "IC1"
-			(at 210.82 93.9799 0)
+			(at 171.45 118.1099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2188,8 +1700,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A1101EUA-T"
-			(at 210.82 96.5199 0)
+		(property "Value" "HAL1506UA"
+			(at 171.45 120.6499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2198,7 +1710,7 @@
 			)
 		)
 		(property "Footprint" "Samacsys:A1101EUAT"
-			(at 210.82 187.63 0)
+			(at 171.45 211.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2208,7 +1720,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.allegromicro.com/~/media/Files/Datasheets/A110x-Datasheet.ashx"
-			(at 210.82 287.63 0)
+			(at 171.45 311.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2218,7 +1730,7 @@
 			)
 		)
 		(property "Description" "Continuous-Time Switch Unipolar Switch"
-			(at 191.77 92.71 0)
+			(at 152.4 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2227,7 +1739,7 @@
 			)
 		)
 		(property "Height" "3.1"
-			(at 210.82 487.63 0)
+			(at 171.45 511.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2237,7 +1749,7 @@
 			)
 		)
 		(property "Mouser Part Number" "250-A1101EUA-T"
-			(at 210.82 587.63 0)
+			(at 171.45 611.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2247,7 +1759,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Allegro-MicroSystems/A1101EUA-T?qs=pUKx8fyJudAoca%252BrN0Sfug%3D%3D"
-			(at 210.82 687.63 0)
+			(at 171.45 711.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2257,7 +1769,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Allegro Microsystems"
-			(at 210.82 787.63 0)
+			(at 171.45 811.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2267,7 +1779,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "A1101EUA-T"
-			(at 210.82 887.63 0)
+			(at 171.45 911.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2295,178 +1807,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 160.02 71.12 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c097409a-f9a0-4f36-b574-ba45798a1ef5")
-		(property "Reference" "M1_1"
-			(at 162.56 68.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 162.56 71.1199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 160.02 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 160.02 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 160.02 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7b9e81ea-e182-48fd-b82b-90fa95f5781f")
-		)
-		(instances
-			(project "motor_board"
-				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "M1_1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 173.99 40.64 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d4e2ec8f-2043-4bed-8489-938630c33ec6")
-		(property "Reference" "M0_2"
-			(at 176.53 38.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 176.53 40.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 173.99 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 173.99 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 173.99 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "271d3976-df7c-4e00-83bc-1d01561e05b4")
-		)
-		(instances
-			(project "motor_board"
-				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "M0_2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_02x04_Counter_Clockwise")
-		(at 132.08 87.63 0)
+		(lib_id "Diode:1N4148")
+		(at 139.7 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ecc8370e-c478-4f12-a416-78e25929bcaf")
-		(property "Reference" "J1"
-			(at 133.35 78.74 0)
+		(uuid "ebdee761-6b87-45a8-b64e-f2c62e4f86f3")
+		(property "Reference" "D1"
+			(at 139.7 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "connector to driver board"
-			(at 133.35 81.28 0)
+		(property "Value" "1N4148"
+			(at 139.7 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Connector_IDC:IDC-Header_2x04_P2.54mm_Vertical"
-			(at 132.08 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 132.08 87.63 0)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P5.08mm_Vertical_AnodeUp"
+			(at 139.7 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2474,8 +1841,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 132.08 87.63 0)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 139.7 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2483,102 +1850,43 @@
 				(hide yes)
 			)
 		)
-		(pin "5"
-			(uuid "97253cbc-1fa3-4e9d-a549-e91442196337")
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 139.7 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "6"
-			(uuid "00724f89-3e80-43b5-a28f-8e2086ae7500")
+		(property "Sim.Device" "D"
+			(at 139.7 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "4"
-			(uuid "db615169-c492-42e3-b38d-1f2dc1cb774c")
-		)
-		(pin "7"
-			(uuid "7ec6e08f-cab2-4afd-bb01-64f6769370ea")
-		)
-		(pin "1"
-			(uuid "5a68ec51-ac5a-4e82-8565-56e2847803f2")
+		(property "Sim.Pins" "1=K 2=A"
+			(at 139.7 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "2"
-			(uuid "f0f5afa4-bcff-485b-8983-cfaada68de95")
+			(uuid "570ba17c-c07a-42c0-ac64-48fe15e4bd58")
 		)
-		(pin "3"
-			(uuid "f95d1ea5-289c-42b4-acb2-db3fb71bc6d2")
-		)
-		(pin "8"
-			(uuid "af72cd99-5e06-4f86-836d-76e005cbfec0")
+		(pin "1"
+			(uuid "553ae4d4-90b6-49f3-9314-5e66dabc162f")
 		)
 		(instances
 			(project ""
 				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 201.93 71.12 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f4244b26-88a2-41fe-a948-9a1530a4200d")
-		(property "Reference" "M1_4"
-			(at 204.47 68.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 204.47 71.1199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 201.93 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 201.93 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 201.93 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b3082be6-79d1-4422-8ad7-1ef1ca4568c8")
-		)
-		(instances
-			(project "motor_board"
-				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "M1_4")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -2586,16 +1894,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 115.57 86.36 0)
+		(at 91.44 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "fe51ab34-48ce-443f-b5d9-60028a690856")
-		(property "Reference" "#PWR01"
-			(at 115.57 92.71 0)
+		(uuid "f0ed3dd6-60e6-4ff7-9c45-f73ecef64196")
+		(property "Reference" "#PWR02"
+			(at 91.44 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2604,7 +1912,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 115.57 91.44 0)
+			(at 91.44 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2612,7 +1920,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 86.36 0)
+			(at 91.44 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2621,7 +1929,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 86.36 0)
+			(at 91.44 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2630,7 +1938,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 115.57 86.36 0)
+			(at 91.44 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2639,12 +1947,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "48062ee2-68da-4ae3-b332-fbd9f87b44b2")
+			(uuid "c8664610-5c62-4185-b554-dcae9f4e4b44")
 		)
 		(instances
-			(project ""
+			(project "motor_board"
 				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
-					(reference "#PWR01")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
