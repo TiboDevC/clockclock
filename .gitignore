@@ -21,6 +21,7 @@ _autosave-*
 fp-info-cache
 ~*.lck
 \#auto_saved_files#
+*.log
 
 # Netlist files (exported from Eeschema)
 *.net
@@ -32,3 +33,6 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+# Gerber files output
+gerber
