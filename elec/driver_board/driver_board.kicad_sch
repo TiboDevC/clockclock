@@ -1305,7 +1305,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
-					(page "30")
+					(page "0")
 				)
 			)
 		)
@@ -1875,7 +1875,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
-					(page "31")
+					(page "1")
 				)
 			)
 		)
