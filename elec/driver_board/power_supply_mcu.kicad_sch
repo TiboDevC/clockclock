@@ -326,20 +326,20 @@
 		)
 	)
 	(junction
-		(at 96.52 85.09)
+		(at 129.54 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7ae29a9f-d389-4abe-a645-a05ca3d2564d")
 	)
 	(junction
-		(at 96.52 67.31)
+		(at 129.54 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9f1f405e-f19f-4595-8a4d-0494be32ed75")
 	)
 	(wire
 		(pts
-			(xy 96.52 85.09) (xy 96.52 87.63)
+			(xy 129.54 93.98) (xy 129.54 96.52)
 		)
 		(stroke
 			(width 0)
@@ -349,7 +349,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 67.31) (xy 96.52 67.31)
+			(xy 140.97 76.2) (xy 129.54 76.2)
 		)
 		(stroke
 			(width 0)
@@ -359,7 +359,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 67.31) (xy 96.52 71.12)
+			(xy 129.54 76.2) (xy 129.54 80.01)
 		)
 		(stroke
 			(width 0)
@@ -369,7 +369,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 83.82) (xy 96.52 85.09)
+			(xy 129.54 92.71) (xy 129.54 93.98)
 		)
 		(stroke
 			(width 0)
@@ -379,7 +379,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 62.23) (xy 96.52 67.31)
+			(xy 129.54 71.12) (xy 129.54 76.2)
 		)
 		(stroke
 			(width 0)
@@ -389,7 +389,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 85.09) (xy 96.52 85.09)
+			(xy 140.97 93.98) (xy 129.54 93.98)
 		)
 		(stroke
 			(width 0)
@@ -397,9 +397,19 @@
 		)
 		(uuid "b7049f42-d60d-42b5-973d-9d7595e40323")
 	)
+	(text "Power supply from USB-C 5V"
+		(exclude_from_sim no)
+		(at 137.16 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1ffb4a9d-ad8e-46d1-acd8-2fbd1eb8c516")
+	)
 	(global_label "GND"
 		(shape input)
-		(at 107.95 85.09 0)
+		(at 140.97 93.98 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -409,7 +419,7 @@
 		)
 		(uuid "5e62d6a8-a509-4e0a-80c5-e81d54fc5bf5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 114.8057 85.09 0)
+			(at 147.8257 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -421,7 +431,7 @@
 	)
 	(global_label "VCC"
 		(shape input)
-		(at 107.95 67.31 0)
+		(at 140.97 76.2 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -431,7 +441,7 @@
 		)
 		(uuid "ea73cf50-5559-4438-87c9-b94b4501506c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 114.5638 67.31 0)
+			(at 147.5838 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -444,7 +454,7 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 96.52 67.31 90)
+		(at 129.54 76.2 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -454,7 +464,7 @@
 		)
 		(uuid "ed4205ae-dc26-444c-ba6d-3bd3fd537c9d")
 		(property "Netclass" "power"
-			(at 93.98 66.6115 90)
+			(at 127 75.5015 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -466,7 +476,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 96.52 87.63 0)
+		(at 129.54 96.52 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -475,7 +485,7 @@
 		(dnp no)
 		(uuid "468013cf-a85e-4b28-8df8-9ac9f3a4e239")
 		(property "Reference" "GND_DCDC1"
-			(at 99.06 92.2021 0)
+			(at 132.08 101.0921 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -484,7 +494,7 @@
 			)
 		)
 		(property "Value" "M-"
-			(at 99.06 89.6621 0)
+			(at 132.08 98.5521 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -494,7 +504,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 101.6 87.63 0)
+			(at 134.62 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -503,7 +513,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 101.6 87.63 0)
+			(at 134.62 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -512,7 +522,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 96.52 87.63 0)
+			(at 129.54 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -534,7 +544,7 @@
 	)
 	(symbol
 		(lib_id "Samacsys:ECA-1HM471")
-		(at 96.52 71.12 270)
+		(at 129.54 80.01 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -543,7 +553,7 @@
 		(fields_autoplaced yes)
 		(uuid "6d9130d6-d542-4938-8358-1f8873613736")
 		(property "Reference" "C49"
-			(at 100.33 76.1999 90)
+			(at 133.35 85.0899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -552,7 +562,7 @@
 			)
 		)
 		(property "Value" "ECA-1HM471"
-			(at 100.33 78.7399 90)
+			(at 133.35 87.6299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -561,7 +571,7 @@
 			)
 		)
 		(property "Footprint" "Samacsys:CAPPRD500W65D1000H2200"
-			(at 0.33 80.01 0)
+			(at 33.35 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -571,7 +581,7 @@
 			)
 		)
 		(property "Datasheet" "http://industrial.panasonic.com/cdbs/www-data/pdf/RDF0000/ABA0000C1218.pdf"
-			(at -99.67 80.01 0)
+			(at -66.65 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -581,7 +591,7 @@
 			)
 		)
 		(property "Description" "PANASONIC - ECA-1HM471 - Electrolytic Capacitor, 470 F, 50 V, M Series, +/- 20%, Radial Leaded, 10 mm"
-			(at 96.52 71.12 0)
+			(at 129.54 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -590,7 +600,7 @@
 			)
 		)
 		(property "Height" "22"
-			(at -299.67 80.01 0)
+			(at -266.65 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -600,7 +610,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Panasonic"
-			(at -399.67 80.01 0)
+			(at -366.65 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -610,7 +620,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "ECA-1HM471"
-			(at -499.67 80.01 0)
+			(at -466.65 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -620,7 +630,7 @@
 			)
 		)
 		(property "Arrow Part Number" "ECA-1HM471"
-			(at -599.67 80.01 0)
+			(at -566.65 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -630,7 +640,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/eca-1hm471/panasonic"
-			(at -699.67 80.01 0)
+			(at -666.65 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -656,7 +666,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 96.52 62.23 0)
+		(at 129.54 71.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -665,7 +675,7 @@
 		(fields_autoplaced yes)
 		(uuid "c93c99c4-7786-497c-9447-3c5f867ee65b")
 		(property "Reference" "VCC_DCDC1"
-			(at 99.06 58.9279 0)
+			(at 132.08 67.8179 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -674,7 +684,7 @@
 			)
 		)
 		(property "Value" "M+"
-			(at 99.06 60.1979 0)
+			(at 132.08 69.0879 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -684,7 +694,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 101.6 62.23 0)
+			(at 134.62 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -693,7 +703,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 101.6 62.23 0)
+			(at 134.62 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -702,7 +712,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 96.52 62.23 0)
+			(at 129.54 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
