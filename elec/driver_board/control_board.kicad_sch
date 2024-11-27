@@ -1502,6 +1502,193 @@
 				)
 			)
 		)
+		(symbol "Samacsys:FSM2JAH"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "S"
+				(at 16.51 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "FSM2JAH"
+				(at 16.51 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Samacsys:FSM4JH"
+				(at 16.51 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1825910%7FC9%7Fpdf%7FEnglish%7FENG_CD_1825910_C9.pdf%7F1825910-3"
+				(at 16.51 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "6x6mm tactile switch,4.3mm H 2.6N Red Button Tactile Switch, SPST 50 mA@ 24 V dc 0.7mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" ""
+				(at 16.51 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "506-FSM2JAH"
+				(at 16.51 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/TE-Connectivity-PB/FSM2JAH?qs=Of7OaoM7rsH02ckr%252BGLHNA%3D%3D"
+				(at 16.51 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "TE Connectivity"
+				(at 16.51 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "FSM2JAH"
+				(at 16.51 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "FSM2JAH_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 15.24 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 0 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 -2.54 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Snapeda:ESP32-C3-DEVKITM-1"
 			(pin_names
 				(offset 1.016)
@@ -2433,10 +2620,28 @@
 		(uuid "13625e65-8f27-4a5c-882a-3e417c6ebb5e")
 	)
 	(junction
-		(at 139.7 40.64)
+		(at 88.9 41.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2da3d40c-e5b9-4489-abde-43cef1540eb0")
+	)
+	(junction
+		(at 115.57 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "34bda593-beef-42e3-ab7a-ffe214376d20")
+	)
+	(junction
+		(at 111.76 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "34ecb210-bbe6-4dd6-b97e-087a18fb884c")
+	)
+	(junction
+		(at 181.61 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7825edd2-59fd-4453-9439-97b6ee4d9861")
 	)
 	(junction
 		(at 234.95 127)
@@ -2457,6 +2662,12 @@
 		(uuid "a92524c4-36f5-494d-a26e-97733bc61256")
 	)
 	(junction
+		(at 158.75 41.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "be156b7d-23aa-44fc-a128-ea8fb65d582b")
+	)
+	(junction
 		(at 234.95 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2467,8 +2678,20 @@
 		(uuid "1c518264-f508-41cc-81c7-8b92d95af4c1")
 	)
 	(no_connect
+		(at 90.17 35.56)
+		(uuid "2a9ca818-6dfd-49a9-8284-24a0389fcb05")
+	)
+	(no_connect
+		(at 110.49 35.56)
+		(uuid "411ee287-bcce-405d-804a-6a5d6ba2f988")
+	)
+	(no_connect
 		(at 238.76 31.75)
 		(uuid "6d2f9665-992b-45d4-9f48-a4a965616862")
+	)
+	(no_connect
+		(at 160.02 35.56)
+		(uuid "727168c9-e0b8-4cf4-82e4-aa64abb4a690")
 	)
 	(no_connect
 		(at 114.3 113.03)
@@ -2479,12 +2702,20 @@
 		(uuid "a049cfbf-9dac-4248-a36f-24c37b1c3b69")
 	)
 	(no_connect
+		(at 180.34 35.56)
+		(uuid "a7cab158-0f5a-4097-a684-73e395fc3b45")
+	)
+	(no_connect
 		(at 114.3 115.57)
 		(uuid "d0381397-064b-4f83-bdfc-19f9d4ca9f6a")
 	)
+	(no_connect
+		(at 124.46 200.66)
+		(uuid "d4c0944e-f6ce-44c7-918e-d4db8d88f3e1")
+	)
 	(wire
 		(pts
-			(xy 88.9 48.26) (xy 88.9 53.34)
+			(xy 44.45 53.34) (xy 44.45 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2494,7 +2725,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 40.64) (xy 143.51 40.64)
+			(xy 115.57 41.91) (xy 119.38 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2511,6 +2742,16 @@
 			(type default)
 		)
 		(uuid "0e0839f9-3154-495f-b6dc-b17d79a91a22")
+	)
+	(wire
+		(pts
+			(xy 158.75 41.91) (xy 156.21 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fef94b6-7ce2-45b4-9fef-a0326758fc66")
 	)
 	(wire
 		(pts
@@ -2624,6 +2865,16 @@
 	)
 	(wire
 		(pts
+			(xy 180.34 38.1) (xy 181.61 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3788c626-93e8-4fd7-b58a-00ac77cd0e5a")
+	)
+	(wire
+		(pts
 			(xy 114.3 130.81) (xy 119.38 130.81)
 		)
 		(stroke
@@ -2651,6 +2902,16 @@
 			(type default)
 		)
 		(uuid "3e3915b1-c02a-4c0c-b42a-6cfb290bd9c1")
+	)
+	(wire
+		(pts
+			(xy 110.49 38.1) (xy 111.76 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e7ed7cb-d5a1-49f2-bada-8be5962b82b8")
 	)
 	(wire
 		(pts
@@ -2684,7 +2945,17 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 29.21) (xy 139.7 31.75)
+			(xy 181.61 38.1) (xy 181.61 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5359e1da-50ba-44be-a737-231f6a110641")
+	)
+	(wire
+		(pts
+			(xy 115.57 30.48) (xy 115.57 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2734,13 +3005,33 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 43.18) (xy 139.7 43.18)
+			(xy 87.63 44.45) (xy 111.76 44.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "682fd908-ee94-4097-a0ec-f94cf63c75db")
+	)
+	(wire
+		(pts
+			(xy 88.9 41.91) (xy 87.63 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d9badbf-ee69-410c-8886-32800304b7dc")
+	)
+	(wire
+		(pts
+			(xy 90.17 38.1) (xy 88.9 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71568a50-bd13-4110-8d64-0dec764ec990")
 	)
 	(wire
 		(pts
@@ -2774,6 +3065,16 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 44.45) (xy 186.69 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "826d56be-c36d-4e3b-b29b-667a6717600d")
+	)
+	(wire
+		(pts
 			(xy 181.61 127) (xy 181.61 128.27)
 		)
 		(stroke
@@ -2784,7 +3085,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 40.64) (xy 133.35 40.64)
+			(xy 115.57 41.91) (xy 88.9 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2794,13 +3095,23 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 44.45) (xy 186.69 44.45)
+			(xy 156.21 44.45) (xy 181.61 44.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "872b5e61-acf4-4f68-9e6e-719746c16479")
+	)
+	(wire
+		(pts
+			(xy 160.02 38.1) (xy 158.75 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87a26ccc-7ec7-43e6-ace3-7e7fd6e48f14")
 	)
 	(wire
 		(pts
@@ -2844,6 +3155,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 44.45) (xy 115.57 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f45c4a7-9dda-47bb-9bd4-182ed51009de")
+	)
+	(wire
+		(pts
 			(xy 78.74 133.35) (xy 71.12 133.35)
 		)
 		(stroke
@@ -2854,7 +3175,7 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 41.91) (xy 180.34 41.91)
+			(xy 186.69 41.91) (xy 158.75 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2874,7 +3195,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 43.18) (xy 139.7 44.45)
+			(xy 115.57 44.45) (xy 115.57 45.72)
 		)
 		(stroke
 			(width 0)
@@ -2954,6 +3275,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 38.1) (xy 111.76 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0044347-9d0a-41d0-b680-3e59e07c621a")
+	)
+	(wire
+		(pts
 			(xy 234.95 116.84) (xy 234.95 118.11)
 		)
 		(stroke
@@ -2961,6 +3292,26 @@
 			(type default)
 		)
 		(uuid "dd27c9a7-503e-4e62-bce6-2ecc599643e4")
+	)
+	(wire
+		(pts
+			(xy 88.9 38.1) (xy 88.9 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e24eaf10-7d4e-49c1-9b4c-20aa7eb7e2ea")
+	)
+	(wire
+		(pts
+			(xy 158.75 38.1) (xy 158.75 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9da8ef0-9676-438e-b466-7d0bb49d6649")
 	)
 	(wire
 		(pts
@@ -3024,7 +3375,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 39.37) (xy 139.7 40.64)
+			(xy 115.57 40.64) (xy 115.57 41.91)
 		)
 		(stroke
 			(width 0)
@@ -3045,7 +3396,7 @@
 		(uuid 1798b1af-4ee0-4cef-8f51-c1836ec2baf6)
 	)
 	(rectangle
-		(start 118.11 21.59)
+		(start 76.2 21.59)
 		(end 209.55 59.69)
 		(stroke
 			(width 0)
@@ -3106,7 +3457,7 @@
 	)
 	(text "Buttons"
 		(exclude_from_sim no)
-		(at 162.052 56.642 0)
+		(at 139.7 57.15 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3146,7 +3497,7 @@
 	)
 	(text "Output of the DC/DC 5V"
 		(exclude_from_sim no)
-		(at 93.726 57.912 0)
+		(at 49.276 62.992 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3253,7 +3604,7 @@
 		(uuid "41fc5c95-8c2b-4f0a-b097-29d92b282eee")
 	)
 	(label "VCC_3V3"
-		(at 139.7 29.21 0)
+		(at 115.57 30.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3385,7 +3736,7 @@
 		(uuid "ad4e2040-e123-4536-8e04-859d94223e86")
 	)
 	(label "PIN_BUTTON_SHUTDOWN"
-		(at 143.51 40.64 0)
+		(at 119.38 41.91 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3485,7 +3836,7 @@
 	)
 	(global_label "VCC"
 		(shape input)
-		(at 88.9 53.34 0)
+		(at 44.45 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3495,7 +3846,7 @@
 		)
 		(uuid "1dcfffe2-403e-4a8f-ab9b-c4a6f4c9e4c9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 95.5138 53.34 0)
+			(at 51.0638 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3834,17 +4185,142 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x02_Pin")
-		(at 175.26 41.91 0)
+		(lib_id "Samacsys:FSM2JAH")
+		(at 110.49 38.1 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
+		(uuid "3363b171-ef99-44e2-a8cc-ba85109276a6")
+		(property "Reference" "S1"
+			(at 100.33 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FSM2JAH"
+			(at 100.33 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Samacsys:FSM4JH"
+			(at 93.98 -56.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1825910%7FC9%7Fpdf%7FEnglish%7FENG_CD_1825910_C9.pdf%7F1825910-3"
+			(at 93.98 -156.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "6x6mm tactile switch,4.3mm H 2.6N Red Button Tactile Switch, SPST 50 mA@ 24 V dc 0.7mm"
+			(at 110.49 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 93.98 -356.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "506-FSM2JAH"
+			(at 93.98 -456.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/TE-Connectivity-PB/FSM2JAH?qs=Of7OaoM7rsH02ckr%252BGLHNA%3D%3D"
+			(at 93.98 -556.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "TE Connectivity"
+			(at 93.98 -656.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FSM2JAH"
+			(at 93.98 -756.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "509e7de9-a261-43c9-9330-be43e430268a")
+		)
+		(pin "4"
+			(uuid "f42fb421-4d6b-485a-8756-8d5a27d5d553")
+		)
+		(pin "3"
+			(uuid "f4dedb45-91d0-460e-9e29-181988865a9b")
+		)
+		(pin "1"
+			(uuid "239f54f5-fb32-4ba4-916a-c98e55b47b4e")
+		)
+		(instances
+			(project ""
+				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/4bcac3d6-680b-4b29-8743-c3c7298e2548"
+					(reference "S1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 151.13 41.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(uuid "3399a05f-59f9-48e6-825a-ed2e8184906c")
 		(property "Reference" "J26"
-			(at 175.895 36.83 0)
+			(at 151.765 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3852,7 +4328,7 @@
 			)
 		)
 		(property "Value" "button_mode"
-			(at 175.895 39.37 0)
+			(at 170.688 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3860,7 +4336,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 175.26 41.91 0)
+			(at 151.13 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3869,7 +4345,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 175.26 41.91 0)
+			(at 151.13 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3878,7 +4354,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 175.26 41.91 0)
+			(at 151.13 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4046,16 +4522,15 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 128.27 40.64 0)
+		(at 82.55 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "57e3aa6a-03c5-495d-b01f-294411c55570")
 		(property "Reference" "J25"
-			(at 128.905 35.56 0)
+			(at 83.185 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4063,7 +4538,7 @@
 			)
 		)
 		(property "Value" "button_shutdown"
-			(at 128.905 38.1 0)
+			(at 99.822 47.244 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4071,7 +4546,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 128.27 40.64 0)
+			(at 82.55 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4080,7 +4555,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 128.27 40.64 0)
+			(at 82.55 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4089,7 +4564,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 128.27 40.64 0)
+			(at 82.55 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4555,7 +5030,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.2nF"
+		(property "Value" "4.7nF"
 			(at 185.42 133.3499 0)
 			(effects
 				(font
@@ -4601,6 +5076,132 @@
 			(project ""
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/4bcac3d6-680b-4b29-8743-c3c7298e2548"
 					(reference "Cl1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Samacsys:FSM2JAH")
+		(at 180.34 38.1 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a200358a-64be-4cff-b833-a7ff3f52bb0a")
+		(property "Reference" "S2"
+			(at 170.18 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FSM2JAH"
+			(at 170.18 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Samacsys:FSM4JH"
+			(at 163.83 -56.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1825910%7FC9%7Fpdf%7FEnglish%7FENG_CD_1825910_C9.pdf%7F1825910-3"
+			(at 163.83 -156.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "6x6mm tactile switch,4.3mm H 2.6N Red Button Tactile Switch, SPST 50 mA@ 24 V dc 0.7mm"
+			(at 180.34 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 163.83 -356.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "506-FSM2JAH"
+			(at 163.83 -456.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/TE-Connectivity-PB/FSM2JAH?qs=Of7OaoM7rsH02ckr%252BGLHNA%3D%3D"
+			(at 163.83 -556.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "TE Connectivity"
+			(at 163.83 -656.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FSM2JAH"
+			(at 163.83 -756.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "48815e08-214d-48b3-9ff2-11ca2d977be9")
+		)
+		(pin "4"
+			(uuid "67221dd3-3e9f-49fd-b1ba-4c41018762c3")
+		)
+		(pin "3"
+			(uuid "af1e0a3a-4b6a-4eb3-97dd-e8d7035499bb")
+		)
+		(pin "1"
+			(uuid "c2748c8b-cb97-45f0-8576-1556650c5929")
+		)
+		(instances
+			(project "driver_board"
+				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/4bcac3d6-680b-4b29-8743-c3c7298e2548"
+					(reference "S2")
 					(unit 1)
 				)
 			)
@@ -5132,16 +5733,15 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 139.7 35.56 0)
+		(at 115.57 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ca9ae9a2-d449-4422-8b67-3fc308489ebb")
 		(property "Reference" "R1"
-			(at 142.24 34.2899 0)
+			(at 118.11 35.5599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5150,7 +5750,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 142.24 36.8299 0)
+			(at 118.11 38.0999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5159,7 +5759,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 137.922 35.56 90)
+			(at 113.792 36.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5168,7 +5768,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 139.7 35.56 0)
+			(at 115.57 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5177,7 +5777,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 139.7 35.56 0)
+			(at 115.57 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5202,7 +5802,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 88.9 48.26 0)
+		(at 44.45 53.34 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5211,7 +5811,7 @@
 		(fields_autoplaced yes)
 		(uuid "d6086373-81a4-4b20-8e13-b15c605100fe")
 		(property "Reference" "#PWR0123"
-			(at 88.9 52.07 0)
+			(at 44.45 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5220,7 +5820,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 88.9 43.18 0)
+			(at 44.45 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5228,7 +5828,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 88.9 48.26 0)
+			(at 44.45 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5237,7 +5837,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 88.9 48.26 0)
+			(at 44.45 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5246,7 +5846,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 88.9 48.26 0)
+			(at 44.45 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5333,7 +5933,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 139.7 44.45 0)
+		(at 115.57 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5342,7 +5942,7 @@
 		(fields_autoplaced yes)
 		(uuid "e114e992-44ad-4d02-b84b-e4308cc3e8f9")
 		(property "Reference" "#PWR0126"
-			(at 139.7 50.8 0)
+			(at 115.57 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5351,7 +5951,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 139.7 49.53 0)
+			(at 115.57 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5359,7 +5959,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 139.7 44.45 0)
+			(at 115.57 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5368,7 +5968,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 44.45 0)
+			(at 115.57 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5377,7 +5977,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 139.7 44.45 0)
+			(at 115.57 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5482,7 +6082,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.2nF"
+		(property "Value" "4.7nF"
 			(at 238.76 133.3499 0)
 			(effects
 				(font
