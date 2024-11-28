@@ -3,11 +3,21 @@
 This personal project first intention is to build a clock with a design inspired
 by [Human since 1982](https://www.humanssince1982.com/).
 
+1. [The idea](#the-idea)
+2. [The solution](#the-solution)
+    1. [Motors](#motors)
+    2. [Real Time Clock (RTC)](#real-time-clock-rtc)
+    3. [Hands](#hands)
+3. [Hardware](#hardware)
+
 ## The idea
 
-There is a lot of open source design and all these projects use several microcontrollers, often one for every two
-motors, which makes the project expensive and adds a lot of complexity. My aim is to make a much simpler and cheaper
-design with a single MCU that controls all 48 motors. This design also integrates the reading of 48 hall-effect sensors
+There are many open source models and all these projects use several microcontrollers, often one for two motors, which
+makes the project expensive and adds a lot of complexity.
+This makes the project expensive and adds a lot of complexity. My aim is to achieve a much simpler and cheaper project
+with a single MCU controlling all 48 motors.
+My aim is to achieve a much simpler and cheaper project with a single MCU controlling all 48 motors. This design also
+integrates the reading of 48 Hall-effect sensors
 with the same MCU.
 
 I also wanted to create a clock that was always on time but not connected to the internet.
