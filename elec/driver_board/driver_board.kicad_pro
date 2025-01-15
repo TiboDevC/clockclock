@@ -914,54 +914,6 @@
     [
       "4e7aa681-599e-48a1-98d2-7ee6054e5f59",
       "motor_driver11"
-    ],
-    [
-      "a400a4d6-6192-4140-abeb-d6a24bd6de75",
-      "motor_driver12"
-    ],
-    [
-      "df528100-2030-49f1-9994-1873f4eef095",
-      "motor_driver13"
-    ],
-    [
-      "2cf84e43-4693-4fa1-9c81-3a9b8ea0e81d",
-      "motor_driver14"
-    ],
-    [
-      "7dc83951-ec33-43c3-bde4-66d42045d964",
-      "motor_driver15"
-    ],
-    [
-      "8883ee82-ab86-423f-82e3-45262d780789",
-      "motor_driver16"
-    ],
-    [
-      "ba6783a9-5f18-4ba3-bf4a-68f3d5ab25d5",
-      "motor_driver17"
-    ],
-    [
-      "40623bad-c69b-4bd5-9ceb-53d6668d70b8",
-      "motor_driver18"
-    ],
-    [
-      "76de9e72-945f-4ebb-9874-9ce85584a0de",
-      "motor_driver19"
-    ],
-    [
-      "89d3c48e-4351-4670-8958-8dac1a233ddb",
-      "motor_driver20"
-    ],
-    [
-      "78e7cfaa-5631-45d6-871f-16f53a7d5fa5",
-      "motor_driver21"
-    ],
-    [
-      "b9750902-6d86-4ac3-914e-9fa250b2f468",
-      "motor_driver22"
-    ],
-    [
-      "960e810c-e3ab-40ca-82a2-02972a9f7d71",
-      "motor_driver23"
     ]
   ],
   "text_variables": {}
