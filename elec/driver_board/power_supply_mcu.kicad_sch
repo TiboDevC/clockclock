@@ -552,7 +552,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6d9130d6-d542-4938-8358-1f8873613736")
-		(property "Reference" "C1"
+		(property "Reference" "C3"
 			(at 133.35 85.0899 90)
 			(effects
 				(font
@@ -658,7 +658,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/8c6a74a5-4238-4c38-a1b6-74fe6b2385f9"
-					(reference "C1")
+					(reference "C3")
 					(unit 1)
 				)
 			)
