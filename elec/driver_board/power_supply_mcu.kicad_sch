@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Power supply")
-		(date "2024-11-23")
-		(rev "1")
+		(date "2025-01-26")
+		(rev "2")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
@@ -493,7 +493,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "M-"
+		(property "Value" "GND"
 			(at 132.08 98.5521 0)
 			(effects
 				(font
@@ -683,7 +683,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "M+"
+		(property "Value" "VCC 5V"
 			(at 132.08 69.0879 0)
 			(effects
 				(font
