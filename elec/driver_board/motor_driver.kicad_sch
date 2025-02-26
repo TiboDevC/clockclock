@@ -5130,7 +5130,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8761f96-a2ce-4d9b-8fce-7bb4ec239e11")
-		(property "Reference" "CM2"
+		(property "Reference" "M2"
 			(at 213.36 121.9199 0)
 			(effects
 				(font
@@ -5202,51 +5202,51 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/019d0959-b2d7-40e3-bcde-64e1ae2cba0e"
-					(reference "CM18")
+					(reference "M18")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/139340e2-704b-4f11-8f36-78173d5ff297"
-					(reference "CM8")
+					(reference "M8")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/282cdb59-849b-4e51-8c8f-1fe6c219b1fb"
-					(reference "CM22")
+					(reference "M22")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/2a294713-3d44-472d-bef5-1abebc44687b"
-					(reference "CM20")
+					(reference "M20")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/3b5368a0-d7c1-49e5-b592-54e26f9ab0f3"
-					(reference "CM10")
+					(reference "M10")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/4aecfc80-b507-4e3a-9014-cbd720ff1980"
-					(reference "CM6")
+					(reference "M6")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/4e7aa681-599e-48a1-98d2-7ee6054e5f59"
-					(reference "CM24")
+					(reference "M24")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/56b777f7-590b-4db9-98ba-01b4469f76a0"
-					(reference "CM16")
+					(reference "M16")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/81b72853-db4a-435b-a101-2d4a5729a607"
-					(reference "CM2")
+					(reference "M2")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/89777332-f368-41a1-9c8f-851eab9528aa"
-					(reference "CM14")
+					(reference "M14")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/b6dbef3c-59a4-417d-9805-2b3c0886345e"
-					(reference "CM4")
+					(reference "M4")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/ebd563aa-1f82-4f6c-b14d-9a42f69511f5"
-					(reference "CM12")
+					(reference "M12")
 					(unit 1)
 				)
 			)
@@ -5262,7 +5262,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ea6a8a16-8f4f-4965-943e-b212e65250d1")
-		(property "Reference" "CM1"
+		(property "Reference" "M1"
 			(at 212.09 92.7099 0)
 			(effects
 				(font
@@ -5334,51 +5334,51 @@
 		(instances
 			(project ""
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/019d0959-b2d7-40e3-bcde-64e1ae2cba0e"
-					(reference "CM17")
+					(reference "M17")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/139340e2-704b-4f11-8f36-78173d5ff297"
-					(reference "CM7")
+					(reference "M7")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/282cdb59-849b-4e51-8c8f-1fe6c219b1fb"
-					(reference "CM21")
+					(reference "M21")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/2a294713-3d44-472d-bef5-1abebc44687b"
-					(reference "CM19")
+					(reference "M19")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/3b5368a0-d7c1-49e5-b592-54e26f9ab0f3"
-					(reference "CM9")
+					(reference "M9")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/4aecfc80-b507-4e3a-9014-cbd720ff1980"
-					(reference "CM5")
+					(reference "M5")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/4e7aa681-599e-48a1-98d2-7ee6054e5f59"
-					(reference "CM23")
+					(reference "M23")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/56b777f7-590b-4db9-98ba-01b4469f76a0"
-					(reference "CM15")
+					(reference "M15")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/81b72853-db4a-435b-a101-2d4a5729a607"
-					(reference "CM1")
+					(reference "M1")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/89777332-f368-41a1-9c8f-851eab9528aa"
-					(reference "CM13")
+					(reference "M13")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/b6dbef3c-59a4-417d-9805-2b3c0886345e"
-					(reference "CM3")
+					(reference "M3")
 					(unit 1)
 				)
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe/ebd563aa-1f82-4f6c-b14d-9a42f69511f5"
-					(reference "CM11")
+					(reference "M11")
 					(unit 1)
 				)
 			)

@@ -3244,6 +3244,10 @@
 		(uuid "073a76e4-22b6-4cf9-a3a3-8fa195409b69")
 	)
 	(no_connect
+		(at 186.69 27.94)
+		(uuid "0b0d022d-fa73-4dad-906a-479da4e07a26")
+	)
+	(no_connect
 		(at 74.93 127)
 		(uuid "505f6d97-5684-4fa3-8f06-84a636f81007")
 	)
@@ -3260,8 +3264,16 @@
 		(uuid "a049cfbf-9dac-4248-a36f-24c37b1c3b69")
 	)
 	(no_connect
+		(at 110.49 116.84)
+		(uuid "ab0df191-83bf-407f-a522-1a0efd31edad")
+	)
+	(no_connect
 		(at 238.76 39.37)
 		(uuid "b80f874a-f278-4c63-8048-e832bd4b37ff")
+	)
+	(no_connect
+		(at 184.15 27.94)
+		(uuid "c111f213-1dcf-4ecb-9e75-41cef6aab845")
 	)
 	(no_connect
 		(at 110.49 111.76)
@@ -3270,10 +3282,6 @@
 	(no_connect
 		(at 119.38 26.67)
 		(uuid "d36adfec-abc0-4b2e-8bb6-0a0e93c9da81")
-	)
-	(no_connect
-		(at 124.46 200.66)
-		(uuid "d4c0944e-f6ce-44c7-918e-d4db8d88f3e1")
 	)
 	(no_connect
 		(at 238.76 41.91)
@@ -3895,6 +3903,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 121.92) (xy 110.49 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecb029ab-f777-4f51-93b8-7bbf609676e8")
+	)
+	(wire
+		(pts
 			(xy 184.15 50.8) (xy 184.15 48.26)
 		)
 		(stroke
@@ -4174,7 +4192,7 @@
 		(uuid "ef04afab-136f-4da4-b335-e4d31e5ceed1")
 	)
 	(label "PIN_BUTTON_SHUTDOWN"
-		(at 110.49 121.92 0)
+		(at 111.76 121.92 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4274,7 +4292,7 @@
 		(lib_id "Jumper:Jumper_2_Open")
 		(at 123.19 96.52 270)
 		(unit 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
