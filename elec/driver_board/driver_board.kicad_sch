@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "f74582a2-e122-4df8-8bf1-319684e69fbe")
 	(paper "A4")
 	(title_block
@@ -392,6 +392,10 @@
 	(sheet
 		(at 166.37 102.87)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -422,23 +426,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 180.34 105.41 0)
+			(uuid "ec97471f-c60f-427c-a985-9119b1b432aa")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "ec97471f-c60f-427c-a985-9119b1b432aa")
 		)
 		(pin "DATA_OUT" output
 			(at 180.34 107.95 0)
+			(uuid "3c225df1-8e10-4a54-a88a-ddd8da3cea2d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "3c225df1-8e10-4a54-a88a-ddd8da3cea2d")
 		)
 		(instances
 			(project "driver_board"
@@ -451,6 +455,10 @@
 	(sheet
 		(at 104.14 119.38)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -481,23 +489,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 118.11 121.92 0)
+			(uuid "c9917f9d-0a75-4d46-9b2f-4bfd2b4acc2c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "c9917f9d-0a75-4d46-9b2f-4bfd2b4acc2c")
 		)
 		(pin "DATA_OUT" output
 			(at 118.11 124.46 0)
+			(uuid "b50e4222-6d92-4116-a079-3cacbebffbaa")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "b50e4222-6d92-4116-a079-3cacbebffbaa")
 		)
 		(instances
 			(project "driver_board"
@@ -510,6 +518,10 @@
 	(sheet
 		(at 166.37 133.35)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -540,23 +552,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 180.34 135.89 0)
+			(uuid "5d7799d7-34b7-49b4-bd23-be303d81ded5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "5d7799d7-34b7-49b4-bd23-be303d81ded5")
 		)
 		(pin "DATA_OUT" output
 			(at 180.34 138.43 0)
+			(uuid "e3dbcc4a-c6ce-4cae-b1a1-caa5c9d01f2c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "e3dbcc4a-c6ce-4cae-b1a1-caa5c9d01f2c")
 		)
 		(instances
 			(project "driver_board"
@@ -569,6 +581,10 @@
 	(sheet
 		(at 166.37 118.11)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -599,23 +615,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 180.34 120.65 0)
+			(uuid "9618d0e6-a61d-4935-a382-801c7f494eaa")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "9618d0e6-a61d-4935-a382-801c7f494eaa")
 		)
 		(pin "DATA_OUT" output
 			(at 180.34 123.19 0)
+			(uuid "766a8a15-8b7b-45c6-8e28-eeb9f48ee17e")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "766a8a15-8b7b-45c6-8e28-eeb9f48ee17e")
 		)
 		(instances
 			(project "driver_board"
@@ -628,6 +644,10 @@
 	(sheet
 		(at 104.14 134.62)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -658,23 +678,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 118.11 137.16 0)
+			(uuid "6cf90aaa-85b3-4eb4-9e36-0816c7a0461a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "6cf90aaa-85b3-4eb4-9e36-0816c7a0461a")
 		)
 		(pin "DATA_OUT" output
 			(at 118.11 139.7 0)
+			(uuid "2c83c9eb-e0c6-4208-8948-3b04ed4fd212")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2c83c9eb-e0c6-4208-8948-3b04ed4fd212")
 		)
 		(instances
 			(project "driver_board"
@@ -687,6 +707,10 @@
 	(sheet
 		(at 104.14 104.14)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -717,23 +741,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 118.11 106.68 0)
+			(uuid "839c453e-3859-4233-b79c-b9ca0257ef74")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "839c453e-3859-4233-b79c-b9ca0257ef74")
 		)
 		(pin "DATA_OUT" output
 			(at 118.11 109.22 0)
+			(uuid "5dfc848e-e166-4fd3-9a83-b18182967f56")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "5dfc848e-e166-4fd3-9a83-b18182967f56")
 		)
 		(instances
 			(project "driver_board"
@@ -746,6 +770,10 @@
 	(sheet
 		(at 102.87 57.15)
 		(size 15.24 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -776,13 +804,13 @@
 		)
 		(pin "DATA_OUT" output
 			(at 118.11 59.69 0)
+			(uuid "a1e5a78d-cbc8-4723-bcf5-b8a47d90986b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "a1e5a78d-cbc8-4723-bcf5-b8a47d90986b")
 		)
 		(instances
 			(project "driver_board"
@@ -795,6 +823,10 @@
 	(sheet
 		(at 166.37 148.59)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -825,23 +857,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 180.34 151.13 0)
+			(uuid "a5854770-6607-4553-b943-40eb67714f66")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "a5854770-6607-4553-b943-40eb67714f66")
 		)
 		(pin "DATA_OUT" output
 			(at 180.34 153.67 0)
+			(uuid "855b9ff7-78f4-464e-81e2-7d1d5cdb618c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "855b9ff7-78f4-464e-81e2-7d1d5cdb618c")
 		)
 		(instances
 			(project "driver_board"
@@ -854,6 +886,10 @@
 	(sheet
 		(at 166.37 87.63)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -884,23 +920,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 180.34 90.17 0)
+			(uuid "5751ef65-fbfc-4394-8412-4f07015c69af")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "5751ef65-fbfc-4394-8412-4f07015c69af")
 		)
 		(pin "DATA_OUT" output
 			(at 180.34 92.71 0)
+			(uuid "448eca94-4897-4fa0-840c-d8dbd130e296")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "448eca94-4897-4fa0-840c-d8dbd130e296")
 		)
 		(instances
 			(project "driver_board"
@@ -913,6 +949,10 @@
 	(sheet
 		(at 104.14 73.66)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -943,23 +983,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 118.11 76.2 0)
+			(uuid "bfc987c4-19c6-4383-a5e1-78a271a2b5dd")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "bfc987c4-19c6-4383-a5e1-78a271a2b5dd")
 		)
 		(pin "DATA_OUT" output
 			(at 118.11 78.74 0)
+			(uuid "66352890-d52e-4a1b-90a7-5f0def90b348")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "66352890-d52e-4a1b-90a7-5f0def90b348")
 		)
 		(instances
 			(project "driver_board"
@@ -972,6 +1012,10 @@
 	(sheet
 		(at 166.37 72.39)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1002,23 +1046,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 180.34 74.93 0)
+			(uuid "706bc834-10ea-4e95-8990-4c5c57122fcf")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "706bc834-10ea-4e95-8990-4c5c57122fcf")
 		)
 		(pin "DATA_OUT" output
 			(at 180.34 77.47 0)
+			(uuid "381155f5-52fe-43fd-ae0a-a19897eab55c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "381155f5-52fe-43fd-ae0a-a19897eab55c")
 		)
 		(instances
 			(project "driver_board"
@@ -1031,6 +1075,10 @@
 	(sheet
 		(at 100.33 39.37)
 		(size 17.78 8.89)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1070,6 +1118,10 @@
 	(sheet
 		(at 104.14 88.9)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1100,23 +1152,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 118.11 91.44 0)
+			(uuid "75533247-671e-490e-83fb-7bc87e17ad65")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "75533247-671e-490e-83fb-7bc87e17ad65")
 		)
 		(pin "DATA_OUT" output
 			(at 118.11 93.98 0)
+			(uuid "b5ec5e3a-17b9-4783-9ddc-ad91e55750d5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "b5ec5e3a-17b9-4783-9ddc-ad91e55750d5")
 		)
 		(instances
 			(project "driver_board"
@@ -1129,6 +1181,10 @@
 	(sheet
 		(at 104.14 149.86)
 		(size 13.97 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1159,23 +1215,23 @@
 		)
 		(pin "DATA_IN" input
 			(at 118.11 152.4 0)
+			(uuid "768b08c7-13f0-424a-815f-b6a1a1b80a16")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "768b08c7-13f0-424a-815f-b6a1a1b80a16")
 		)
 		(pin "DATA_OUT" output
 			(at 118.11 154.94 0)
+			(uuid "7b03158e-2e04-4568-bf8c-33d2c0263fc4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "7b03158e-2e04-4568-bf8c-33d2c0263fc4")
 		)
 		(instances
 			(project "driver_board"
@@ -1190,4 +1246,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
