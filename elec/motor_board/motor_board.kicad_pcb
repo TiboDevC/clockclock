@@ -1,7 +1,7 @@
 (kicad_pcb
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(general
 		(thickness 1.6)
 		(legacy_teardrops no)
@@ -9,41 +9,42 @@
 	(paper "A4")
 	(layers
 		(0 "F.Cu" signal)
-		(31 "B.Cu" signal)
-		(32 "B.Adhes" user "B.Adhesive")
-		(33 "F.Adhes" user "F.Adhesive")
-		(34 "B.Paste" user)
-		(35 "F.Paste" user)
-		(36 "B.SilkS" user "B.Silkscreen")
-		(37 "F.SilkS" user "F.Silkscreen")
-		(38 "B.Mask" user)
-		(39 "F.Mask" user)
-		(40 "Dwgs.User" user "User.Drawings")
-		(41 "Cmts.User" user "User.Comments")
-		(42 "Eco1.User" user "User.Eco1")
-		(43 "Eco2.User" user "User.Eco2")
-		(44 "Edge.Cuts" user)
-		(45 "Margin" user)
-		(46 "B.CrtYd" user "B.Courtyard")
-		(47 "F.CrtYd" user "F.Courtyard")
-		(48 "B.Fab" user)
-		(49 "F.Fab" user)
-		(50 "User.1" user)
-		(51 "User.2" user)
-		(52 "User.3" user)
-		(53 "User.4" user)
-		(54 "User.5" user)
-		(55 "User.6" user)
-		(56 "User.7" user)
-		(57 "User.8" user)
-		(58 "User.9" user)
+		(2 "B.Cu" signal)
+		(9 "F.Adhes" user "F.Adhesive")
+		(11 "B.Adhes" user "B.Adhesive")
+		(13 "F.Paste" user)
+		(15 "B.Paste" user)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
+		(1 "F.Mask" user)
+		(3 "B.Mask" user)
+		(17 "Dwgs.User" user "User.Drawings")
+		(19 "Cmts.User" user "User.Comments")
+		(21 "Eco1.User" user "User.Eco1")
+		(23 "Eco2.User" user "User.Eco2")
+		(25 "Edge.Cuts" user)
+		(27 "Margin" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
+		(35 "F.Fab" user)
+		(33 "B.Fab" user)
+		(39 "User.1" user)
+		(41 "User.2" user)
+		(43 "User.3" user)
+		(45 "User.4" user)
+		(47 "User.5" user)
+		(49 "User.6" user)
+		(51 "User.7" user)
+		(53 "User.8" user)
+		(55 "User.9" user)
 	)
 	(setup
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
+		(tenting front back)
 		(pcbplotparams
-			(layerselection 0x00010fc_ffffffff)
-			(plot_on_all_layers_selection 0x0000000_00000000)
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
 			(usegerberattributes yes)
@@ -53,7 +54,6 @@
 			(dashed_line_gap_ratio 3.000000)
 			(svgprecision 4)
 			(plotframeref no)
-			(viasonmask no)
 			(mode 1)
 			(useauxorigin no)
 			(hpglpennumber 1)
@@ -61,16 +61,20 @@
 			(hpglpendiameter 15.000000)
 			(pdf_front_fp_property_popups yes)
 			(pdf_back_fp_property_popups yes)
+			(pdf_metadata yes)
+			(pdf_single_document no)
 			(dxfpolygonmode yes)
 			(dxfimperialunits yes)
 			(dxfusepcbnewfont yes)
 			(psnegative no)
 			(psa4output no)
-			(plotreference yes)
-			(plotvalue yes)
-			(plotfptext yes)
+			(plot_black_and_white yes)
 			(plotinvisibletext no)
 			(sketchpadsonfab no)
+			(plotpadnumbers no)
+			(hidednponfab no)
+			(sketchdnponfab yes)
+			(crossoutdnponfab yes)
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
@@ -116,21 +120,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.00mm:PinSocket_1x08_P2.00mm_Vertical"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "95dadefb-c605-40b9-a039-274ac455a0e9")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" ""
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -143,7 +134,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -409,6 +400,7 @@
 			(pintype "passive")
 			(uuid "61260d2d-7ac0-4b8f-9a4f-6e98a1b3f86b")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_PinSocket_2.00mm.3dshapes/PinSocket_1x08_P2.00mm_Vertical.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -443,20 +435,6 @@
 			(unlocked yes)
 			(layer "B.Fab")
 			(uuid "216e6123-9d38-4448-97d9-43d10fa7960a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Footprint" "perso:BKA30D-R5"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "8cfb8cf6-4133-4b05-ace6-f0048d1a5d82")
 			(effects
 				(font
 					(size 1 1)
@@ -544,7 +522,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "Edge.Cuts")
 			(uuid "90b2f481-5bd6-4528-96ca-b8381c36c69e")
 		)
@@ -555,7 +533,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "Edge.Cuts")
 			(uuid "6a3781f6-f8dc-4490-9cd1-a2f515d1c439")
 		)
@@ -566,7 +544,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "Edge.Cuts")
 			(uuid "d8d67e91-85b6-46e5-9c90-fdedfa231f84")
 		)
@@ -577,7 +555,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "Edge.Cuts")
 			(uuid "60989849-6c7b-4f12-a332-abbacebf8526")
 		)
@@ -588,7 +566,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "Edge.Cuts")
 			(uuid "09b9bd73-abb5-4072-bb93-9d289ffa079f")
 		)
@@ -599,7 +577,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "Edge.Cuts")
 			(uuid "2f21a6ae-7d44-456d-9901-3ee8544f4791")
 		)
@@ -610,7 +588,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "Margin")
 			(uuid "2b7f6084-95e2-4072-b2fe-b913240e61d9")
 		)
@@ -621,113 +599,9 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "Margin")
 			(uuid "3b1673a8-973d-4bf6-b95f-69c7e06900a7")
-		)
-		(fp_text user "B3"
-			(at 17 4 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "27ea75e7-3470-4179-8c5d-9ee30d40f61c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-				(justify left bottom mirror)
-			)
-		)
-		(fp_text user "A3"
-			(at 40.5 22 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "389e78f8-04fa-4a0a-8f85-4207c6c7ef2e")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-				(justify left bottom mirror)
-			)
-		)
-		(fp_text user "B2"
-			(at 17 22 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "5a9fbf66-ec56-4c35-bafa-9991ced3406a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-				(justify left bottom mirror)
-			)
-		)
-		(fp_text user "B1"
-			(at 9.5 22 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "7f6a8557-78d9-4bd9-ba58-12f8875dd993")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-				(justify left bottom mirror)
-			)
-		)
-		(fp_text user "A4"
-			(at 48 22 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "96ff81e2-c538-4062-873f-871508c1fca9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-				(justify left bottom mirror)
-			)
-		)
-		(fp_text user "A1"
-			(at 48 4 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "988a5e64-87bc-4dec-9187-a4db6b4df03d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-				(justify left bottom mirror)
-			)
-		)
-		(fp_text user "B4"
-			(at 10 4 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "a8e4cbf8-1ba1-40ca-9b20-48812505d27e")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-				(justify left bottom mirror)
-			)
-		)
-		(fp_text user "A2"
-			(at 40.5 4 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "dd9cbef9-f8e3-48fe-bbe2-58c51844e35b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-				(justify left bottom mirror)
-			)
 		)
 		(fp_text user "A2"
 			(at 42.5 4 0)
@@ -846,6 +720,110 @@
 				(justify left bottom)
 			)
 		)
+		(fp_text user "B3"
+			(at 17 4 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "27ea75e7-3470-4179-8c5d-9ee30d40f61c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+				(justify left bottom mirror)
+			)
+		)
+		(fp_text user "A3"
+			(at 40.5 22 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "389e78f8-04fa-4a0a-8f85-4207c6c7ef2e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+				(justify left bottom mirror)
+			)
+		)
+		(fp_text user "B2"
+			(at 17 22 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "5a9fbf66-ec56-4c35-bafa-9991ced3406a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+				(justify left bottom mirror)
+			)
+		)
+		(fp_text user "B1"
+			(at 9.5 22 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "7f6a8557-78d9-4bd9-ba58-12f8875dd993")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+				(justify left bottom mirror)
+			)
+		)
+		(fp_text user "A4"
+			(at 48 22 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "96ff81e2-c538-4062-873f-871508c1fca9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+				(justify left bottom mirror)
+			)
+		)
+		(fp_text user "A1"
+			(at 48 4 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "988a5e64-87bc-4dec-9187-a4db6b4df03d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+				(justify left bottom mirror)
+			)
+		)
+		(fp_text user "B4"
+			(at 10 4 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "a8e4cbf8-1ba1-40ca-9b20-48812505d27e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+				(justify left bottom mirror)
+			)
+		)
+		(fp_text user "A2"
+			(at 40.5 4 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "dd9cbef9-f8e3-48fe-bbe2-58c51844e35b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+				(justify left bottom mirror)
+			)
+		)
 		(fp_text user "${REFERENCE}"
 			(at -5 -1.5 0)
 			(unlocked yes)
@@ -947,6 +925,7 @@
 			(pintype "input")
 			(uuid "0663de41-0583-4b9b-8838-cf971133d0fe")
 		)
+		(embedded_fonts no)
 	)
 	(gr_circle
 		(center 181.75 110.75)
@@ -955,7 +934,7 @@
 			(width 0.2)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "Edge.Cuts")
 		(uuid "329c36ee-c89f-461c-bd35-cf499ed34158")
 	)
@@ -966,7 +945,7 @@
 			(width 0.2)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "Edge.Cuts")
 		(uuid "343f112a-4606-4dae-a795-d9ef54769551")
 	)
@@ -977,7 +956,7 @@
 			(width 0.2)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "Edge.Cuts")
 		(uuid "b9a38819-fdf2-44e3-aaeb-3b437e1cee1d")
 	)
@@ -988,117 +967,9 @@
 			(width 0.2)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "Edge.Cuts")
 		(uuid "e703fd21-1f19-40f3-8ce5-fcacd06ea8fe")
-	)
-	(gr_text "A2"
-		(at 179.75 78.25 -90)
-		(layer "B.SilkS")
-		(uuid "0354c06e-dc12-4d86-875f-e7d263637da8")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "B3"
-		(at 189.75 78.25 -90)
-		(layer "B.SilkS")
-		(uuid "0dd23f60-c616-48c7-8932-b2a044a1ebea")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "A1"
-		(at 181.75 78.25 -90)
-		(layer "B.SilkS")
-		(uuid "160a8c10-8b3f-4e67-aaa6-e7c4d49d6f84")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "B4"
-		(at 187.5 78.25 -90)
-		(layer "B.SilkS")
-		(uuid "1643db0d-d700-43be-9187-319fd202c143")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "A4"
-		(at 177.75 78.25 -90)
-		(layer "B.SilkS")
-		(uuid "3f46cb58-19bf-4fb4-8b30-9a75e2f13db7")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "B2"
-		(at 185.5 78.25 -90)
-		(layer "B.SilkS")
-		(uuid "62bd54ab-6579-44cc-abdc-ef3ac055a674")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "Motor board v2.0\nThibaut 26/01/2025"
-		(at 197 94.75 -0)
-		(layer "B.SilkS")
-		(uuid "9c6658b1-9491-4b61-981b-ff8d47eca170")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "A3"
-		(at 175.5 78.25 -90)
-		(layer "B.SilkS")
-		(uuid "a1a9acf7-e293-48e7-9a81-a10aaf2b69f7")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "B1"
-		(at 183.5 78.25 -90)
-		(layer "B.SilkS")
-		(uuid "bc99af17-de5c-4251-be24-6afc242930ee")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
 	)
 	(gr_text "B1"
 		(at 184.75 78.25 90)
@@ -1206,6 +1077,114 @@
 				(thickness 0.15)
 			)
 			(justify left bottom)
+		)
+	)
+	(gr_text "A2"
+		(at 179.75 78.25 -90)
+		(layer "B.SilkS")
+		(uuid "0354c06e-dc12-4d86-875f-e7d263637da8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "B3"
+		(at 189.75 78.25 -90)
+		(layer "B.SilkS")
+		(uuid "0dd23f60-c616-48c7-8932-b2a044a1ebea")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "A1"
+		(at 181.75 78.25 -90)
+		(layer "B.SilkS")
+		(uuid "160a8c10-8b3f-4e67-aaa6-e7c4d49d6f84")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "B4"
+		(at 187.5 78.25 -90)
+		(layer "B.SilkS")
+		(uuid "1643db0d-d700-43be-9187-319fd202c143")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "A4"
+		(at 177.75 78.25 -90)
+		(layer "B.SilkS")
+		(uuid "3f46cb58-19bf-4fb4-8b30-9a75e2f13db7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "B2"
+		(at 185.5 78.25 -90)
+		(layer "B.SilkS")
+		(uuid "62bd54ab-6579-44cc-abdc-ef3ac055a674")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "Motor board v2.0\nThibaut 26/01/2025"
+		(at 197 94.75 -0)
+		(layer "B.SilkS")
+		(uuid "9c6658b1-9491-4b61-981b-ff8d47eca170")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "A3"
+		(at 175.5 78.25 -90)
+		(layer "B.SilkS")
+		(uuid "a1a9acf7-e293-48e7-9a81-a10aaf2b69f7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "B1"
+		(at 183.5 78.25 -90)
+		(layer "B.SilkS")
+		(uuid "bc99af17-de5c-4251-be24-6afc242930ee")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
 		)
 	)
 	(segment
@@ -1408,4 +1387,5 @@
 		(net 8)
 		(uuid "53184b60-c533-4704-8036-3d5d2ec964e9")
 	)
+	(embedded_fonts no)
 )
