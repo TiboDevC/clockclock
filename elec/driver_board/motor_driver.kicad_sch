@@ -5,9 +5,9 @@
 	(uuid "ed449512-ce52-4371-8549-9f3be3401935")
 	(paper "A4")
 	(title_block
-		(title "Motor driver")
-		(date "2025-01-26")
-		(rev "2")
+		(title "Clockclock")
+		(date "2025-02-26")
+		(rev "3")
 	)
 	(lib_symbols
 		(symbol "74xx:74HCT595"

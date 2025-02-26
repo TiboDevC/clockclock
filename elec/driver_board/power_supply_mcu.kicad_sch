@@ -5,9 +5,9 @@
 	(uuid "3f287bcd-e224-46d0-bb88-59081879a047")
 	(paper "A4")
 	(title_block
-		(title "Power supply")
-		(date "2025-01-26")
-		(rev "2")
+		(title "Clockclock")
+		(date "2025-02-26")
+		(rev "3")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"

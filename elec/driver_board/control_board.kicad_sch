@@ -5,8 +5,9 @@
 	(uuid "8fd789ba-fa10-4776-ba4f-cc9261a64015")
 	(paper "A4")
 	(title_block
-		(date "2025-01-26")
-		(rev "2")
+		(title "Clockclock")
+		(date "2025-02-26")
+		(rev "3")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x04_Pin"

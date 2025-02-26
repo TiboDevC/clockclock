@@ -884,16 +884,16 @@
   },
   "sheets": [
     [
-      "4bcac3d6-680b-4b29-8743-c3c7298e2548",
-      "control_board"
-    ],
-    [
       "f74582a2-e122-4df8-8bf1-319684e69fbe",
       "Root"
     ],
     [
       "8c6a74a5-4238-4c38-a1b6-74fe6b2385f9",
       "power_supply"
+    ],
+    [
+      "4bcac3d6-680b-4b29-8743-c3c7298e2548",
+      "control_board"
     ],
     [
       "81b72853-db4a-435b-a101-2d4a5729a607",

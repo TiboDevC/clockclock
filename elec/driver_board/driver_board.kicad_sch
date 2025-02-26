@@ -5,8 +5,9 @@
 	(uuid "f74582a2-e122-4df8-8bf1-319684e69fbe")
 	(paper "A4")
 	(title_block
-		(date "2025-01-26")
-		(rev "2")
+		(title "Clockclock")
+		(date "2025-02-26")
+		(rev "3")
 	)
 	(lib_symbols)
 	(no_connect
@@ -514,7 +515,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
-					(page "5")
+					(page "6")
 				)
 			)
 		)
@@ -703,7 +704,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
-					(page "6")
+					(page "7")
 				)
 			)
 		)
@@ -766,7 +767,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
-					(page "4")
+					(page "5")
 				)
 			)
 		)
@@ -819,7 +820,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
-					(page "0")
+					(page "2")
 				)
 			)
 		)
@@ -1008,7 +1009,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
-					(page "2")
+					(page "3")
 				)
 			)
 		)
@@ -1177,7 +1178,7 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
-					(page "3")
+					(page "4")
 				)
 			)
 		)
@@ -1240,14 +1241,14 @@
 		(instances
 			(project "driver_board"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
-					(page "7")
+					(page "8")
 				)
 			)
 		)
 	)
 	(sheet_instances
 		(path "/"
-			(page "1")
+			(page "0")
 		)
 	)
 	(embedded_fonts no)
