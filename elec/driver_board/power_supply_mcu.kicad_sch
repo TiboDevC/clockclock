@@ -142,7 +142,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Samacsys:CAPPRD500W65D1000H2200"
+			(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
 				(at 8.89 -96.19 0)
 				(effects
 					(font
@@ -303,7 +303,7 @@
 							)
 						)
 					)
-					(number "2"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -321,7 +321,7 @@
 							)
 						)
 					)
-					(number "1"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -578,7 +578,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Samacsys:CAPPRD500W65D1000H2200"
+		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
 			(at 33.35 88.9 0)
 			(effects
 				(font
@@ -701,7 +701,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 134.62 71.12 0)
 			(effects
 				(font
