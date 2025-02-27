@@ -539,10 +539,10 @@
 		)
 		(fp_circle
 			(center 39.25 13.5)
-			(end 42 13.5)
+			(end 42.15 13.5)
 			(stroke
 				(width 0.05)
-				(type default)
+				(type solid)
 			)
 			(fill no)
 			(layer "Edge.Cuts")
@@ -928,8 +928,8 @@
 		(embedded_fonts no)
 	)
 	(gr_circle
-		(center 181.75 110.75)
-		(end 183.25 110.75)
+		(center 187.5 112)
+		(end 189 112)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -939,8 +939,8 @@
 		(uuid "329c36ee-c89f-461c-bd35-cf499ed34158")
 	)
 	(gr_circle
-		(center 170 74)
-		(end 171.5 74)
+		(center 168.5 74)
+		(end 170 74)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -950,8 +950,8 @@
 		(uuid "343f112a-4606-4dae-a795-d9ef54769551")
 	)
 	(gr_circle
-		(center 195 74)
-		(end 196.5 74)
+		(center 196.5 74)
+		(end 198 74)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -962,7 +962,7 @@
 	)
 	(gr_rect
 		(start 160.75 71.75)
-		(end 202.75 113)
+		(end 202.75 114)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -972,7 +972,7 @@
 		(uuid "e703fd21-1f19-40f3-8ce5-fcacd06ea8fe")
 	)
 	(gr_text "B1"
-		(at 184.75 78.25 90)
+		(at 184.75 75 90)
 		(layer "F.SilkS")
 		(uuid "0109087b-6bc7-4431-b5c2-7ed8944507b5")
 		(effects
@@ -984,7 +984,7 @@
 		)
 	)
 	(gr_text "A1"
-		(at 182.75 78.25 90)
+		(at 182.75 75 90)
 		(layer "F.SilkS")
 		(uuid "091844a1-e1b3-4e8d-9522-e92ae6e719de")
 		(effects
@@ -996,7 +996,7 @@
 		)
 	)
 	(gr_text "A4"
-		(at 178.75 78.25 90)
+		(at 178.75 75 90)
 		(layer "F.SilkS")
 		(uuid "2ac6b043-8c1b-472e-99e9-599eff8285cb")
 		(effects
@@ -1007,7 +1007,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Motor board v2.0\nThibaut 26/01/2025"
+	(gr_text "Motor board v2.1\nTibo 27/02/2025"
 		(at 181.5 95 0)
 		(layer "F.SilkS")
 		(uuid "5b4edfd1-0c08-4f7d-b20c-e605fe24fa02")
@@ -1020,7 +1020,7 @@
 		)
 	)
 	(gr_text "A2"
-		(at 180.75 78.25 90)
+		(at 180.5 75 90)
 		(layer "F.SilkS")
 		(uuid "8125b782-4fc6-4fdc-96a0-2c96451b665e")
 		(effects
@@ -1032,7 +1032,7 @@
 		)
 	)
 	(gr_text "A3"
-		(at 176.75 78.25 90)
+		(at 176.75 75 90)
 		(layer "F.SilkS")
 		(uuid "8d3fa837-ee40-448f-b447-94f71bfcf02d")
 		(effects
@@ -1044,7 +1044,7 @@
 		)
 	)
 	(gr_text "B3"
-		(at 191 78.25 90)
+		(at 191 75 90)
 		(layer "F.SilkS")
 		(uuid "aac2bbc7-d62b-4e37-8f0e-dcc83189c83a")
 		(effects
@@ -1056,7 +1056,7 @@
 		)
 	)
 	(gr_text "B4"
-		(at 188.75 78.25 90)
+		(at 188.75 75 90)
 		(layer "F.SilkS")
 		(uuid "ad83b59f-7536-4537-8481-7cdbfade2398")
 		(effects
@@ -1068,7 +1068,7 @@
 		)
 	)
 	(gr_text "B2"
-		(at 186.75 78.25 90)
+		(at 186.75 75 90)
 		(layer "F.SilkS")
 		(uuid "f21e481d-59d0-4408-abd2-c88d6eca9394")
 		(effects
@@ -1080,7 +1080,7 @@
 		)
 	)
 	(gr_text "A2"
-		(at 179.75 78.25 -90)
+		(at 179.75 75 -90)
 		(layer "B.SilkS")
 		(uuid "0354c06e-dc12-4d86-875f-e7d263637da8")
 		(effects
@@ -1092,7 +1092,7 @@
 		)
 	)
 	(gr_text "B3"
-		(at 189.75 78.25 -90)
+		(at 189.75 75 -90)
 		(layer "B.SilkS")
 		(uuid "0dd23f60-c616-48c7-8932-b2a044a1ebea")
 		(effects
@@ -1104,7 +1104,7 @@
 		)
 	)
 	(gr_text "A1"
-		(at 181.75 78.25 -90)
+		(at 181.75 75 -90)
 		(layer "B.SilkS")
 		(uuid "160a8c10-8b3f-4e67-aaa6-e7c4d49d6f84")
 		(effects
@@ -1116,7 +1116,7 @@
 		)
 	)
 	(gr_text "B4"
-		(at 187.5 78.25 -90)
+		(at 187.5 75 -90)
 		(layer "B.SilkS")
 		(uuid "1643db0d-d700-43be-9187-319fd202c143")
 		(effects
@@ -1128,7 +1128,7 @@
 		)
 	)
 	(gr_text "A4"
-		(at 177.75 78.25 -90)
+		(at 177.75 75 -90)
 		(layer "B.SilkS")
 		(uuid "3f46cb58-19bf-4fb4-8b30-9a75e2f13db7")
 		(effects
@@ -1140,7 +1140,7 @@
 		)
 	)
 	(gr_text "B2"
-		(at 185.5 78.25 -90)
+		(at 185.5 75 -90)
 		(layer "B.SilkS")
 		(uuid "62bd54ab-6579-44cc-abdc-ef3ac055a674")
 		(effects
@@ -1151,8 +1151,8 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "Motor board v2.0\nThibaut 26/01/2025"
-		(at 197 94.75 -0)
+	(gr_text "Motor board v2.1\nTibo 27/02/2025"
+		(at 197 94.75 0)
 		(layer "B.SilkS")
 		(uuid "9c6658b1-9491-4b61-981b-ff8d47eca170")
 		(effects
@@ -1164,7 +1164,7 @@
 		)
 	)
 	(gr_text "A3"
-		(at 175.5 78.25 -90)
+		(at 175.5 75 -90)
 		(layer "B.SilkS")
 		(uuid "a1a9acf7-e293-48e7-9a81-a10aaf2b69f7")
 		(effects
@@ -1175,8 +1175,20 @@
 			(justify left bottom mirror)
 		)
 	)
+	(gr_text "v2.1"
+		(at 163 73.5 90)
+		(layer "B.SilkS")
+		(uuid "a6e5538b-0ada-408c-9244-4651b667b9ec")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
 	(gr_text "B1"
-		(at 183.5 78.25 -90)
+		(at 183.5 75 -90)
 		(layer "B.SilkS")
 		(uuid "bc99af17-de5c-4251-be24-6afc242930ee")
 		(effects
