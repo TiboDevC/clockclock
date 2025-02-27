@@ -49950,7 +49950,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Clockclock v2.1\nTibo 26/02/2025"
+	(gr_text "Clockclock v2.1\nTibo 27/02/2025"
 		(at 150.25 88 0)
 		(layer "F.SilkS")
 		(uuid "c0d992a4-d15e-420f-89ea-c1fdde8bed5d")

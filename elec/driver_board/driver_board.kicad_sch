@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Clockclock")
-		(date "2025-02-26")
-		(rev "3")
+		(date "2025-02-27")
+		(rev "v2.1")
 	)
 	(lib_symbols)
 	(no_connect

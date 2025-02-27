@@ -5,9 +5,9 @@
 	(uuid "fe6a7538-a3d9-4027-9983-e027b2a46836")
 	(paper "A4")
 	(title_block
-		(title "Motor board")
-		(date "2025-01-26")
-		(rev "2.0")
+		(title "Stepper board")
+		(date "2025-02-27")
+		(rev "2.1")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x08"
@@ -535,6 +535,16 @@
 	)
 	(wire
 		(pts
+			(xy 102.87 92.71) (xy 109.22 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13800b98-b7ec-4ba5-bded-a702228a7940")
+	)
+	(wire
+		(pts
 			(xy 171.45 114.3) (xy 173.99 114.3)
 		)
 		(stroke
@@ -552,6 +562,26 @@
 			(type default)
 		)
 		(uuid "1dd79acf-8c2b-49a6-bec6-770b70f4b2c2")
+	)
+	(wire
+		(pts
+			(xy 102.87 87.63) (xy 109.22 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2850bce4-557c-46ec-bde0-4cea500b4a7f")
+	)
+	(wire
+		(pts
+			(xy 102.87 97.79) (xy 109.22 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6cc05f22-9690-48cb-a911-38796012c1a0")
 	)
 	(wire
 		(pts
@@ -585,6 +615,16 @@
 	)
 	(wire
 		(pts
+			(xy 102.87 105.41) (xy 109.22 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "861a5a05-6d29-4cca-bb5f-e151cc529ec1")
+	)
+	(wire
+		(pts
 			(xy 171.45 102.87) (xy 173.99 102.87)
 		)
 		(stroke
@@ -595,6 +635,36 @@
 	)
 	(wire
 		(pts
+			(xy 102.87 90.17) (xy 109.22 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9a01351-eebe-46b7-80a1-45eea3be4ec0")
+	)
+	(wire
+		(pts
+			(xy 102.87 100.33) (xy 109.22 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cef15c06-f893-4103-9daf-a22b20721a68")
+	)
+	(wire
+		(pts
+			(xy 102.87 95.25) (xy 109.22 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1279c8b-039d-4be5-bc1c-db0ed71bf2da")
+	)
+	(wire
+		(pts
 			(xy 171.45 99.06) (xy 173.99 99.06)
 		)
 		(stroke
@@ -602,6 +672,16 @@
 			(type default)
 		)
 		(uuid "e560d6fb-6d6e-4388-a4dd-c7d3f77f0408")
+	)
+	(wire
+		(pts
+			(xy 102.87 102.87) (xy 109.22 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9a62eb8-e83f-46c9-b432-f6bf035e9b1c")
 	)
 	(wire
 		(pts
@@ -1204,6 +1284,92 @@
 			(project ""
 				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
 					(reference "BKA30D-R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x08")
+		(at 114.3 97.79 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c2d04a8c-9ce1-452a-81bc-41a62c83f3fb")
+		(property "Reference" "J4"
+			(at 114.3 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x08"
+			(at 114.3 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.00mm:PinSocket_1x08_P2.00mm_Vertical"
+			(at 114.3 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 114.3 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 114.3 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "e0743830-fe30-4ce1-b2cb-d5d7a388e94e")
+		)
+		(pin "6"
+			(uuid "c2a3ecdd-b975-44a8-9b02-f0186368c109")
+		)
+		(pin "8"
+			(uuid "a3415e31-98ea-4be1-a794-6cdc503583cb")
+		)
+		(pin "1"
+			(uuid "19b3c020-93ba-4594-aa37-1f241cf30c62")
+		)
+		(pin "2"
+			(uuid "d5469bda-d77a-4185-b91f-c46cb7821c55")
+		)
+		(pin "5"
+			(uuid "7b5e5106-26ee-4110-b98c-c693b8d93349")
+		)
+		(pin "4"
+			(uuid "8d735588-3ae8-429a-bb45-c632d7261ea5")
+		)
+		(pin "7"
+			(uuid "57bdaed8-a808-4983-beab-74825a4e48d8")
+		)
+		(instances
+			(project "motor_board"
+				(path "/fe6a7538-a3d9-4027-9983-e027b2a46836"
+					(reference "J4")
 					(unit 1)
 				)
 			)
