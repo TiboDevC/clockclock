@@ -464,7 +464,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "motor_board.kicad_pro",
+    "filename": "clokclock_stepper.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -535,12 +535,24 @@
       "/B4": [
         "power"
       ],
-      "/M0_1": "power",
-      "/M0_23": "power",
-      "/M0_4": "power",
-      "/M1_1": "power",
-      "/M1_23": "power",
-      "/M1_4": "power"
+      "/M0_1": [
+        "power"
+      ],
+      "/M0_23": [
+        "power"
+      ],
+      "/M0_4": [
+        "power"
+      ],
+      "/M1_1": [
+        "power"
+      ],
+      "/M1_23": [
+        "power"
+      ],
+      "/M1_4": [
+        "power"
+      ]
     },
     "netclass_patterns": []
   },

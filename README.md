@@ -84,4 +84,4 @@ module [COM-ZY12PDN-ST](https://www.joy-it.net/files/files/Produkte/COM-ZY12PDN-
 so it be powered on easily.
 
 Here are the schematic of [the main board](elec/clockclock_main/output/clockclock_main.pdf)
-and [the motor board](elec/motor_board/output/motor_board.pdf).
+and [the stepper board](elec/clokclock_stepper/output/clokclock_stepper.pdf).
