@@ -547,210 +547,612 @@
     },
     "net_colors": null,
     "netclass_assignments": {
-      "/motor_driver0/VCC_MOTOR": "power",
-      "/motor_driver10/VCC_MOTOR": "power",
-      "/motor_driver12/VCC_MOTOR": "power",
-      "/motor_driver18/VCC_MOTOR": "power",
-      "/motor_power_supply1/M+": "VCC_MOTOR",
-      "/motor_power_supply2/M+": "VCC_MOTOR",
-      "/motor_power_supply3/M+": "VCC_MOTOR",
-      "Net-(IC11-OUT1)": "power",
-      "Net-(IC11-OUT2)": "power",
-      "Net-(IC11-OUT3)": "power",
-      "Net-(IC11-OUT4)": "power",
-      "Net-(IC12-OUT1)": "power",
-      "Net-(IC12-OUT2)": "power",
-      "Net-(IC12-OUT3)": "power",
-      "Net-(IC12-OUT4)": "power",
-      "Net-(IC14-OUT1)": "power",
-      "Net-(IC14-OUT2)": "power",
-      "Net-(IC14-OUT3)": "power",
-      "Net-(IC14-OUT4)": "power",
-      "Net-(IC15-OUT1)": "power",
-      "Net-(IC15-OUT2)": "power",
-      "Net-(IC15-OUT3)": "power",
-      "Net-(IC15-OUT4)": "power",
-      "Net-(IC17-OUT1)": "power",
-      "Net-(IC17-OUT2)": "power",
-      "Net-(IC17-OUT3)": "power",
-      "Net-(IC17-OUT4)": "power",
-      "Net-(IC18-OUT1)": "power",
-      "Net-(IC18-OUT2)": "power",
-      "Net-(IC18-OUT3)": "power",
-      "Net-(IC18-OUT4)": "power",
-      "Net-(IC2-OUT1)": "power",
-      "Net-(IC2-OUT2)": "power",
-      "Net-(IC2-OUT3)": "power",
-      "Net-(IC2-OUT4)": "power",
-      "Net-(IC20-OUT1)": "power",
-      "Net-(IC20-OUT2)": "power",
-      "Net-(IC20-OUT3)": "power",
-      "Net-(IC20-OUT4)": "power",
-      "Net-(IC21-OUT1)": "power",
-      "Net-(IC21-OUT2)": "power",
-      "Net-(IC21-OUT3)": "power",
-      "Net-(IC21-OUT4)": "power",
-      "Net-(IC23-OUT1)": "power",
-      "Net-(IC23-OUT2)": "power",
-      "Net-(IC23-OUT3)": "power",
-      "Net-(IC23-OUT4)": "power",
-      "Net-(IC24-OUT1)": "power",
-      "Net-(IC24-OUT2)": "power",
-      "Net-(IC24-OUT3)": "power",
-      "Net-(IC24-OUT4)": "power",
-      "Net-(IC26-OUT1)": "power",
-      "Net-(IC26-OUT2)": "power",
-      "Net-(IC26-OUT3)": "power",
-      "Net-(IC26-OUT4)": "power",
-      "Net-(IC27-OUT1)": "power",
-      "Net-(IC27-OUT2)": "power",
-      "Net-(IC27-OUT3)": "power",
-      "Net-(IC27-OUT4)": "power",
-      "Net-(IC29-OUT1)": "power",
-      "Net-(IC29-OUT2)": "power",
-      "Net-(IC29-OUT3)": "power",
-      "Net-(IC29-OUT4)": "power",
-      "Net-(IC3-OUT1)": "power",
-      "Net-(IC3-OUT2)": "power",
-      "Net-(IC3-OUT3)": "power",
-      "Net-(IC3-OUT4)": "power",
-      "Net-(IC30-OUT1)": "power",
-      "Net-(IC30-OUT2)": "power",
-      "Net-(IC30-OUT3)": "power",
-      "Net-(IC30-OUT4)": "power",
-      "Net-(IC32-OUT1)": "power",
-      "Net-(IC32-OUT2)": "power",
-      "Net-(IC32-OUT3)": "power",
-      "Net-(IC32-OUT4)": "power",
-      "Net-(IC33-OUT1)": "power",
-      "Net-(IC33-OUT2)": "power",
-      "Net-(IC33-OUT3)": "power",
-      "Net-(IC33-OUT4)": "power",
-      "Net-(IC35-OUT1)": "power",
-      "Net-(IC35-OUT2)": "power",
-      "Net-(IC35-OUT3)": "power",
-      "Net-(IC35-OUT4)": "power",
-      "Net-(IC36-OUT1)": "power",
-      "Net-(IC36-OUT2)": "power",
-      "Net-(IC36-OUT3)": "power",
-      "Net-(IC36-OUT4)": "power",
-      "Net-(IC38-OUT1)": "power",
-      "Net-(IC38-OUT2)": "power",
-      "Net-(IC38-OUT3)": "power",
-      "Net-(IC38-OUT4)": "power",
-      "Net-(IC39-OUT1)": "power",
-      "Net-(IC39-OUT2)": "power",
-      "Net-(IC39-OUT3)": "power",
-      "Net-(IC39-OUT4)": "power",
-      "Net-(IC41-OUT1)": "power",
-      "Net-(IC41-OUT2)": "power",
-      "Net-(IC41-OUT3)": "power",
-      "Net-(IC41-OUT4)": "power",
-      "Net-(IC42-OUT1)": "power",
-      "Net-(IC42-OUT2)": "power",
-      "Net-(IC42-OUT3)": "power",
-      "Net-(IC42-OUT4)": "power",
-      "Net-(IC44-OUT1)": "power",
-      "Net-(IC44-OUT2)": "power",
-      "Net-(IC44-OUT3)": "power",
-      "Net-(IC44-OUT4)": "power",
-      "Net-(IC45-OUT1)": "power",
-      "Net-(IC45-OUT2)": "power",
-      "Net-(IC45-OUT3)": "power",
-      "Net-(IC45-OUT4)": "power",
-      "Net-(IC47-OUT1)": "power",
-      "Net-(IC47-OUT2)": "power",
-      "Net-(IC47-OUT3)": "power",
-      "Net-(IC47-OUT4)": "power",
-      "Net-(IC48-OUT1)": "power",
-      "Net-(IC48-OUT2)": "power",
-      "Net-(IC48-OUT3)": "power",
-      "Net-(IC48-OUT4)": "power",
-      "Net-(IC5-OUT1)": "power",
-      "Net-(IC5-OUT2)": "power",
-      "Net-(IC5-OUT3)": "power",
-      "Net-(IC5-OUT4)": "power",
-      "Net-(IC50-OUT1)": "power",
-      "Net-(IC50-OUT2)": "power",
-      "Net-(IC50-OUT3)": "power",
-      "Net-(IC50-OUT4)": "power",
-      "Net-(IC51-OUT1)": "power",
-      "Net-(IC51-OUT2)": "power",
-      "Net-(IC51-OUT3)": "power",
-      "Net-(IC51-OUT4)": "power",
-      "Net-(IC53-OUT1)": "power",
-      "Net-(IC53-OUT2)": "power",
-      "Net-(IC53-OUT3)": "power",
-      "Net-(IC53-OUT4)": "power",
-      "Net-(IC54-OUT1)": "power",
-      "Net-(IC54-OUT2)": "power",
-      "Net-(IC54-OUT3)": "power",
-      "Net-(IC54-OUT4)": "power",
-      "Net-(IC56-OUT1)": "power",
-      "Net-(IC56-OUT2)": "power",
-      "Net-(IC56-OUT3)": "power",
-      "Net-(IC56-OUT4)": "power",
-      "Net-(IC57-OUT1)": "power",
-      "Net-(IC57-OUT2)": "power",
-      "Net-(IC57-OUT3)": "power",
-      "Net-(IC57-OUT4)": "power",
-      "Net-(IC59-OUT1)": "power",
-      "Net-(IC59-OUT2)": "power",
-      "Net-(IC59-OUT3)": "power",
-      "Net-(IC59-OUT4)": "power",
-      "Net-(IC6-OUT1)": "power",
-      "Net-(IC6-OUT2)": "power",
-      "Net-(IC6-OUT3)": "power",
-      "Net-(IC6-OUT4)": "power",
-      "Net-(IC60-OUT1)": "power",
-      "Net-(IC60-OUT2)": "power",
-      "Net-(IC60-OUT3)": "power",
-      "Net-(IC60-OUT4)": "power",
-      "Net-(IC62-OUT1)": "power",
-      "Net-(IC62-OUT2)": "power",
-      "Net-(IC62-OUT3)": "power",
-      "Net-(IC62-OUT4)": "power",
-      "Net-(IC63-OUT1)": "power",
-      "Net-(IC63-OUT2)": "power",
-      "Net-(IC63-OUT3)": "power",
-      "Net-(IC63-OUT4)": "power",
-      "Net-(IC65-OUT1)": "power",
-      "Net-(IC65-OUT2)": "power",
-      "Net-(IC65-OUT3)": "power",
-      "Net-(IC65-OUT4)": "power",
-      "Net-(IC66-OUT1)": "power",
-      "Net-(IC66-OUT2)": "power",
-      "Net-(IC66-OUT3)": "power",
-      "Net-(IC66-OUT4)": "power",
-      "Net-(IC68-OUT1)": "power",
-      "Net-(IC68-OUT2)": "power",
-      "Net-(IC68-OUT3)": "power",
-      "Net-(IC68-OUT4)": "power",
-      "Net-(IC69-OUT1)": "power",
-      "Net-(IC69-OUT2)": "power",
-      "Net-(IC69-OUT3)": "power",
-      "Net-(IC69-OUT4)": "power",
-      "Net-(IC71-OUT1)": "power",
-      "Net-(IC71-OUT2)": "power",
-      "Net-(IC71-OUT3)": "power",
-      "Net-(IC71-OUT4)": "power",
-      "Net-(IC72-OUT1)": "power",
-      "Net-(IC72-OUT2)": "power",
-      "Net-(IC72-OUT3)": "power",
-      "Net-(IC72-OUT4)": "power",
-      "Net-(IC8-OUT1)": "power",
-      "Net-(IC8-OUT2)": "power",
-      "Net-(IC8-OUT3)": "power",
-      "Net-(IC8-OUT4)": "power",
-      "Net-(IC9-OUT1)": "power",
-      "Net-(IC9-OUT2)": "power",
-      "Net-(IC9-OUT3)": "power",
-      "Net-(IC9-OUT4)": "power",
-      "Net-(JP1-B)": "power",
+      "/motor_driver0/VCC_MOTOR": [
+        "power"
+      ],
+      "/motor_driver10/VCC_MOTOR": [
+        "power"
+      ],
+      "/motor_driver12/VCC_MOTOR": [
+        "power"
+      ],
+      "/motor_driver18/VCC_MOTOR": [
+        "power"
+      ],
+      "/motor_power_supply1/M+": [
+        "VCC_MOTOR"
+      ],
+      "/motor_power_supply2/M+": [
+        "VCC_MOTOR"
+      ],
+      "/motor_power_supply3/M+": [
+        "VCC_MOTOR"
+      ],
+      "Net-(IC11-OUT1)": [
+        "power"
+      ],
+      "Net-(IC11-OUT2)": [
+        "power"
+      ],
+      "Net-(IC11-OUT3)": [
+        "power"
+      ],
+      "Net-(IC11-OUT4)": [
+        "power"
+      ],
+      "Net-(IC12-OUT1)": [
+        "power"
+      ],
+      "Net-(IC12-OUT2)": [
+        "power"
+      ],
+      "Net-(IC12-OUT3)": [
+        "power"
+      ],
+      "Net-(IC12-OUT4)": [
+        "power"
+      ],
+      "Net-(IC14-OUT1)": [
+        "power"
+      ],
+      "Net-(IC14-OUT2)": [
+        "power"
+      ],
+      "Net-(IC14-OUT3)": [
+        "power"
+      ],
+      "Net-(IC14-OUT4)": [
+        "power"
+      ],
+      "Net-(IC15-OUT1)": [
+        "power"
+      ],
+      "Net-(IC15-OUT2)": [
+        "power"
+      ],
+      "Net-(IC15-OUT3)": [
+        "power"
+      ],
+      "Net-(IC15-OUT4)": [
+        "power"
+      ],
+      "Net-(IC17-OUT1)": [
+        "power"
+      ],
+      "Net-(IC17-OUT2)": [
+        "power"
+      ],
+      "Net-(IC17-OUT3)": [
+        "power"
+      ],
+      "Net-(IC17-OUT4)": [
+        "power"
+      ],
+      "Net-(IC18-OUT1)": [
+        "power"
+      ],
+      "Net-(IC18-OUT2)": [
+        "power"
+      ],
+      "Net-(IC18-OUT3)": [
+        "power"
+      ],
+      "Net-(IC18-OUT4)": [
+        "power"
+      ],
+      "Net-(IC2-OUT1)": [
+        "power"
+      ],
+      "Net-(IC2-OUT2)": [
+        "power"
+      ],
+      "Net-(IC2-OUT3)": [
+        "power"
+      ],
+      "Net-(IC2-OUT4)": [
+        "power"
+      ],
+      "Net-(IC20-OUT1)": [
+        "power"
+      ],
+      "Net-(IC20-OUT2)": [
+        "power"
+      ],
+      "Net-(IC20-OUT3)": [
+        "power"
+      ],
+      "Net-(IC20-OUT4)": [
+        "power"
+      ],
+      "Net-(IC21-OUT1)": [
+        "power"
+      ],
+      "Net-(IC21-OUT2)": [
+        "power"
+      ],
+      "Net-(IC21-OUT3)": [
+        "power"
+      ],
+      "Net-(IC21-OUT4)": [
+        "power"
+      ],
+      "Net-(IC23-OUT1)": [
+        "power"
+      ],
+      "Net-(IC23-OUT2)": [
+        "power"
+      ],
+      "Net-(IC23-OUT3)": [
+        "power"
+      ],
+      "Net-(IC23-OUT4)": [
+        "power"
+      ],
+      "Net-(IC24-OUT1)": [
+        "power"
+      ],
+      "Net-(IC24-OUT2)": [
+        "power"
+      ],
+      "Net-(IC24-OUT3)": [
+        "power"
+      ],
+      "Net-(IC24-OUT4)": [
+        "power"
+      ],
+      "Net-(IC26-OUT1)": [
+        "power"
+      ],
+      "Net-(IC26-OUT2)": [
+        "power"
+      ],
+      "Net-(IC26-OUT3)": [
+        "power"
+      ],
+      "Net-(IC26-OUT4)": [
+        "power"
+      ],
+      "Net-(IC27-OUT1)": [
+        "power"
+      ],
+      "Net-(IC27-OUT2)": [
+        "power"
+      ],
+      "Net-(IC27-OUT3)": [
+        "power"
+      ],
+      "Net-(IC27-OUT4)": [
+        "power"
+      ],
+      "Net-(IC29-OUT1)": [
+        "power"
+      ],
+      "Net-(IC29-OUT2)": [
+        "power"
+      ],
+      "Net-(IC29-OUT3)": [
+        "power"
+      ],
+      "Net-(IC29-OUT4)": [
+        "power"
+      ],
+      "Net-(IC3-OUT1)": [
+        "power"
+      ],
+      "Net-(IC3-OUT2)": [
+        "power"
+      ],
+      "Net-(IC3-OUT3)": [
+        "power"
+      ],
+      "Net-(IC3-OUT4)": [
+        "power"
+      ],
+      "Net-(IC30-OUT1)": [
+        "power"
+      ],
+      "Net-(IC30-OUT2)": [
+        "power"
+      ],
+      "Net-(IC30-OUT3)": [
+        "power"
+      ],
+      "Net-(IC30-OUT4)": [
+        "power"
+      ],
+      "Net-(IC32-OUT1)": [
+        "power"
+      ],
+      "Net-(IC32-OUT2)": [
+        "power"
+      ],
+      "Net-(IC32-OUT3)": [
+        "power"
+      ],
+      "Net-(IC32-OUT4)": [
+        "power"
+      ],
+      "Net-(IC33-OUT1)": [
+        "power"
+      ],
+      "Net-(IC33-OUT2)": [
+        "power"
+      ],
+      "Net-(IC33-OUT3)": [
+        "power"
+      ],
+      "Net-(IC33-OUT4)": [
+        "power"
+      ],
+      "Net-(IC35-OUT1)": [
+        "power"
+      ],
+      "Net-(IC35-OUT2)": [
+        "power"
+      ],
+      "Net-(IC35-OUT3)": [
+        "power"
+      ],
+      "Net-(IC35-OUT4)": [
+        "power"
+      ],
+      "Net-(IC36-OUT1)": [
+        "power"
+      ],
+      "Net-(IC36-OUT2)": [
+        "power"
+      ],
+      "Net-(IC36-OUT3)": [
+        "power"
+      ],
+      "Net-(IC36-OUT4)": [
+        "power"
+      ],
+      "Net-(IC38-OUT1)": [
+        "power"
+      ],
+      "Net-(IC38-OUT2)": [
+        "power"
+      ],
+      "Net-(IC38-OUT3)": [
+        "power"
+      ],
+      "Net-(IC38-OUT4)": [
+        "power"
+      ],
+      "Net-(IC39-OUT1)": [
+        "power"
+      ],
+      "Net-(IC39-OUT2)": [
+        "power"
+      ],
+      "Net-(IC39-OUT3)": [
+        "power"
+      ],
+      "Net-(IC39-OUT4)": [
+        "power"
+      ],
+      "Net-(IC41-OUT1)": [
+        "power"
+      ],
+      "Net-(IC41-OUT2)": [
+        "power"
+      ],
+      "Net-(IC41-OUT3)": [
+        "power"
+      ],
+      "Net-(IC41-OUT4)": [
+        "power"
+      ],
+      "Net-(IC42-OUT1)": [
+        "power"
+      ],
+      "Net-(IC42-OUT2)": [
+        "power"
+      ],
+      "Net-(IC42-OUT3)": [
+        "power"
+      ],
+      "Net-(IC42-OUT4)": [
+        "power"
+      ],
+      "Net-(IC44-OUT1)": [
+        "power"
+      ],
+      "Net-(IC44-OUT2)": [
+        "power"
+      ],
+      "Net-(IC44-OUT3)": [
+        "power"
+      ],
+      "Net-(IC44-OUT4)": [
+        "power"
+      ],
+      "Net-(IC45-OUT1)": [
+        "power"
+      ],
+      "Net-(IC45-OUT2)": [
+        "power"
+      ],
+      "Net-(IC45-OUT3)": [
+        "power"
+      ],
+      "Net-(IC45-OUT4)": [
+        "power"
+      ],
+      "Net-(IC47-OUT1)": [
+        "power"
+      ],
+      "Net-(IC47-OUT2)": [
+        "power"
+      ],
+      "Net-(IC47-OUT3)": [
+        "power"
+      ],
+      "Net-(IC47-OUT4)": [
+        "power"
+      ],
+      "Net-(IC48-OUT1)": [
+        "power"
+      ],
+      "Net-(IC48-OUT2)": [
+        "power"
+      ],
+      "Net-(IC48-OUT3)": [
+        "power"
+      ],
+      "Net-(IC48-OUT4)": [
+        "power"
+      ],
+      "Net-(IC5-OUT1)": [
+        "power"
+      ],
+      "Net-(IC5-OUT2)": [
+        "power"
+      ],
+      "Net-(IC5-OUT3)": [
+        "power"
+      ],
+      "Net-(IC5-OUT4)": [
+        "power"
+      ],
+      "Net-(IC50-OUT1)": [
+        "power"
+      ],
+      "Net-(IC50-OUT2)": [
+        "power"
+      ],
+      "Net-(IC50-OUT3)": [
+        "power"
+      ],
+      "Net-(IC50-OUT4)": [
+        "power"
+      ],
+      "Net-(IC51-OUT1)": [
+        "power"
+      ],
+      "Net-(IC51-OUT2)": [
+        "power"
+      ],
+      "Net-(IC51-OUT3)": [
+        "power"
+      ],
+      "Net-(IC51-OUT4)": [
+        "power"
+      ],
+      "Net-(IC53-OUT1)": [
+        "power"
+      ],
+      "Net-(IC53-OUT2)": [
+        "power"
+      ],
+      "Net-(IC53-OUT3)": [
+        "power"
+      ],
+      "Net-(IC53-OUT4)": [
+        "power"
+      ],
+      "Net-(IC54-OUT1)": [
+        "power"
+      ],
+      "Net-(IC54-OUT2)": [
+        "power"
+      ],
+      "Net-(IC54-OUT3)": [
+        "power"
+      ],
+      "Net-(IC54-OUT4)": [
+        "power"
+      ],
+      "Net-(IC56-OUT1)": [
+        "power"
+      ],
+      "Net-(IC56-OUT2)": [
+        "power"
+      ],
+      "Net-(IC56-OUT3)": [
+        "power"
+      ],
+      "Net-(IC56-OUT4)": [
+        "power"
+      ],
+      "Net-(IC57-OUT1)": [
+        "power"
+      ],
+      "Net-(IC57-OUT2)": [
+        "power"
+      ],
+      "Net-(IC57-OUT3)": [
+        "power"
+      ],
+      "Net-(IC57-OUT4)": [
+        "power"
+      ],
+      "Net-(IC59-OUT1)": [
+        "power"
+      ],
+      "Net-(IC59-OUT2)": [
+        "power"
+      ],
+      "Net-(IC59-OUT3)": [
+        "power"
+      ],
+      "Net-(IC59-OUT4)": [
+        "power"
+      ],
+      "Net-(IC6-OUT1)": [
+        "power"
+      ],
+      "Net-(IC6-OUT2)": [
+        "power"
+      ],
+      "Net-(IC6-OUT3)": [
+        "power"
+      ],
+      "Net-(IC6-OUT4)": [
+        "power"
+      ],
+      "Net-(IC60-OUT1)": [
+        "power"
+      ],
+      "Net-(IC60-OUT2)": [
+        "power"
+      ],
+      "Net-(IC60-OUT3)": [
+        "power"
+      ],
+      "Net-(IC60-OUT4)": [
+        "power"
+      ],
+      "Net-(IC62-OUT1)": [
+        "power"
+      ],
+      "Net-(IC62-OUT2)": [
+        "power"
+      ],
+      "Net-(IC62-OUT3)": [
+        "power"
+      ],
+      "Net-(IC62-OUT4)": [
+        "power"
+      ],
+      "Net-(IC63-OUT1)": [
+        "power"
+      ],
+      "Net-(IC63-OUT2)": [
+        "power"
+      ],
+      "Net-(IC63-OUT3)": [
+        "power"
+      ],
+      "Net-(IC63-OUT4)": [
+        "power"
+      ],
+      "Net-(IC65-OUT1)": [
+        "power"
+      ],
+      "Net-(IC65-OUT2)": [
+        "power"
+      ],
+      "Net-(IC65-OUT3)": [
+        "power"
+      ],
+      "Net-(IC65-OUT4)": [
+        "power"
+      ],
+      "Net-(IC66-OUT1)": [
+        "power"
+      ],
+      "Net-(IC66-OUT2)": [
+        "power"
+      ],
+      "Net-(IC66-OUT3)": [
+        "power"
+      ],
+      "Net-(IC66-OUT4)": [
+        "power"
+      ],
+      "Net-(IC68-OUT1)": [
+        "power"
+      ],
+      "Net-(IC68-OUT2)": [
+        "power"
+      ],
+      "Net-(IC68-OUT3)": [
+        "power"
+      ],
+      "Net-(IC68-OUT4)": [
+        "power"
+      ],
+      "Net-(IC69-OUT1)": [
+        "power"
+      ],
+      "Net-(IC69-OUT2)": [
+        "power"
+      ],
+      "Net-(IC69-OUT3)": [
+        "power"
+      ],
+      "Net-(IC69-OUT4)": [
+        "power"
+      ],
+      "Net-(IC71-OUT1)": [
+        "power"
+      ],
+      "Net-(IC71-OUT2)": [
+        "power"
+      ],
+      "Net-(IC71-OUT3)": [
+        "power"
+      ],
+      "Net-(IC71-OUT4)": [
+        "power"
+      ],
+      "Net-(IC72-OUT1)": [
+        "power"
+      ],
+      "Net-(IC72-OUT2)": [
+        "power"
+      ],
+      "Net-(IC72-OUT3)": [
+        "power"
+      ],
+      "Net-(IC72-OUT4)": [
+        "power"
+      ],
+      "Net-(IC8-OUT1)": [
+        "power"
+      ],
+      "Net-(IC8-OUT2)": [
+        "power"
+      ],
+      "Net-(IC8-OUT3)": [
+        "power"
+      ],
+      "Net-(IC8-OUT4)": [
+        "power"
+      ],
+      "Net-(IC9-OUT1)": [
+        "power"
+      ],
+      "Net-(IC9-OUT2)": [
+        "power"
+      ],
+      "Net-(IC9-OUT3)": [
+        "power"
+      ],
+      "Net-(IC9-OUT4)": [
+        "power"
+      ],
+      "Net-(JP1-B)": [
+        "power"
+      ],
       "VCC": [
         "power"
       ],
-      "VCC_MOTOR": "power"
+      "VCC_MOTOR": [
+        "power"
+      ]
     },
     "netclass_patterns": [
       {
