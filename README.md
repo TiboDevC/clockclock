@@ -83,5 +83,5 @@ Power supply is provided by a USB-PD
 module [COM-ZY12PDN-ST](https://www.joy-it.net/files/files/Produkte/COM-ZY12PDN-ST/COM-ZYPDN-ST_Datasheet_2021-11-10.pdf)
 so it be powered on easily.
 
-Here are the schematic of [the driver board](elec/driver_board/output/driver_board.pdf)
+Here are the schematic of [the main board](elec/clockclock_main/output/clockclock_main.pdf)
 and [the motor board](elec/motor_board/output/motor_board.pdf).
