@@ -27,82 +27,97 @@ static struct {
 
 static std::array<uint8_t, SHIFT_REG_SIZE> _steps;
 
+enum {
+	MOTOR_A,
+	MOTOR_B,
+	MOTOR_C,
+	MOTOR_D,
+};
+
+/* Output of 74HCT595 have a specific order: */
+enum OUTPUT_74HCT595 {
+	OUTPUT_D_74H,
+	OUTPUT_A_74H,
+	OUTPUT_B_74H,
+	OUTPUT_C_74H,
+};
+
 static void _set_motor_bits(const int motor_id, const int sequence)
 {
-	_steps.at(motor_id / 2) &= ~(0xF << ((motor_id % 2) * 4));
-	_steps.at(motor_id / 2) |= sequence << ((motor_id % 2) * 4);
+	/* 74HCT595 output is:
+	 * QA: DIR_D
+	 * QB: STEP_D
+	 * QC: DIR_A
+	 * QD: STEP_A
+	 * QE: DIR_B
+	 * QF: STEP_B
+	 * QG: DIR_D
+	 * QH: STEP_C
+	 *
+	 * SPI is configured as MSB first
+	 * */
+	const int motor_num = motor_id % NUM_MOTORS_PER_SHIFT_REG;
+	switch (motor_num) {
+	case MOTOR_A:
+		/* Output A */
+		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_A_74H * 2));
+		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_A_74H;
+		break;
+	case MOTOR_B:
+		/* Output B */
+		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_B_74H * 2));
+		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_B_74H;
+		break;
+	case MOTOR_C:
+		/* Output C */
+		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_C_74H * 2));
+		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_C_74H;
+		break;
+	case MOTOR_D:
+		/* Output D */
+		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_D_74H * 2));
+		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_D_74H;
+		break;
+	default:
+		break;
+	}
+}
+
+static void _update_direction()
+{
+	auto steps = _steps;
+	for (auto &step : steps) {
+		/* Mask the step instruction, only keep the direction which is the first bit */
+		step &= 0b01010101;
+	}
+	ctrl_motors(steps);
+}
+
+static void _reset_position()
+{
+	for (auto &step : _steps) {
+		step &= 0b01010101;
+	}
+	ctrl_motors(_steps);
 }
 
 Motor::Motor()
-    : AccelStepper(AccelStepper::FULL4WIRE)
+    : AccelStepper(AccelStepper::DRIVER)
 {
 	setMaxSpeed(_ctx.speed);
 	setAcceleration(_ctx.acceleration);
 };
 
-void Motor::step4(const long step)
+void Motor::step1(const long)
 {
-	uint8_t sequence = 0;
+	uint8_t sequence = 0b00;
+
+	/* Set-up direction, this is the first bit */
+	sequence = _direction ? 0b01 : 0b00;
+
 	if (isRunning()) {
-		switch (step & 0x3) {
-		case 0: // 1010
-			sequence = 0b1100;
-			break;
-
-		case 1: // 0110
-			sequence = 0b0110;
-			break;
-
-		case 2: // 0101
-			sequence = 0b0011;
-			break;
-
-		case 3: // 1001
-			sequence = 0b1001;
-			break;
-		}
-	}
-
-	_set_motor_bits(_motor_id, sequence);
-}
-
-void Motor::step8(const long step)
-{
-	uint8_t sequence = 0;
-	if (isRunning()) {
-		switch (step & 0x7) {
-		case 0: // 1000
-			sequence = 0b1100;
-			break;
-
-		case 1: // 1010
-			sequence = 0b0100;
-			break;
-
-		case 2: // 0010
-			sequence = 0b0110;
-			break;
-
-		case 3: // 0110
-			sequence = 0b0010;
-			break;
-
-		case 4: // 0100
-			sequence = 0b0011;
-			break;
-
-		case 5: // 0101
-			sequence = 0b0001;
-			break;
-
-		case 6: // 0001
-			sequence = 0b1001;
-			break;
-
-		case 7: // 1001
-			sequence = 0b1000;
-			break;
-		}
+		/* Update the step bit, this is the second bit */
+		sequence |= 0b10;
 	}
 
 	_set_motor_bits(_motor_id, sequence);
@@ -120,9 +135,7 @@ void Motor::enableOutputs()
 
 void Motor::disableOutputs()
 {
-	_set_motor_bits(_motor_id, 0);
-
-	/* Reset position to be sure in motor lib */
+	/* Reset position in motor lib */
 	long new_position = currentPosition() % NUM_STEPS_PER_ROT;
 	if (new_position < 0) {
 		new_position *= -1;
@@ -151,7 +164,12 @@ void motor_loop()
 		}
 	}
 
+	/* Step 1) update the direction of the motor - set direction first else get rogue pulses */
+	_update_direction();
+	/* Step 2) increment the step if needed with a rising edge */
 	ctrl_motors(_steps);
+	/* Step 3) restore step pin to low */
+	_reset_position();
 }
 
 void motors_goto_zero()

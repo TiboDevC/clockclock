@@ -17,9 +17,7 @@ class Motor : public AccelStepper
 public:
 	Motor();
 
-	void step4(long step) final;
-
-	void step8(long step) final;
+	void step1(long step) final;
 
 	void setMotorId(uint8_t motor_id);
 
