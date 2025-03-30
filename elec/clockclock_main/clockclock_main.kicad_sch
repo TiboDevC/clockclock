@@ -450,7 +450,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "11")
 				)
@@ -513,7 +513,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "6")
 				)
@@ -576,7 +576,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "13")
 				)
@@ -639,7 +639,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "12")
 				)
@@ -702,7 +702,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "7")
 				)
@@ -765,7 +765,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "5")
 				)
@@ -818,7 +818,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "2")
 				)
@@ -881,7 +881,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "14")
 				)
@@ -944,7 +944,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "10")
 				)
@@ -1007,7 +1007,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "3")
 				)
@@ -1070,7 +1070,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "9")
 				)
@@ -1113,7 +1113,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "1")
 				)
@@ -1176,7 +1176,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "4")
 				)
@@ -1239,7 +1239,7 @@
 			)
 		)
 		(instances
-			(project "driver_board"
+			(project "clockclock_main"
 				(path "/f74582a2-e122-4df8-8bf1-319684e69fbe"
 					(page "8")
 				)

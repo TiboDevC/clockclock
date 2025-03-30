@@ -1636,7 +1636,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "8 bit shift register"
+	(text "8 bits shift register"
 		(exclude_from_sim no)
 		(at 104.394 141.478 0)
 		(effects
