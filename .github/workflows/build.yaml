@@ -1,0 +1,42 @@
+name: Build firmware
+
+on:
+  push:
+    branches:
+      - '*'
+    paths:
+      - 'firmware/**'
+  pull_request:
+    branches:
+      - '*'
+    paths:
+      - 'firmware/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  code-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pre-commit install
+
+      - name: Run pre-commit
+        run: |
+          source venv/bin/activate
+          pre-commit run --all-files
