@@ -17,15 +17,15 @@
 	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
 #define STEP_TO_ANGLE(target_step) (((uint32_t) target_step * 360ul) / NUM_STEPS_PER_ROT)
 
-#define MOTOR_MAX_SPEED 400
-#define MOTOR_ACC       200
+static constexpr int MOTOR_MAX_SPEED = 400;
+static constexpr int MOTOR_ACC = 200;
 
-static struct {
+static constexpr struct {
 	uint32_t acceleration;
 	uint32_t speed;
-} _ctx = {.acceleration = MOTOR_ACC, .speed = MOTOR_MAX_SPEED};
+} motor_config_ = {.acceleration = MOTOR_ACC, .speed = MOTOR_MAX_SPEED};
 
-static std::array<uint8_t, SHIFT_REG_SIZE> _steps;
+static std::array<uint8_t, SHIFT_REG_SIZE> steps_ = {};
 
 enum {
 	MOTOR_A,
@@ -42,7 +42,7 @@ enum OUTPUT_74HCT595 {
 	OUTPUT_C_74H,
 };
 
-static void _set_motor_bits(const int motor_id, const int sequence)
+static void set_motor_bits_(const int motor_id, const int sequence)
 {
 	/* 74HCT595 output is:
 	 * QA: DIR_D
@@ -60,32 +60,32 @@ static void _set_motor_bits(const int motor_id, const int sequence)
 	switch (motor_num) {
 	case MOTOR_A:
 		/* Output A */
-		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_A_74H * 2));
-		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_A_74H;
+		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_A_74H * 2));
+		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_A_74H;
 		break;
 	case MOTOR_B:
 		/* Output B */
-		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_B_74H * 2));
-		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_B_74H;
+		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_B_74H * 2));
+		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_B_74H;
 		break;
 	case MOTOR_C:
 		/* Output C */
-		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_C_74H * 2));
-		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_C_74H;
+		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_C_74H * 2));
+		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_C_74H;
 		break;
 	case MOTOR_D:
 		/* Output D */
-		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_D_74H * 2));
-		_steps.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_D_74H;
+		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_D_74H * 2));
+		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_D_74H;
 		break;
 	default:
 		break;
 	}
 }
 
-static void _update_direction()
+static void update_direction_()
 {
-	auto steps = _steps;
+	auto steps = steps_;
 	for (auto &step : steps) {
 		/* Mask the step instruction, only keep the direction which is the first bit */
 		step &= 0b01010101;
@@ -93,19 +93,19 @@ static void _update_direction()
 	ctrl_motors(steps);
 }
 
-static void _reset_position()
+static void reset_position_()
 {
-	for (auto &step : _steps) {
+	for (auto &step : steps_) {
 		step &= 0b01010101;
 	}
-	ctrl_motors(_steps);
+	ctrl_motors(steps_);
 }
 
 Motor::Motor()
     : AccelStepper(AccelStepper::DRIVER)
 {
-	setMaxSpeed(_ctx.speed);
-	setAcceleration(_ctx.acceleration);
+	setMaxSpeed(motor_config_.speed);
+	setAcceleration(motor_config_.acceleration);
 };
 
 void Motor::step1(const long)
@@ -120,7 +120,7 @@ void Motor::step1(const long)
 		sequence |= 0b10;
 	}
 
-	_set_motor_bits(_motor_id, sequence);
+	set_motor_bits_(_motor_id, sequence);
 }
 
 void Motor::setMotorId(uint8_t motor_id)
@@ -143,39 +143,39 @@ void Motor::disableOutputs()
 	setCurrentPosition(new_position);
 }
 
-static std::array<Motor, NUM_MOTORS> _motors;
+static std::array<Motor, NUM_MOTORS> motors_;
 
 void motor_init()
 {
 	uint8_t motor_id = 0;
-	for (auto &motor : _motors) {
+	for (auto &motor : motors_) {
 		motor.setMotorId(motor_id);
-		motor.setMaxSpeed(_ctx.speed);
-		motor.setAcceleration(_ctx.acceleration);
+		motor.setMaxSpeed(motor_config_.speed);
+		motor.setAcceleration(motor_config_.acceleration);
 		motor_id++;
 	}
 }
 
 void motor_loop()
 {
-	for (auto &motor : _motors) {
+	for (auto &motor : motors_) {
 		if (not motor.run()) {
 			motor.disableOutputs();
 		}
 	}
 
 	/* Step 1) update the direction of the motor - set direction first else get rogue pulses */
-	_update_direction();
+	update_direction_();
 	/* Step 2) increment the step if needed with a rising edge */
-	ctrl_motors(_steps);
+	ctrl_motors(steps_);
 	/* Step 3) restore step pin to low */
-	_reset_position();
+	reset_position_();
 }
 
 void motors_goto_zero()
 {
 	/* Set all motors to position 0 */
-	for (auto &motor : _motors) {
+	for (auto &motor : motors_) {
 		motor.moveTo(0);
 	}
 }
@@ -183,36 +183,36 @@ void motors_goto_zero()
 void motor_set_0_position()
 {
 	/* Set all motors to position 0 */
-	for (auto &motor : _motors) {
+	for (auto &motor : motors_) {
 		motor.setCurrentPosition(0);
 	}
 }
 
 void motor_move_to_relative(const int motor_idx, int16_t increment)
 {
-	_motors.at(motor_idx).move(increment);
+	motors_.at(motor_idx).move(increment);
 }
 
 void motor_move_to_absolute(const int motor_idx, int16_t increment)
 {
-	_motors.at(motor_idx).moveTo(increment);
+	motors_.at(motor_idx).moveTo(increment);
 }
 
 long motor_get_position(const int motor_idx)
 {
-	return _motors.at(motor_idx).currentPosition();
+	return motors_.at(motor_idx).currentPosition();
 }
 
 long motor_distance_to_go(const int motor_idx)
 {
-	return _motors.at(motor_idx).distanceToGo();
+	return motors_.at(motor_idx).distanceToGo();
 }
 
 void motor_test()
 {
 	/* Set all motors to position 0 */
-	if (not _motors.at(44).isRunning()) {
-		_motors.at(44).move(NUM_STEPS_PER_ROT);
+	if (not motors_.at(44).isRunning()) {
+		motors_.at(44).move(NUM_STEPS_PER_ROT);
 	}
 	/*
 	int i = 0;
