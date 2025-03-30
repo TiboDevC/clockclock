@@ -26,16 +26,15 @@ The final constraint was to make the clock as small as possible, with a target l
 
 ### Motors
 
-I chose stepper motors `BKA30D-R5` as they are relatively cheap (<4€/piece), then can turn 360°, and they are 6 cm long
+I chose stepper motors [BKA30D-R5](datasheet/BKA30D-R5.webp) as they are relatively cheap (<4€/piece), then can turn 360°, and they are 6 cm long
 which is small enough for the project. Also, they consume only 20mA per motor so a regular USB-C phone charger can
-handle it (20mA x 48 motors = 960mA). Those motors are easily controlled with 4 pins, the sequence is described in their
-datasheet:
+handle it (20mA x 48 motors = 960mA).
 
-![Driving pulse in partial mode](img/BKA30D-R5_sequence.png)
-
-All motors are controlled by an ESP32-C3 (RISC-V architecture). This MCU is connected to a series of 12 bit shift
-registers. Bitshift registers are connected to steppers driver: VID6606 (or equivalent like AX1201728SG/STI6606z). Each
+All motors are controlled by an ESP32-C3 (RISC-V architecture). This MCU is connected to a series of 12 bit-shift
+registers. Bit-shift registers are connected to steppers driver: VID6606 (or equivalent like AX1201728SG/STI6606z). Each
 driver can drive 4 steppers, 2 pins per stepper: direction and step.
+
+![bit-shift and stepper driver](img/elec0.png)
 
 One bit shift register has 8 output so it controls 2 motors. At any point of time the MCU knows the motor sequence step.
 Periodically, the MCU sends the step sequence through bit shift registers and once all of them have been updated with
