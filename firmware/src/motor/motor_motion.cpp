@@ -213,17 +213,7 @@ long motor_distance_to_go(const int motor_idx)
 
 void motor_test()
 {
-	/* Set all motors to position 0 */
-	if (not motors_.at(44).isRunning()) {
-		motors_.at(44).move(NUM_STEPS_PER_ROT);
+	for (auto &motor : motors_) {
+		motor.move(NUM_STEPS_PER_ROT);
 	}
-	/*
-	int i = 0;
-	for (auto &motor : _motors) {
-	        if ((i + 1) % 2) {
-	                motor.move(NUM_STEPS_PER_ROT);
-	        }
-	        i++;
-	}
-	*/
 }
