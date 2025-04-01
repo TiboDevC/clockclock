@@ -188,12 +188,12 @@ void motor_set_0_position()
 	}
 }
 
-void motor_move_to_relative(const int motor_idx, int16_t increment)
+void motor_move_to_relative(const int motor_idx, const int16_t increment)
 {
 	motors_.at(motor_idx).move(increment);
 }
 
-void motor_move_to_absolute(const int motor_idx, int16_t increment)
+void motor_move_to_absolute(const int motor_idx, const int16_t increment)
 {
 	motors_.at(motor_idx).moveTo(increment);
 }

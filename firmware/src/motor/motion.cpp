@@ -55,59 +55,59 @@ struct full_clock_t {
 	struct clock_digit_t digit[NUM_DIGIT];
 };
 
-static struct {
+static constexpr struct {
 	transition_t transition;
 } _ctx = {.transition = TRANS_CLOCKWISE};
 
-static const struct clock_digit_t digit_0 = {
+static constexpr struct clock_digit_t digit_0 = {
     .clocks = {{270, 180}, {180, 0}, {270, 0}, {0, 90}, {0, 180}, {180, 90}}};
 
-static const struct clock_digit_t digit_1 = {
+static constexpr struct clock_digit_t digit_1 = {
     .clocks = {{145, 145}, {145, 145}, {145, 145}, {0, 0}, {0, 180}, {180, 180}}};
 
-static const struct clock_digit_t digit_2 = {
+static constexpr struct clock_digit_t digit_2 = {
     .clocks = {{270, 270}, {180, 270}, {270, 0}, {90, 90}, {90, 0}, {180, 90}}};
 
-static const struct clock_digit_t digit_3 = {
+static constexpr struct clock_digit_t digit_3 = {
     .clocks = {{270, 270}, {270, 270}, {270, 270}, {90, 0}, {180, 0}, {180, 90}}};
 
-static const struct clock_digit_t digit_4 = {
+static constexpr struct clock_digit_t digit_4 = {
     .clocks = {{180, 180}, {270, 0}, {135, 135}, {0, 0}, {0, 180}, {180, 180}}};
 
-static const struct clock_digit_t digit_5 = {
+static constexpr struct clock_digit_t digit_5 = {
     .clocks = {{270, 180}, {270, 0}, {270, 270}, {90, 0}, {90, 180}, {90, 90}}};
 
-static const struct clock_digit_t digit_6 = {
+static constexpr struct clock_digit_t digit_6 = {
     .clocks = {{180, 180}, {0, 180}, {270, 0}, {90, 0}, {90, 180}, {300, 300}}};
 
-static const struct clock_digit_t digit_7 = {
+static constexpr struct clock_digit_t digit_7 = {
     .clocks = {{270, 270}, {135, 135}, {135, 135}, {0, 0}, {0, 180}, {180, 90}}};
 
-static const struct clock_digit_t digit_8 = {
+static constexpr struct clock_digit_t digit_8 = {
     .clocks = {{270, 180}, {270, 0}, {270, 0}, {0, 90}, {90, 0}, {90, 180}}};
 
-static const struct clock_digit_t digit_9 = {
+static constexpr struct clock_digit_t digit_9 = {
     .clocks = {{270, 180}, {0, 270}, {135, 135}, {0, 0}, {0, 180}, {90, 180}}};
 
-static const struct clock_digit_t digit_null = {
+static constexpr struct clock_digit_t digit_null = {
     .clocks = {{270, 270}, {270, 270}, {270, 270}, {270, 270}, {270, 270}, {270, 270}}};
 
-static const struct clock_digit_t digit_I = {
+static constexpr struct clock_digit_t digit_I = {
     .clocks = {{270, 90}, {270, 90}, {270, 90}, {270, 90}, {270, 90}, {270, 90}}};
 
-static const struct clock_digit_t digit_fun = {.clocks = {
-						   {225, 45},
-						   {225, 45},
-						   {225, 45},
-						   {225, 45},
-						   {225, 45},
-						   {225, 45},
-					       }};
+static constexpr struct clock_digit_t digit_fun = {.clocks = {
+						       {225, 45},
+						       {225, 45},
+						       {225, 45},
+						       {225, 45},
+						       {225, 45},
+						       {225, 45},
+						   }};
 
-static const clock_digit_t _digits[10] = {
+static constexpr clock_digit_t _digits[10] = {
     digit_0, digit_1, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9};
 
-static struct full_clock_t _get_clock_state_from_time(int h, int m)
+static struct full_clock_t _get_clock_state_from_time(const int h, const int m)
 {
 	DBG_MOTION("Set time: ");
 	DBG_MOTION(h);
@@ -119,7 +119,7 @@ static struct full_clock_t _get_clock_state_from_time(int h, int m)
 	const int d2 = m / 10;
 	const int d3 = m - d2 * 10;
 
-	struct full_clock_t clock_state = {_digits[d0], _digits[d1], _digits[d2], _digits[d3]};
+	const struct full_clock_t clock_state = {_digits[d0], _digits[d1], _digits[d2], _digits[d3]};
 	return clock_state;
 }
 
@@ -196,7 +196,7 @@ static angle_t _sanitize_angle(angle_t angle)
 static pos_t _adjust_pos(pos_t pos)
 {
 	/* Adjusts the target step to always arrive at the first motor step sequence */
-	pos_t modulo = pos % 4 == 0 ? 0 : 4 - pos % 4; /*  4 = number of steps in the motor sequence */
+	const pos_t modulo = pos % 4 == 0 ? 0 : 4 - pos % 4; /*  4 = number of steps in the motor sequence */
 	pos += modulo;
 	pos %= NUM_STEPS_PER_ROT;
 
@@ -226,8 +226,8 @@ static void _update_motor_pos(const int motor_idx, angle_t angle_absolute)
 static void _update_dial(const int digit_idx, const int dial_idx, const struct clock_dial_t *clock_dial)
 {
 	for (int motor_idx = 0; motor_idx < NUM_MOTOR_PER_DIAL; motor_idx++) {
-		int motor_id = digit_idx * NUM_DIAL_PER_DIGIT * NUM_MOTOR_PER_DIAL +
-		               dial_idx * NUM_MOTOR_PER_DIAL + motor_idx;
+		const int motor_id = digit_idx * NUM_DIAL_PER_DIGIT * NUM_MOTOR_PER_DIAL +
+		                     dial_idx * NUM_MOTOR_PER_DIAL + motor_idx;
 		_update_motor_pos(motor_id, clock_dial->angle_absolute[motor_idx]);
 #if 0
 		DBG_MOTION(motor_id);
