@@ -17,8 +17,8 @@
 	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
 #define STEP_TO_ANGLE(target_step) (((uint32_t) target_step * 360ul) / NUM_STEPS_PER_ROT)
 
-static constexpr int MOTOR_MAX_SPEED = 400;
-static constexpr int MOTOR_ACC = 200;
+static constexpr int MOTOR_MAX_SPEED = 2000;
+static constexpr int MOTOR_ACC = 700;
 
 static constexpr struct {
 	uint32_t acceleration;
