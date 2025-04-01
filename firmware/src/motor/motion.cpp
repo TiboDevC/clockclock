@@ -196,7 +196,8 @@ static angle_t _sanitize_angle(angle_t angle)
 static pos_t _adjust_pos(pos_t pos)
 {
 	/* Adjusts the target step to always arrive at the first motor step sequence */
-	const pos_t modulo = pos % 4 == 0 ? 0 : 4 - pos % 4; /*  4 = number of steps in the motor sequence */
+	constexpr int sequence_length = 24; /*  M-S Quad Driver X12.017 has 24 steps */
+	const pos_t modulo = pos % sequence_length == 0 ? 0 : sequence_length - pos % sequence_length;
 	pos += modulo;
 	pos %= NUM_STEPS_PER_ROT;
 
