@@ -246,7 +246,11 @@ void Motor::step1(const long)
 	uint8_t sequence = 0b00;
 
 	/* Set-up direction, this is the first bit */
-	sequence = _direction ? 0b01 : 0b00;
+	if (_motor_id % 2 == 0) {
+		sequence = _direction ? 0b01 : 0b00;
+	} else {
+		sequence = _direction ? 0b00 : 0b01;
+	}
 
 	if (isRunning()) {
 		/* Update the step bit, this is the second bit */
