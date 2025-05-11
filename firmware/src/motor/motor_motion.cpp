@@ -1,8 +1,6 @@
-#include <cstdint>
-
+#include "motor_motion.h"
 #include "AccelStepper.h"
 #include "cfg.hpp"
-#include "motor_motion.h"
 #include "shift_register.h"
 
 #ifdef DEBUG_MOTION
@@ -34,15 +32,168 @@ enum {
 	MOTOR_D,
 };
 
-/* Output of 74HCT595 have a specific order: */
-enum OUTPUT_74HCT595 {
-	OUTPUT_D_74H,
-	OUTPUT_A_74H,
-	OUTPUT_B_74H,
-	OUTPUT_C_74H,
+// Define driver and motor IDs with more descriptive names
+enum DriverId : uint8_t {
+	M1,
+	M2,
+	M3,
+	M4,
+	M5,
+	M6,
+	M7,
+	M8,
+	M9,
+	M10,
+	M11,
+	M12,
+	M13,
+	M14,
+	M15,
+	M16,
+	M17,
+	M18,
+	M19,
+	M20,
+	M21,
+	M22,
+	M23,
+	M24,
 };
 
-static void set_motor_bits_(const int motor_id, const int sequence)
+enum MotorId : uint8_t {
+	MOTOR_0,
+	MOTOR_1,
+	MOTOR_2,
+	MOTOR_3,
+	MOTOR_4,
+	MOTOR_5,
+	MOTOR_6,
+	MOTOR_7,
+	MOTOR_8,
+	MOTOR_9,
+	MOTOR_10,
+	MOTOR_11,
+	MOTOR_12,
+	MOTOR_13,
+	MOTOR_14,
+	MOTOR_15,
+	MOTOR_16,
+	MOTOR_17,
+	MOTOR_18,
+	MOTOR_19,
+	MOTOR_20,
+	MOTOR_21,
+	MOTOR_22,
+	MOTOR_23,
+	MOTOR_24,
+	MOTOR_25,
+	MOTOR_26,
+	MOTOR_27,
+	MOTOR_28,
+	MOTOR_29,
+	MOTOR_30,
+	MOTOR_31,
+	MOTOR_32,
+	MOTOR_33,
+	MOTOR_34,
+	MOTOR_35,
+	MOTOR_36,
+	MOTOR_37,
+	MOTOR_38,
+	MOTOR_39,
+	MOTOR_40,
+	MOTOR_41,
+	MOTOR_42,
+	MOTOR_43,
+	MOTOR_44,
+	MOTOR_45,
+	MOTOR_46,
+	MOTOR_47,
+};
+
+/**
+ * @brief Maps a logical motor and driver combination to a physical motor index.
+ *
+ * The mapping logic is based on a regular pattern:
+ * - Drivers are grouped in pairs: (M1, M2), (M3, M4), ..., (M23, M24).
+ * - Each pair corresponds to a 4-slot block of physical motor indices.
+ * - These blocks are ordered in descending order starting from (NUM_MOTORS - 4).
+ * - For each pair:
+ *   - The first driver in the pair maps to the first two slots in the block:
+ *       even (lower) motors → offset 0 (D), odd (upper) motors → offset 1 (A)
+ *   - The second driver in the pair maps to the next two slots:
+ *       even → offset 2 (C), odd → offset 3 (B)
+ *
+ * @param motor The motor ID (even = lower, odd = upper).
+ * @param driver The driver to which the motor is assigned (M1–M24).
+ * @return The corresponding physical motor index, or MAP_ERROR if invalid.
+ */
+static constexpr int mapMotorToPhysical(const MotorId motor, const DriverId driver)
+{
+	constexpr int MAP_ERROR = -1;
+	if (driver > M24) {
+		return MAP_ERROR;
+	}
+
+	const bool is_lower_motor = motor % 2 == 0;
+	const int driver_index = driver;
+	const int block = driver_index / 2;
+	const int block_base = (NUM_MOTORS - 4) - (block * 4);
+
+	const bool is_first_driver_in_pair = (driver_index % 2 == 0);
+
+	if (is_first_driver_in_pair) {
+		return block_base + (is_lower_motor ? 0 : 1); // D or A
+	} else {
+		return block_base + (is_lower_motor ? 2 : 3); // C or B
+	}
+}
+
+
+// Test of the mapping function
+static_assert(mapMotorToPhysical(MOTOR_0, M1) == MOTOR_44);
+static_assert(mapMotorToPhysical(MOTOR_1, M1) == MOTOR_45);
+static_assert(mapMotorToPhysical(MOTOR_2, M2) == MOTOR_46);
+static_assert(mapMotorToPhysical(MOTOR_3, M2) == MOTOR_47);
+static_assert(mapMotorToPhysical(MOTOR_30, M23) == MOTOR_0);
+static_assert(mapMotorToPhysical(MOTOR_31, M23) == MOTOR_1);
+static_assert(mapMotorToPhysical(MOTOR_30, M24) == MOTOR_2);
+static_assert(mapMotorToPhysical(MOTOR_31, M24) == MOTOR_3);
+
+constexpr std::array<DriverId, NUM_MOTORS> MOTOR_DRIVER_ASSIGNMENT = []() {
+	std::array<DriverId, NUM_MOTORS> arr{};
+
+	// Temporary as all motors are not connected yet
+	for (int i = 0; i < 36; ++i) {
+		arr.at(i) = M1;
+	}
+
+	// Digit 4
+	arr.at(36) = M2;
+	arr.at(37) = M2;
+	arr.at(38) = M11;
+	arr.at(39) = M11;
+	arr.at(40) = M12;
+	arr.at(41) = M12;
+	arr.at(42) = M9;
+	arr.at(43) = M24;
+	arr.at(44) = M10;
+	arr.at(45) = M10;
+	arr.at(46) = M7;
+	arr.at(47) = M7;
+
+	return arr;
+}();
+
+constexpr std::array<int, NUM_MOTORS> MOTOR_MAPPING = []() {
+	std::array<int, NUM_MOTORS> arr{};
+	for (int i = 0; i < NUM_MOTORS; ++i) {
+		arr[i] = mapMotorToPhysical(static_cast<MotorId>(i), MOTOR_DRIVER_ASSIGNMENT[i]);
+	}
+	return arr;
+}();
+
+static void set_motor_bits_(int motor_id, const int sequence)
 {
 	/* 74HCT595 output is:
 	 * QA: DIR_D
@@ -56,31 +207,13 @@ static void set_motor_bits_(const int motor_id, const int sequence)
 	 *
 	 * SPI is configured as MSB first
 	 * */
-	const int motor_num = motor_id % NUM_MOTORS_PER_SHIFT_REG;
-	switch (motor_num) {
-	case MOTOR_A:
-		/* Output A */
-		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_A_74H * 2));
-		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_A_74H;
-		break;
-	case MOTOR_B:
-		/* Output B */
-		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_B_74H * 2));
-		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_B_74H;
-		break;
-	case MOTOR_C:
-		/* Output C */
-		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_C_74H * 2));
-		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_C_74H;
-		break;
-	case MOTOR_D:
-		/* Output D */
-		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (OUTPUT_D_74H * 2));
-		steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << 2 * OUTPUT_D_74H;
-		break;
-	default:
-		break;
+	motor_id = static_cast<int>(MOTOR_MAPPING.at(motor_id));
+	if (motor_id < 0 || motor_id >= NUM_MOTORS) {
+		return;
 	}
+	const int motor_num = motor_id % NUM_MOTORS_PER_SHIFT_REG;
+	steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (motor_num * 2));
+	steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << (motor_num * 2);
 }
 
 static void update_direction_()
