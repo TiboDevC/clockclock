@@ -59,35 +59,35 @@ static constexpr struct {
 	transition_t transition;
 } _ctx = {.transition = TRANS_CLOCKWISE};
 
-static constexpr struct clock_digit_t digit_0 = {
-    .clocks = {{270, 180}, {180, 0}, {270, 0}, {0, 90}, {0, 180}, {180, 90}}};
+static constexpr clock_digit_t digit_0 = {
+    .clocks = {{90, 180}, {0, 180}, {0, 90}, {180, 270}, {0, 180}, {270, 0}}};
 
-static constexpr struct clock_digit_t digit_1 = {
-    .clocks = {{145, 145}, {145, 145}, {145, 145}, {0, 0}, {0, 180}, {180, 180}}};
+static constexpr clock_digit_t digit_1 = {
+    .clocks = {{225, 225}, {225, 225}, {225, 225}, {0, 180}, {0, 180}, {0, 180}}};
 
-static constexpr struct clock_digit_t digit_2 = {
-    .clocks = {{270, 270}, {180, 270}, {270, 0}, {90, 90}, {90, 0}, {180, 90}}};
+static constexpr clock_digit_t digit_2 = {
+    .clocks = {{90, 90}, {90, 180}, {90, 0}, {270, 180}, {90, 270}, {270, 270}}};
 
-static constexpr struct clock_digit_t digit_3 = {
-    .clocks = {{270, 270}, {270, 270}, {270, 270}, {90, 0}, {180, 0}, {180, 90}}};
+static constexpr clock_digit_t digit_3 = {
+    .clocks = {{90, 90}, {90, 90}, {90, 90}, {270, 180}, {180, 0}, {270, 0}}};
 
-static constexpr struct clock_digit_t digit_4 = {
-    .clocks = {{180, 180}, {270, 0}, {135, 135}, {0, 0}, {0, 180}, {180, 180}}};
+static constexpr clock_digit_t digit_4 = {
+    .clocks = {{180, 180}, {0, 90}, {225, 225}, {180, 180}, {0, 180}, {0, 0}}};
 
-static constexpr struct clock_digit_t digit_5 = {
-    .clocks = {{270, 180}, {270, 0}, {270, 270}, {90, 0}, {90, 180}, {90, 90}}};
+static constexpr clock_digit_t digit_5 = {
+    .clocks = {{90, 180}, {0, 90}, {90, 90}, {270, 270}, {180, 270}, {270, 0}}};
 
-static constexpr struct clock_digit_t digit_6 = {
-    .clocks = {{180, 180}, {0, 180}, {270, 0}, {90, 0}, {90, 180}, {300, 300}}};
+static constexpr clock_digit_t digit_6 = {
+    .clocks = {{180, 180}, {0, 180}, {0, 90}, {45, 45}, {270, 180}, {0, 270}}};
 
-static constexpr struct clock_digit_t digit_7 = {
-    .clocks = {{270, 270}, {135, 135}, {135, 135}, {0, 0}, {0, 180}, {180, 90}}};
+static constexpr clock_digit_t digit_7 = {
+    .clocks = {{90, 90}, {225, 225}, {225, 225}, {270, 180}, {0, 180}, {0, 180}}};
 
-static constexpr struct clock_digit_t digit_8 = {
-    .clocks = {{270, 180}, {270, 0}, {270, 0}, {0, 90}, {90, 0}, {90, 180}}};
+static constexpr clock_digit_t digit_8 = {
+    .clocks = {{90, 180}, {90, 180}, {0, 90}, {270, 180}, {270, 180}, {0, 270}}};
 
-static constexpr struct clock_digit_t digit_9 = {
-    .clocks = {{270, 180}, {0, 270}, {135, 135}, {0, 0}, {0, 180}, {90, 180}}};
+static constexpr clock_digit_t digit_9 = {
+    .clocks = {{90, 180}, {0, 90}, {225, 225}, {180, 270}, {0, 180}, {0, 0}}};
 
 static constexpr struct clock_digit_t digit_null = {
     .clocks = {{270, 270}, {270, 270}, {270, 270}, {270, 270}, {270, 270}, {270, 270}}};
