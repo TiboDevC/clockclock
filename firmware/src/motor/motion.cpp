@@ -215,9 +215,9 @@ static void _update_motor_pos(const int motor_idx, angle_t angle_absolute)
 	pos_t target_pos_absolute = ANGLE_TO_STEPS(angle_absolute);
 	target_pos_absolute = _adjust_pos(target_pos_absolute);
 
-	if (TRANS_SHORTER_PATH == _ctx.transition) {
+	if constexpr (TRANS_SHORTER_PATH == _ctx.transition) {
 		_shortest_path(motor_idx, target_pos_absolute);
-	} else if (TRANS_CLOCKWISE == _ctx.transition) {
+	} else if constexpr (TRANS_CLOCKWISE == _ctx.transition) {
 		_clockwise_path(motor_idx, target_pos_absolute);
 	}
 }
