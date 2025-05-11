@@ -1,5 +1,3 @@
-#include <cstdint>
-
 #include "Arduino.h"
 
 #include "cfg.hpp"
