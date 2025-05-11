@@ -19,7 +19,7 @@ void display_time(void)
 {
 	static DateTime old_time = {0};
 
-	DateTime now = RTClib::now();
+	const DateTime now = RTClib::now();
 	if ((now.minute() != old_time.minute() || now.hour() != old_time.hour())) {
 		old_time = now;
 		set_clock_time(now.hour(), now.minute());
