@@ -162,25 +162,61 @@ static_assert(mapMotorToPhysical(MOTOR_31, M24) == MOTOR_3);
 
 constexpr std::array<DriverId, NUM_MOTORS> MOTOR_DRIVER_ASSIGNMENT = []() {
 	std::array<DriverId, NUM_MOTORS> arr{};
+	// Digit 1
+	arr.at(0) = M1;
+	arr.at(1) = M1;
+	arr.at(2) = M2;
+	arr.at(3) = M2;
+	arr.at(4) = M3;
+	arr.at(5) = M3;
+	arr.at(6) = M4;
+	arr.at(7) = M4;
+	arr.at(8) = M5;
+	arr.at(9) = M5;
+	arr.at(10) = M6;
+	arr.at(11) = M6;
 
-	// Temporary as all motors are not connected yet
-	for (int i = 0; i < 36; ++i) {
-		arr.at(i) = M1;
-	}
+	// Digit 2
+	arr.at(12) = M7;
+	arr.at(13) = M7;
+	arr.at(14) = M8;
+	arr.at(15) = M8;
+	arr.at(16) = M9;
+	arr.at(17) = M9;
+	arr.at(18) = M10;
+	arr.at(19) = M10;
+	arr.at(20) = M11;
+	arr.at(21) = M11;
+	arr.at(22) = M12;
+	arr.at(23) = M12;
+
+	// Digit 3
+	arr.at(24) = M13;
+	arr.at(25) = M13;
+	arr.at(26) = M14;
+	arr.at(27) = M14;
+	arr.at(28) = M15;
+	arr.at(29) = M15;
+	arr.at(30) = M16;
+	arr.at(31) = M16;
+	arr.at(32) = M17;
+	arr.at(33) = M17;
+	arr.at(34) = M18;
+	arr.at(35) = M18;
 
 	// Digit 4
-	arr.at(36) = M2;
-	arr.at(37) = M2;
-	arr.at(38) = M11;
-	arr.at(39) = M11;
-	arr.at(40) = M12;
-	arr.at(41) = M12;
-	arr.at(42) = M9;
-	arr.at(43) = M24;
-	arr.at(44) = M10;
-	arr.at(45) = M10;
-	arr.at(46) = M7;
-	arr.at(47) = M7;
+	arr.at(36) = M19;
+	arr.at(37) = M19;
+	arr.at(38) = M20;
+	arr.at(39) = M20;
+	arr.at(40) = M21;
+	arr.at(41) = M21;
+	arr.at(42) = M22;
+	arr.at(43) = M22;
+	arr.at(44) = M23;
+	arr.at(45) = M23;
+	arr.at(46) = M24;
+	arr.at(47) = M24;
 
 	return arr;
 }();
