@@ -48,11 +48,11 @@ struct clock_dial_t {
 };
 
 struct clock_digit_t {
-	struct clock_dial_t clocks[NUM_DIAL_PER_DIGIT];
+	clock_dial_t clocks[NUM_DIAL_PER_DIGIT];
 };
 
 struct full_clock_t {
-	struct clock_digit_t digit[NUM_DIGIT];
+	clock_digit_t digit[NUM_DIGIT];
 };
 
 static constexpr struct {
@@ -89,25 +89,25 @@ static constexpr clock_digit_t digit_8 = {
 static constexpr clock_digit_t digit_9 = {
     .clocks = {{90, 180}, {0, 90}, {225, 225}, {180, 270}, {0, 180}, {0, 0}}};
 
-static constexpr struct clock_digit_t digit_null = {
+static constexpr clock_digit_t digit_null = {
     .clocks = {{270, 270}, {270, 270}, {270, 270}, {270, 270}, {270, 270}, {270, 270}}};
 
-static constexpr struct clock_digit_t digit_I = {
+static constexpr clock_digit_t digit_I = {
     .clocks = {{270, 90}, {270, 90}, {270, 90}, {270, 90}, {270, 90}, {270, 90}}};
 
-static constexpr struct clock_digit_t digit_fun = {.clocks = {
-						       {225, 45},
-						       {225, 45},
-						       {225, 45},
-						       {225, 45},
-						       {225, 45},
-						       {225, 45},
-						   }};
+static constexpr clock_digit_t digit_fun = {.clocks = {
+						{225, 45},
+						{225, 45},
+						{225, 45},
+						{225, 45},
+						{225, 45},
+						{225, 45},
+					    }};
 
 static constexpr clock_digit_t _digits[10] = {
     digit_0, digit_1, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9};
 
-static struct full_clock_t _get_clock_state_from_time(const int h, const int m)
+static full_clock_t _get_clock_state_from_time(const int h, const int m)
 {
 	DBG_MOTION("Set time: ");
 	DBG_MOTION(h);
@@ -119,7 +119,7 @@ static struct full_clock_t _get_clock_state_from_time(const int h, const int m)
 	const int d2 = m / 10;
 	const int d3 = m - d2 * 10;
 
-	const struct full_clock_t clock_state = {_digits[d0], _digits[d1], _digits[d2], _digits[d3]};
+	const full_clock_t clock_state = {_digits[d0], _digits[d1], _digits[d2], _digits[d3]};
 	return clock_state;
 }
 
@@ -246,7 +246,7 @@ static void _update_digits(const int digit_idx, const struct clock_digit_t *cloc
 	}
 }
 
-static void _update_clock(const struct full_clock_t *full_clock)
+static void _update_clock(const full_clock_t *full_clock)
 {
 	for (int digit_idx = 0; digit_idx < NUM_DIGIT; digit_idx++) {
 		_update_digits(digit_idx, &full_clock->digit[digit_idx]);
@@ -263,6 +263,6 @@ void set_clock_time(int h, int m)
 	DBG_MOTION(":");
 	DBG_MOTION(m);
 	DBG_MOTION_LN();
-	const struct full_clock_t full_clock = _get_clock_state_from_time(h, m);
+	const full_clock_t full_clock = _get_clock_state_from_time(h, m);
 	_update_clock(&full_clock);
 }
