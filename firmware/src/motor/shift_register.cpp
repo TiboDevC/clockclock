@@ -56,9 +56,8 @@ void ctrl_motors(const std::array<uint8_t, SHIFT_REG_SIZE> &byte_array)
 {
 	/* The Arduino library read SPI and writes it into the input buffer.
 	 * So we need another buffer to not corrupt the original one. */
-	uint8_t buf[SHIFT_REG_SIZE];
-	memcpy(buf, byte_array.data(), byte_array.size());
+	std::array<uint8_t, SHIFT_REG_SIZE> buf = byte_array;
 	digitalWrite(PIN_CLOCK_STORAGE_REGISTER, LOW);
-	SPI.transfer((void *) buf, byte_array.size());
+	SPI.transfer(buf.data(), byte_array.size());
 	digitalWrite(PIN_CLOCK_STORAGE_REGISTER, HIGH);
 }
