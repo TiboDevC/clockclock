@@ -44784,8 +44784,8 @@
 				)
 			)
 		)
-		(property "Value" "Jumper_2_Open"
-			(at 1.27 2 0)
+		(property "Value" "USB power to ESP32"
+			(at 2.54 2 0)
 			(layer "F.SilkS")
 			(uuid "c8ee91bb-b9a6-4e54-a0e0-874d05b44ba9")
 			(effects
@@ -49622,8 +49622,8 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Disconnect if USB is\nplugged to the ESP32"
-		(at 75 115.5 0)
+	(gr_text "Disconnect if USB cable\nis plugged to the ESP32"
+		(at 73.5 115.5 0)
 		(layer "F.SilkS")
 		(uuid "123fe83c-e136-4a13-a425-a6a1ba536896")
 		(effects
@@ -49950,7 +49950,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Clockclock v2.1\nTibo 27/02/2025"
+	(gr_text "Clockclock v2.2\nTibo 13/05/2025"
 		(at 150.25 88 0)
 		(layer "F.SilkS")
 		(uuid "c0d992a4-d15e-420f-89ea-c1fdde8bed5d")

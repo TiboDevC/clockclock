@@ -7,7 +7,7 @@
 	(title_block
 		(title "Clockclock")
 		(date "2025-02-27")
-		(rev "v2.1")
+		(rev "v2.2")
 	)
 	(lib_symbols)
 	(no_connect
