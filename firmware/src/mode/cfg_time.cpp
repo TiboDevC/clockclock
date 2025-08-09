@@ -30,7 +30,7 @@ void loop_cfg_time()
 	const int16_t increment_count = button_get_encoder_count();
 	if (0 != increment_count) {
 		if (_ctx.increment) {
-			if (CFG_TIME_HOUR == _ctx.select) {
+			if (CFG_TIME_MIN == _ctx.select) {
 				rtc_increment_time_min(increment_count * 60);
 			} else {
 				rtc_increment_time_min(increment_count * 3600);
