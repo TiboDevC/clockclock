@@ -64,7 +64,7 @@ static constexpr clock_digit_t digit_1 = {
     .clocks = {{225, 225}, {225, 225}, {225, 225}, {180, 180}, {0, 180}, {0, 0}}};
 
 static constexpr clock_digit_t digit_2 = {
-    .clocks = {{90, 90}, {90, 180}, {90, 0}, {270, 180}, {90, 270}, {270, 270}}};
+    .clocks = {{90, 90}, {90, 180}, {90, 0}, {270, 180}, {0, 270}, {270, 270}}};
 
 static constexpr clock_digit_t digit_3 = {
     .clocks = {{90, 90}, {90, 90}, {90, 90}, {270, 180}, {180, 0}, {270, 0}}};
