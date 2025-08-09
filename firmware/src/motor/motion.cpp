@@ -251,7 +251,7 @@ static void _update_clock(const full_clock_t *full_clock)
 	}
 }
 
-void set_clock_time(int h, int m)
+void set_clock_time(const int h, const int m)
 {
 	if (h < 0 || h > 99 || m < 0 || m > 99) {
 		return;
