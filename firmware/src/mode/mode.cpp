@@ -23,7 +23,7 @@ enum clock_mode_t {
 
 static clock_mode_t _mode = MODE_CLOCK_DISPLAY;
 
-#define MODE_TIMEOUT_MS 15000
+#define MODE_TIMEOUT_MS 20000
 
 static void _init_mode()
 {
