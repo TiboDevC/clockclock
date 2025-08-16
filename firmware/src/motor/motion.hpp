@@ -3,4 +3,7 @@
 
 void set_clock_time(int h, int m);
 
+// Animation integration
+bool are_motors_idle();
+
 #endif /* CLOCKCLOCK_MOTION_HPP */

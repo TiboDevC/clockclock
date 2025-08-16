@@ -1,4 +1,5 @@
 #include "DS3231.h"
+#include "animation/animation_manager.hpp"
 #include "motor/motion.hpp"
 
 #ifdef DEBUG_TIME_MGMT
@@ -17,6 +18,11 @@
 
 void display_time(void)
 {
+	// Don't update time display during animations
+	if (AnimationManager::getInstance().isAnimationRunning()) {
+		return;
+	}
+
 	static DateTime old_time = {0};
 
 	const DateTime now = RTClib::now();
@@ -37,7 +43,14 @@ void time_check(void)
 	}
 	last_time_ms = time_ms;
 
+	// Always update time display (but display_time will check for animations)
 	display_time();
+
+	// Only check for new animations if none is running
+	if (!AnimationManager::getInstance().isAnimationRunning()) {
+		const DateTime now = RTClib::now();
+		AnimationManager::getInstance().checkScheduledAnimations(now.hour(), now.minute());
+	}
 }
 
 void rtc_print_time(void)
@@ -89,4 +102,17 @@ void rtc_increment_time_min(int16_t min)
 	Clock.setEpoch(new_time, false);
 	DBG_TIME_MGMT("Set time: ");
 	DBG_TIME_MGMT_LN(new_time);
+}
+
+void get_current_time(int &hour, int &minute)
+{
+	const DateTime now = RTClib::now();
+	hour = now.hour();
+	minute = now.minute();
+}
+
+void restore_time_display()
+{
+	const DateTime now = RTClib::now();
+	set_clock_time(now.hour(), now.minute());
 }

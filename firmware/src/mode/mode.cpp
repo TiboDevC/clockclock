@@ -1,5 +1,6 @@
 #include <Arduino.h>
 
+#include "animation/animation_manager.hpp"
 #include "button/button.hpp"
 #include "calibration.hpp"
 #include "cfg_time.hpp"
@@ -92,12 +93,18 @@ void loop_mode()
 
 	switch (_mode) {
 	case MODE_CLOCK_DISPLAY:
+		// Update animations only in display mode
+		AnimationManager::getInstance().update();
 		time_check();
 		break;
 	case MODE_CALIB:
+		// Stop any running animation during calibration
+		AnimationManager::getInstance().stopCurrentAnimation();
 		loop_calib();
 		break;
 	case MODE_CLOCK_CONFIG:
+		// Stop any running animation during configuration
+		AnimationManager::getInstance().stopCurrentAnimation();
 		loop_cfg_time();
 		break;
 	default:

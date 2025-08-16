@@ -26,12 +26,13 @@ static constexpr int DRIVERS_PER_PAIR = 2;
 // Constexpr functions replacing macros
 static constexpr uint16_t angleToSteps(const uint16_t target_angle) noexcept
 {
-    return static_cast<uint16_t>((static_cast<uint32_t>(target_angle) * NUM_STEPS_PER_ROT) / DEGREES_PER_ROTATION);
+	return static_cast<uint16_t>((static_cast<uint32_t>(target_angle) * NUM_STEPS_PER_ROT) /
+	                             DEGREES_PER_ROTATION);
 }
 
 static constexpr uint32_t stepToAngle(const uint32_t target_step) noexcept
 {
-    return (target_step * DEGREES_PER_ROTATION) / NUM_STEPS_PER_ROT;
+	return (target_step * DEGREES_PER_ROTATION) / NUM_STEPS_PER_ROT;
 }
 
 static constexpr int MOTOR_MAX_SPEED = 1500;
@@ -266,7 +267,8 @@ static void set_motor_bits_(int motor_id, const int sequence)
 		return;
 	}
 	const int motor_num = motor_id % NUM_MOTORS_PER_SHIFT_REG;
-	steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(STEP_MASK << (motor_num * SEQUENCE_BITS_PER_MOTOR));
+	steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &=
+	    ~(STEP_MASK << (motor_num * SEQUENCE_BITS_PER_MOTOR));
 	steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << (motor_num * SEQUENCE_BITS_PER_MOTOR);
 }
 

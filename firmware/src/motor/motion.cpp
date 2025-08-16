@@ -23,12 +23,13 @@ static constexpr int MAX_MINUTES = 99;
 // Constexpr functions replacing macros
 static constexpr uint16_t angleToSteps(const uint16_t target_angle) noexcept
 {
-    return static_cast<uint16_t>((static_cast<uint32_t>(target_angle) * NUM_STEPS_PER_ROT) / DEGREES_PER_ROTATION);
+	return static_cast<uint16_t>((static_cast<uint32_t>(target_angle) * NUM_STEPS_PER_ROT) /
+	                             DEGREES_PER_ROTATION);
 }
 
 static constexpr uint32_t stepToAngle(const uint32_t target_step) noexcept
 {
-    return (target_step * DEGREES_PER_ROTATION) / NUM_STEPS_PER_ROT;
+	return (target_step * DEGREES_PER_ROTATION) / NUM_STEPS_PER_ROT;
 }
 
 typedef uint16_t pos_t;
@@ -277,4 +278,14 @@ void set_clock_time(const int h, const int m)
 	DBG_MOTION_LN();
 	const full_clock_t full_clock = _get_clock_state_from_time(h, m);
 	_update_clock(&full_clock);
+}
+
+bool are_motors_idle()
+{
+	for (int i = 0; i < NUM_MOTORS; i++) {
+		if (motor_distance_to_go(i) != 0) {
+			return false;
+		}
+	}
+	return true;
 }

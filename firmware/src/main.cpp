@@ -1,5 +1,6 @@
 #include <Arduino.h>
 
+#include "animation/animation_manager.hpp"
 #include "button/button.hpp"
 #include "mode/mode.hpp"
 #include "motor/motor_motion.h"
@@ -16,6 +17,9 @@ void setup()
 	rtc_init();
 	button_init();
 	motor_init();
+
+	// Initialize animation system
+	AnimationManager::getInstance().init();
 
 #if 0
 	ctrl_test();
