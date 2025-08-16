@@ -11,9 +11,28 @@
 #define DBG_MOTOR_MOTION_LN(...)
 #endif
 
-#define ANGLE_TO_STEPS(target_angle) \
-	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
-#define STEP_TO_ANGLE(target_step) (((uint32_t) target_step * 360ul) / NUM_STEPS_PER_ROT)
+// Constants replacing magic numbers
+static constexpr uint32_t DEGREES_PER_ROTATION = 360;
+static constexpr uint8_t STEP_MASK = 0b11;
+static constexpr uint8_t DIRECTION_MASK = 0b01010101;
+static constexpr uint8_t STEP_BIT = 0b10;
+static constexpr uint8_t DIRECTION_BIT_EVEN = 0b01;
+static constexpr uint8_t DIRECTION_BIT_ODD = 0b00;
+static constexpr uint8_t SEQUENCE_BITS_PER_MOTOR = 2;
+static constexpr int MOTOR_MAPPING_ERROR = -1;
+static constexpr int MOTORS_PER_BLOCK = 4;
+static constexpr int DRIVERS_PER_PAIR = 2;
+
+// Constexpr functions replacing macros
+static constexpr uint16_t angleToSteps(const uint16_t target_angle) noexcept
+{
+    return static_cast<uint16_t>((static_cast<uint32_t>(target_angle) * NUM_STEPS_PER_ROT) / DEGREES_PER_ROTATION);
+}
+
+static constexpr uint32_t stepToAngle(const uint32_t target_step) noexcept
+{
+    return (target_step * DEGREES_PER_ROTATION) / NUM_STEPS_PER_ROT;
+}
 
 static constexpr int MOTOR_MAX_SPEED = 1500;
 static constexpr int MOTOR_ACC = 100;
@@ -130,17 +149,16 @@ enum MotorId : uint8_t {
  */
 static constexpr int mapMotorToPhysical(const MotorId motor, const DriverId driver)
 {
-	constexpr int MAP_ERROR = -1;
 	if (driver > M24) {
-		return MAP_ERROR;
+		return MOTOR_MAPPING_ERROR;
 	}
 
 	const bool is_lower_motor = motor % 2 == 0;
 	const int driver_index = driver;
-	const int block = driver_index / 2;
-	const int block_base = (NUM_MOTORS - 4) - (block * 4);
+	const int block = driver_index / DRIVERS_PER_PAIR;
+	const int block_base = (NUM_MOTORS - MOTORS_PER_BLOCK) - (block * MOTORS_PER_BLOCK);
 
-	const bool is_first_driver_in_pair = (driver_index % 2 == 0);
+	const bool is_first_driver_in_pair = (driver_index % DRIVERS_PER_PAIR == 0);
 
 	if (is_first_driver_in_pair) {
 		return block_base + (is_lower_motor ? 0 : 1); // D or A
@@ -248,8 +266,8 @@ static void set_motor_bits_(int motor_id, const int sequence)
 		return;
 	}
 	const int motor_num = motor_id % NUM_MOTORS_PER_SHIFT_REG;
-	steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(0b11 << (motor_num * 2));
-	steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << (motor_num * 2);
+	steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) &= ~(STEP_MASK << (motor_num * SEQUENCE_BITS_PER_MOTOR));
+	steps_.at(motor_id / NUM_MOTORS_PER_SHIFT_REG) |= sequence << (motor_num * SEQUENCE_BITS_PER_MOTOR);
 }
 
 static void update_direction_()
@@ -257,7 +275,7 @@ static void update_direction_()
 	auto steps = steps_;
 	for (auto &step : steps) {
 		/* Mask the step instruction, only keep the direction which is the first bit */
-		step &= 0b01010101;
+		step &= DIRECTION_MASK;
 	}
 	ctrl_motors(steps);
 }
@@ -265,7 +283,7 @@ static void update_direction_()
 static void reset_position_()
 {
 	for (auto &step : steps_) {
-		step &= 0b01010101;
+		step &= DIRECTION_MASK;
 	}
 	ctrl_motors(steps_);
 }
@@ -283,14 +301,14 @@ void Motor::step1(const long)
 
 	/* Set-up direction, this is the first bit */
 	if (_motor_id % 2 == 0) {
-		sequence = _direction ? 0b01 : 0b00;
+		sequence = _direction ? DIRECTION_BIT_EVEN : 0b00;
 	} else {
-		sequence = _direction ? 0b00 : 0b01;
+		sequence = _direction ? 0b00 : DIRECTION_BIT_EVEN;
 	}
 
 	if (isRunning()) {
 		/* Update the step bit, this is the second bit */
-		sequence |= 0b10;
+		sequence |= STEP_BIT;
 	}
 
 	set_motor_bits_(_motor_id, sequence);

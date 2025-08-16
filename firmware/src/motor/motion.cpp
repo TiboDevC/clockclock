@@ -12,9 +12,24 @@
 #define DBG_MOTION_LN(...)
 #endif
 
-#define ANGLE_TO_STEPS(target_angle) \
-	((uint16_t) (((uint32_t) target_angle * NUM_STEPS_PER_ROT) / (uint32_t) 360))
-#define STEP_TO_ANGLE(target_step) (((uint32_t) target_step * 360ul) / NUM_STEPS_PER_ROT)
+// Constants replacing magic numbers
+static constexpr uint32_t DEGREES_PER_ROTATION = 360;
+static constexpr uint32_t MAX_ANGLE_VALUE = 359;
+static constexpr int SEQUENCE_LENGTH = 24; // M-S Quad Driver X12.017 has 24 steps
+static constexpr int DECIMAL_BASE = 10;
+static constexpr int MAX_HOURS = 99;
+static constexpr int MAX_MINUTES = 99;
+
+// Constexpr functions replacing macros
+static constexpr uint16_t angleToSteps(const uint16_t target_angle) noexcept
+{
+    return static_cast<uint16_t>((static_cast<uint32_t>(target_angle) * NUM_STEPS_PER_ROT) / DEGREES_PER_ROTATION);
+}
+
+static constexpr uint32_t stepToAngle(const uint32_t target_step) noexcept
+{
+    return (target_step * DEGREES_PER_ROTATION) / NUM_STEPS_PER_ROT;
+}
 
 typedef uint16_t pos_t;
 
@@ -35,9 +50,9 @@ enum transition_t : uint8_t {
  * }
  */
 
-#define NUM_MOTOR_PER_DIAL 2
-#define NUM_DIAL_PER_DIGIT 6
-#define NUM_DIGIT          4
+static constexpr int NUM_MOTOR_PER_DIAL = 2;
+static constexpr int NUM_DIAL_PER_DIGIT = 6;
+static constexpr int NUM_DIGIT = 4;
 
 typedef uint16_t angle_t;
 
@@ -112,10 +127,10 @@ static full_clock_t _get_clock_state_from_time(const int h, const int m)
 	DBG_MOTION(":");
 	DBG_MOTION_LN(m);
 
-	const int d0 = h / 10;
-	const int d1 = h - d0 * 10;
-	const int d2 = m / 10;
-	const int d3 = m - d2 * 10;
+	const int d0 = h / DECIMAL_BASE;
+	const int d1 = h - d0 * DECIMAL_BASE;
+	const int d2 = m / DECIMAL_BASE;
+	const int d3 = m - d2 * DECIMAL_BASE;
 
 	const full_clock_t clock_state = {_digits[d0], _digits[d1], _digits[d2], _digits[d3]};
 	return clock_state;
@@ -139,11 +154,11 @@ static void _shortest_path(const int motor_idx, const pos_t target_pos_absolute)
 	int clockwise;
 	int counterclockwise;
 	if (cur_position > target_pos_absolute) {
-		clockwise = NUM_STEPS_PER_ROT - (target_pos_absolute - target_pos_absolute);
-		counterclockwise = target_pos_absolute - target_pos_absolute;
+		clockwise = NUM_STEPS_PER_ROT - (cur_position - target_pos_absolute);
+		counterclockwise = cur_position - target_pos_absolute;
 	} else {
-		clockwise = target_pos_absolute - target_pos_absolute;
-		counterclockwise = NUM_STEPS_PER_ROT - (target_pos_absolute - target_pos_absolute);
+		clockwise = target_pos_absolute - cur_position;
+		counterclockwise = NUM_STEPS_PER_ROT - (target_pos_absolute - cur_position);
 	}
 
 	if (clockwise > counterclockwise) {
@@ -185,8 +200,8 @@ static void _clockwise_path(const int motor_idx, const pos_t target_pos_absolute
 
 static angle_t _sanitize_angle(angle_t angle)
 {
-	if (angle > 360 - 1) {
-		angle = 360 - 1;
+	if (angle > MAX_ANGLE_VALUE) {
+		angle = MAX_ANGLE_VALUE;
 	}
 	return angle;
 }
@@ -194,8 +209,7 @@ static angle_t _sanitize_angle(angle_t angle)
 static pos_t _adjust_pos(pos_t pos)
 {
 	/* Adjusts the target step to always arrive at the first motor step sequence */
-	constexpr int sequence_length = 24; /*  M-S Quad Driver X12.017 has 24 steps */
-	const pos_t modulo = pos % sequence_length == 0 ? 0 : sequence_length - pos % sequence_length;
+	const pos_t modulo = pos % SEQUENCE_LENGTH == 0 ? 0 : SEQUENCE_LENGTH - pos % SEQUENCE_LENGTH;
 	pos += modulo;
 	pos %= NUM_STEPS_PER_ROT;
 
@@ -212,7 +226,7 @@ static void _update_motor_pos(const int motor_idx, angle_t angle_absolute)
 #endif
 
 	angle_absolute = _sanitize_angle(angle_absolute);
-	pos_t target_pos_absolute = ANGLE_TO_STEPS(angle_absolute);
+	pos_t target_pos_absolute = angleToSteps(angle_absolute);
 	target_pos_absolute = _adjust_pos(target_pos_absolute);
 
 	if constexpr (TRANS_SHORTER_PATH == _ctx.transition) {
@@ -253,7 +267,7 @@ static void _update_clock(const full_clock_t *full_clock)
 
 void set_clock_time(const int h, const int m)
 {
-	if (h < 0 || h > 99 || m < 0 || m > 99) {
+	if (h < 0 || h > MAX_HOURS || m < 0 || m > MAX_MINUTES) {
 		return;
 	}
 	DBG_MOTION("Display ");
