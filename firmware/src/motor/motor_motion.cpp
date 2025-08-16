@@ -384,9 +384,12 @@ long motor_distance_to_go(const int motor_idx)
 	return motors_.at(motor_idx).distanceToGo();
 }
 
-void motor_test()
+void motor_test(const int motor_id)
 {
-	for (auto &motor : motors_) {
-		motor.move(NUM_STEPS_PER_ROT);
-	}
+	const int move = motor_id % 2 == 0 ? -NUM_STEPS_PER_ROT : NUM_STEPS_PER_ROT;
+	motors_.at(motor_id).move(move);
+	// for (auto &motor : motors_) {
+	// 	motor.move(NUM_STEPS_PER_ROT/2);
+	// }
+	// motors_.at(motor_id).move(NUM_STEPS_PER_ROT);
 }

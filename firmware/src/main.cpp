@@ -24,14 +24,19 @@ void setup()
 #if 0
 	unsigned long last_time_ms = 0;
 
-	while (1) {
+	int motor_id = 0;
+	while (true) {
 		const unsigned long time_ms = millis();
 
-		if (time_ms > last_time_ms && time_ms - last_time_ms >= 10000) {
+		if (time_ms > last_time_ms && time_ms - last_time_ms >= 1000) {
 			last_time_ms = time_ms;
-			motor_test();
+			motor_test(motor_id);
 			Serial.print("Loop ");
-			Serial.println(time_ms);
+			Serial.println(motor_id);
+			motor_id++;
+			if (motor_id >= NUM_MOTORS) {
+				motor_id = 0;
+			}
 		}
 
 		motor_loop();
