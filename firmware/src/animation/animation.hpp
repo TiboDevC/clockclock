@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-enum class AnimationType : uint8_t { SYNC_ROTATION, WAVE_PATTERN, SPIRAL, RANDOM_DANCE, HOUR_CELEBRATION };
+enum class AnimationType : uint8_t { SYNC_ROTATION, WAVE_PATTERN };
 
 enum class AnimationState : uint8_t { IDLE, RUNNING, FINISHED };
 

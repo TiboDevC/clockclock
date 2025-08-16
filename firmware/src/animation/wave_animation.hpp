@@ -6,7 +6,7 @@
 class WaveAnimation final : public Animation
 {
 public:
-	explicit WaveAnimation(uint32_t duration_ms = 8000)
+	explicit WaveAnimation(uint32_t duration_ms = 30000)
 	    : Animation(duration_ms)
 	{
 	}
@@ -20,13 +20,16 @@ public:
 	}
 
 private:
-	static constexpr uint32_t WAVE_INTERVAL_MS = 200;
-	static constexpr uint16_t WAVE_AMPLITUDE = 90;          // 90 degrees
-	static constexpr uint32_t RETURN_PHASE_DURATION = 2000; // 2 seconds for artistic return
-	uint32_t last_wave_time_ = 0;
-	int current_wave_position_ = 0;
-	bool in_return_phase_ = false;
-	uint32_t return_phase_start_time_ = 0;
+	enum class WavePhase {
+		INITIALIZING, // Move all hands to 0°
+		ROTATING      // Sequential rotations
+	};
+
+	static constexpr uint32_t DELAY_BETWEEN_MOTORS_MS = 500; // 500ms between each motor start
+
+	WavePhase current_phase_ = WavePhase::INITIALIZING;
+	int current_rotating_motor_ = 0; // Which motor is currently starting rotation
+	uint32_t last_motor_start_time_ = 0;
 };
 
 #endif /* CLOCKCLOCK_WAVE_ANIMATION_HPP */

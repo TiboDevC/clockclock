@@ -20,8 +20,7 @@ public:
 	}
 
 private:
-	static constexpr uint16_t TARGET_ANGLE = 180; // 6h30 position
-	static constexpr uint16_t FULL_ROTATION = 360;
+	static constexpr uint16_t TARGET_ANGLE = 180; // 0h30 position
 	bool rotation_started_ = false;
 };
 
