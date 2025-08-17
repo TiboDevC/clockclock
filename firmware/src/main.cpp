@@ -7,6 +7,10 @@
 #include "motor/shift_register.h"
 #include "time_manager.hpp"
 
+#ifdef NTP_WIFI_SYNC
+#include "ntp_sync.hpp"
+#endif
+
 void setup()
 {
 #ifdef DEBUG
@@ -20,6 +24,19 @@ void setup()
 
 	// Initialize animation system
 	AnimationManager::getInstance().init();
+
+	// Configure DST for Central European Time (CET/CEST)
+	set_dst_timezone(true, 1, 2); // Winter: UTC+1, Summer: UTC+2
+
+#ifdef NTP_WIFI_SYNC
+	// Note: NTP sync should use UTC time, DST will be applied automatically
+	SyncResult result = sync_rtc_once("SSID", "PASSWORD", TimeZone::UTC);
+	if (result == SyncResult::SUCCESS) {
+		Serial.println("RTC synchronized successfully!");
+	} else {
+		Serial.println("RTC sync failed!");
+	}
+#endif
 
 #if 0
 	ctrl_test();
