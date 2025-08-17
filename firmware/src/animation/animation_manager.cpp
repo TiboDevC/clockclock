@@ -160,8 +160,7 @@ std::unique_ptr<Animation> AnimationManager::createAnimation(AnimationType type)
 	case AnimationType::WAVE_PATTERN:
 		return std::make_unique<WaveAnimation>();
 	default:
-		// Do nothing
-		break;
+		return std::make_unique<WaveAnimation>();
 	}
 }
 
