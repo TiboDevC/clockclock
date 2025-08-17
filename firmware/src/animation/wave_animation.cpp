@@ -50,10 +50,12 @@ void WaveAnimation::update(uint32_t current_time_ms)
 			DBG_ANIM("Starting rotation for motor ");
 			DBG_ANIM_LN(current_rotating_motor_);
 
-			// Start one complete rotation (360°)
+			// Start one complete rotation (360°) of the 2 motors
 			motor_move_to_absolute(current_rotating_motor_, NUM_STEPS_PER_ROT);
-
 			current_rotating_motor_++;
+			motor_move_to_absolute(current_rotating_motor_, NUM_STEPS_PER_ROT);
+			current_rotating_motor_++;
+
 			last_motor_start_time_ = current_time_ms;
 		}
 
