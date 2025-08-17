@@ -383,9 +383,11 @@ void motor_set_0_position()
 
 void motor_move_to_relative(const int motor_idx, const int16_t increment)
 {
+#if 0
 	DBG_MOTOR_MOTION(motor_idx);
 	DBG_MOTOR_MOTION(": ");
 	DBG_MOTOR_MOTION_LN(increment);
+#endif
 	motors_.at(motor_idx).move(increment);
 }
 
