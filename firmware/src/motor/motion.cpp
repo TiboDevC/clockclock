@@ -103,21 +103,6 @@ static constexpr clock_digit_t digit_8 = {
 static constexpr clock_digit_t digit_9 = {
     .clocks = {{90, 180}, {0, 90}, {225, 225}, {180, 270}, {0, 180}, {0, 0}}};
 
-static constexpr clock_digit_t digit_null = {
-    .clocks = {{270, 270}, {270, 270}, {270, 270}, {270, 270}, {270, 270}, {270, 270}}};
-
-static constexpr clock_digit_t digit_I = {
-    .clocks = {{270, 90}, {270, 90}, {270, 90}, {270, 90}, {270, 90}, {270, 90}}};
-
-static constexpr clock_digit_t digit_fun = {.clocks = {
-						{225, 45},
-						{225, 45},
-						{225, 45},
-						{225, 45},
-						{225, 45},
-						{225, 45},
-					    }};
-
 static constexpr clock_digit_t _digits[10] = {
     digit_0, digit_1, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9};
 
@@ -237,7 +222,7 @@ static void _update_motor_pos(const int motor_idx, angle_t angle_absolute)
 	}
 }
 
-static void _update_dial(const int digit_idx, const int dial_idx, const struct clock_dial_t *clock_dial)
+static void _update_dial(const int digit_idx, const int dial_idx, const clock_dial_t *clock_dial)
 {
 	for (int motor_idx = 0; motor_idx < NUM_MOTOR_PER_DIAL; motor_idx++) {
 		const int motor_id = digit_idx * NUM_DIAL_PER_DIGIT * NUM_MOTOR_PER_DIAL +

@@ -243,8 +243,6 @@ void rtc_print_time(void)
 
 void rtc_init(void)
 {
-	constexpr time_t tstmp{1702383132UL}; // Tue Dec 12 2023 12:12:12
-
 	DS3231 Clock;
 	Wire.begin();
 
@@ -252,6 +250,7 @@ void rtc_init(void)
 	delay(500);
 
 	if (Clock.getYear() < 23) {
+		constexpr time_t tstmp{1702383132UL};
 		DBG_TIME_MGMT_LN("RTC lost time, reconfigure it");
 		Clock.setEpoch(tstmp, false);
 		// set to 24h
@@ -261,7 +260,7 @@ void rtc_init(void)
 	rtc_print_time();
 }
 
-void rtc_increment_time_min(int16_t min)
+void rtc_increment_time_min(const int16_t min)
 {
 	DS3231 Clock;
 	const DateTime now = RTClib::now();

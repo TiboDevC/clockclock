@@ -3,10 +3,10 @@
 
 #include <stdint.h>
 
-void display_time(void);
-void time_check(void);
-void rtc_print_time(void);
-void rtc_init(void);
+void display_time();
+void time_check();
+void rtc_print_time();
+void rtc_init();
 void rtc_increment_time_min(int16_t min);
 void get_current_time(int &hour, int &minute);
 void restore_time_display();

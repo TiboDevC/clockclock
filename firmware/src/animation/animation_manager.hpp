@@ -36,7 +36,7 @@ private:
 	AnimationManager(const AnimationManager &) = delete;
 	AnimationManager &operator=(const AnimationManager &) = delete;
 
-	std::unique_ptr<Animation> createAnimation(AnimationType type);
+	static std::unique_ptr<Animation> createAnimation(AnimationType type);
 	void onAnimationComplete();
 
 	// Animation state

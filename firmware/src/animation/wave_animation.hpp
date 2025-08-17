@@ -6,7 +6,7 @@
 class WaveAnimation final : public Animation
 {
 public:
-	explicit WaveAnimation(uint32_t duration_ms = 30000)
+	explicit WaveAnimation(const uint32_t duration_ms = 30000)
 	    : Animation(duration_ms)
 	{
 	}

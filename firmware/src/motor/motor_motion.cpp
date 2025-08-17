@@ -12,7 +12,6 @@
 #endif
 
 // Constants replacing magic numbers
-static constexpr uint32_t DEGREES_PER_ROTATION = 360;
 static constexpr uint8_t STEP_MASK = 0b11;
 static constexpr uint8_t DIRECTION_MASK = 0b01010101;
 static constexpr uint8_t STEP_BIT = 0b10;
@@ -22,18 +21,6 @@ static constexpr uint8_t SEQUENCE_BITS_PER_MOTOR = 2;
 static constexpr int MOTOR_MAPPING_ERROR = -1;
 static constexpr int MOTORS_PER_BLOCK = 4;
 static constexpr int DRIVERS_PER_PAIR = 2;
-
-// Constexpr functions replacing macros
-static constexpr uint16_t angleToSteps(const uint16_t target_angle) noexcept
-{
-	return static_cast<uint16_t>((static_cast<uint32_t>(target_angle) * NUM_STEPS_PER_ROT) /
-	                             DEGREES_PER_ROTATION);
-}
-
-static constexpr uint32_t stepToAngle(const uint32_t target_step) noexcept
-{
-	return (target_step * DEGREES_PER_ROTATION) / NUM_STEPS_PER_ROT;
-}
 
 static constexpr int MOTOR_MAX_SPEED = 1000;
 static constexpr int MOTOR_ACC = 100;

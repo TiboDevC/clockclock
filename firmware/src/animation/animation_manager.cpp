@@ -116,11 +116,10 @@ void AnimationManager::checkScheduledAnimations(int current_hour, int current_mi
 	// Check for quarter-hour animations (15, 30, 45 minutes only - excluding 0 since hour change handles
 	// it)
 	if (last_minute_check_ != current_minute) {
-		static constexpr int QUARTER_MINUTES[] = {15, 30, 45};
-		static constexpr int NUM_QUARTERS = sizeof(QUARTER_MINUTES) / sizeof(QUARTER_MINUTES[0]);
+		static constexpr std::array QUARTER_MINUTES = {15, 30, 45};
 
-		for (int i = 0; i < NUM_QUARTERS; i++) {
-			if (current_minute == QUARTER_MINUTES[i]) {
+		for (const auto &quarter_minute : QUARTER_MINUTES) {
+			if (current_minute == quarter_minute) {
 				// Alternate between different animation types
 				AnimationType anim_type;
 				switch (current_minute) {
@@ -152,7 +151,7 @@ void AnimationManager::checkScheduledAnimations(int current_hour, int current_mi
 	last_hour_check_ = current_hour;
 }
 
-std::unique_ptr<Animation> AnimationManager::createAnimation(AnimationType type)
+std::unique_ptr<Animation> AnimationManager::createAnimation(const AnimationType type)
 {
 	switch (type) {
 	case AnimationType::SYNC_ROTATION:
