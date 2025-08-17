@@ -35,7 +35,7 @@ static constexpr uint32_t stepToAngle(const uint32_t target_step) noexcept
 	return (target_step * DEGREES_PER_ROTATION) / NUM_STEPS_PER_ROT;
 }
 
-static constexpr int MOTOR_MAX_SPEED = 1500;
+static constexpr int MOTOR_MAX_SPEED = 1000;
 static constexpr int MOTOR_ACC = 100;
 
 static constexpr struct {
