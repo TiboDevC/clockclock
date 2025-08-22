@@ -51,7 +51,8 @@ from Germany. Then this time is used to configure the RTC in the DS3231 module.
 
 ### Hands
 
-Hands are still under development right now, some mechanical issues must be solved.
+This is one of the tricky parts of the project and probably the one that took me the most time and trial and error.
+Currently, these are laser-cut acrylic plates.
 
 ## Hardware
 
@@ -71,3 +72,23 @@ Power supply is provided by a USB-C dongle that provides 5V.
 
 Here are the schematic of [the main board](elec/clockclock_main/output/clockclock_main.pdf)
 and [the stepper board](elec/clokclock_stepper/output/clokclock_stepper.pdf).
+
+## Issues/challenges
+
+### Motors and gears
+
+In order to minimise costs, I first selected the cheapest motors I could find, the famous 28byj-48 5V.
+They can be found for around €1 each and require a ULN2003AN driver.
+The torque was excessive, but the accuracy seemed sufficient for my application, so I started developing the mechanism with these two motors.
+
+I developed the mechanism with two objectives in mind: to minimise the size of the block in order to reduce the size of my clock as much as possible, and to achieve sufficient precision in the hands so that it would be pleasing to look at.
+
+<img src="img/motor00000.png" width="200" alt=""/>
+<img src="img/motor00001.png" width="200" alt=""/>
+
+<img src="img/motor00003.HEIC" width="200" alt=""/>
+<img src="img/motor00005.HEIC" width="200" alt=""/>
+
+<video width="240" controls>
+  <source src="img/motor00004.mov" type="video/mp4">
+</video>
