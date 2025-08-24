@@ -402,3 +402,13 @@ void motor_test(const int motor_id)
 	// }
 	// motors_.at(motor_id).move(NUM_STEPS_PER_ROT);
 }
+
+float motor_get_max_speed(const int motor_idx)
+{
+	return motors_.at(motor_idx).maxSpeed();
+}
+
+void motor_set_max_speed(const int motor_idx, const float speed)
+{
+	motors_.at(motor_idx).setMaxSpeed(speed);
+}

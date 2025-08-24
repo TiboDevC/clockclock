@@ -2,6 +2,7 @@
 
 #include "../time_manager.hpp"
 #include "animation_manager.hpp"
+#include "motor/motor_motion.h"
 #include "sync_rotation_animation.hpp"
 #include "wave_animation.hpp"
 
@@ -48,6 +49,7 @@ void AnimationManager::startAnimation(AnimationType type)
 {
 	if (current_animation_ && current_animation_->getState() == AnimationState::RUNNING) {
 		DBG_ANIM_MGR_LN("Stopping current animation to start new one");
+		restoreSavedSpeeds();
 		current_animation_->stop();
 	}
 
@@ -55,26 +57,17 @@ void AnimationManager::startAnimation(AnimationType type)
 	if (current_animation_) {
 		DBG_ANIM_MGR("Starting animation type: ");
 		DBG_ANIM_MGR_LN(static_cast<int>(type));
+
+		saveCurrentSpeeds();
 		current_animation_->start();
 	}
-}
-
-void AnimationManager::startAnimation(std::unique_ptr<Animation> animation)
-{
-	if (current_animation_ || !animation) {
-		return;
-	}
-
-	current_animation_ = std::move(animation);
-	current_animation_->start();
-
-	DBG_ANIM_MGR_LN("Animation started");
 }
 
 void AnimationManager::stopAnimation()
 {
 	if (current_animation_) {
 		DBG_ANIM_MGR_LN("Stopping animation and restoring time display");
+		restoreSavedSpeeds();
 		current_animation_->stop();
 		current_animation_.reset();
 
@@ -87,6 +80,7 @@ void AnimationManager::stopCurrentAnimation()
 {
 	if (current_animation_) {
 		DBG_ANIM_MGR_LN("Force stopping current animation");
+		restoreSavedSpeeds();
 		current_animation_->stop();
 		onAnimationComplete();
 	}
@@ -170,4 +164,18 @@ void AnimationManager::onAnimationComplete()
 
 	// Restore time display immediately
 	restore_time_display();
+}
+
+void AnimationManager::saveCurrentSpeeds()
+{
+	for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
+		motor_speeds_.at(motor_id) = motor_get_max_speed(motor_id);
+	}
+}
+
+void AnimationManager::restoreSavedSpeeds() const
+{
+	for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
+		motor_set_max_speed(motor_id, motor_speeds_.at(motor_id));
+	}
 }

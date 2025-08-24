@@ -1,12 +1,14 @@
 #ifndef CLOCKCLOCK_WAVE_ANIMATION_HPP
 #define CLOCKCLOCK_WAVE_ANIMATION_HPP
 
+#include <array>
+
 #include "animation.hpp"
 
 class WaveAnimation final : public Animation
 {
 public:
-	explicit WaveAnimation(const uint32_t duration_ms = 30000)
+	explicit WaveAnimation(const uint32_t duration_ms = 60000)
 	    : Animation(duration_ms)
 	{
 	}
@@ -25,7 +27,8 @@ private:
 		ROTATING      // Sequential rotations
 	};
 
-	static constexpr uint32_t DELAY_BETWEEN_MOTORS_MS = 500; // 500ms between each motor start
+	static constexpr uint32_t DELAY_BETWEEN_MOTORS_MS = 2500;
+	static constexpr float MAX_MOTOR_SPEED = 400;
 
 	WavePhase current_phase_ = WavePhase::INITIALIZING;
 	int current_rotating_motor_ = 0; // Which motor is currently starting rotation

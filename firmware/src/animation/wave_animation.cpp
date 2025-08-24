@@ -37,6 +37,11 @@ void WaveAnimation::update(uint32_t current_time_ms)
 	case WavePhase::INITIALIZING:
 		// Wait for all motors to reach 0° position
 		if (are_motors_idle()) {
+			// Reduce motor speeds for smoother animation
+			for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
+				motor_set_max_speed(motor_id, MAX_MOTOR_SPEED);
+			}
+
 			current_phase_ = WavePhase::ROTATING;
 			last_motor_start_time_ = current_time_ms;
 			DBG_ANIM_LN("Initialization complete - starting sequential rotations");
@@ -50,11 +55,11 @@ void WaveAnimation::update(uint32_t current_time_ms)
 			DBG_ANIM("Starting rotation for motor ");
 			DBG_ANIM_LN(current_rotating_motor_);
 
-			// Start one complete rotation (360°) of the 2 motors
-			motor_move_to_absolute(current_rotating_motor_, NUM_STEPS_PER_ROT);
-			current_rotating_motor_++;
-			motor_move_to_absolute(current_rotating_motor_, NUM_STEPS_PER_ROT);
-			current_rotating_motor_++;
+			// Start one complete rotation (360°) of the while column
+			for (int i = 0; i < 6; i++) {
+				motor_move_to_absolute(current_rotating_motor_, NUM_STEPS_PER_ROT);
+				current_rotating_motor_++;
+			}
 
 			last_motor_start_time_ = current_time_ms;
 		}

@@ -5,6 +5,7 @@
 #include <memory>
 
 #include "animation.hpp"
+#include "cfg.hpp"
 
 enum class AnimationTrigger : uint8_t {
 	QUARTER_HOUR, // Every 15 minutes (0, 15, 30, 45)
@@ -36,6 +37,9 @@ private:
 	AnimationManager(const AnimationManager &) = delete;
 	AnimationManager &operator=(const AnimationManager &) = delete;
 
+	void saveCurrentSpeeds();
+	void restoreSavedSpeeds() const;
+
 	static std::unique_ptr<Animation> createAnimation(AnimationType type);
 	void onAnimationComplete();
 
@@ -49,6 +53,8 @@ private:
 	// Timing
 	static constexpr uint32_t UPDATE_INTERVAL_MS = 50;
 	uint32_t last_update_time_ = 0;
+
+	std::array<float, NUM_MOTORS> motor_speeds_{};
 };
 
 #endif /* CLOCKCLOCK_ANIMATION_MANAGER_HPP */
