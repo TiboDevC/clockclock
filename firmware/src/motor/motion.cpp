@@ -2,6 +2,8 @@
 
 #include "cfg.hpp"
 #include "motion.hpp"
+
+#include "motor_helper.h"
 #include "motor_motion.h"
 
 #ifdef DEBUG_MOTION
@@ -13,24 +15,11 @@
 #endif
 
 // Constants replacing magic numbers
-static constexpr uint32_t DEGREES_PER_ROTATION = 360;
 static constexpr uint32_t MAX_ANGLE_VALUE = 359;
 static constexpr int SEQUENCE_LENGTH = 24; // M-S Quad Driver X12.017 has 24 steps
 static constexpr int DECIMAL_BASE = 10;
 static constexpr int MAX_HOURS = 99;
 static constexpr int MAX_MINUTES = 99;
-
-// Constexpr functions replacing macros
-static constexpr uint16_t angleToSteps(const uint16_t target_angle) noexcept
-{
-	return static_cast<uint16_t>((static_cast<uint32_t>(target_angle) * NUM_STEPS_PER_ROT) /
-	                             DEGREES_PER_ROTATION);
-}
-
-static constexpr uint32_t stepToAngle(const uint32_t target_step) noexcept
-{
-	return (target_step * DEGREES_PER_ROTATION) / NUM_STEPS_PER_ROT;
-}
 
 typedef uint16_t pos_t;
 

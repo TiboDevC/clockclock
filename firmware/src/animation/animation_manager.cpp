@@ -3,6 +3,7 @@
 #include "../time_manager.hpp"
 #include "animation_manager.hpp"
 
+#include "bracket_animation.h"
 #include "motor/motor_motion.h"
 #include "one_rotation_animation.h"
 #include "sync_rotation_animation.hpp"
@@ -156,6 +157,8 @@ std::unique_ptr<Animation> AnimationManager::createAnimation(const AnimationType
 		return std::make_unique<WaveAnimation>();
 	case AnimationType::THREE_SIXTY:
 		return std::make_unique<OneRotationAnimation>();
+	case AnimationType::BRACKET:
+		return std::make_unique<BracketAnimation>();
 	default:
 		return std::make_unique<WaveAnimation>();
 	}
