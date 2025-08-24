@@ -6,13 +6,15 @@ void motor_init();
 void motor_loop();
 void motors_goto_zero();
 void motor_set_0_position();
-void motor_move_to_relative(const int motor_idx, int16_t increment);
-void motor_move_to_absolute(const int motor_idx, int16_t increment);
-long motor_get_position(const int motor_idx);
-long motor_distance_to_go(const int motor_idx);
+void motor_move_to_relative(int motor_idx, int16_t increment);
+void motor_move_to_absolute(int motor_idx, int16_t increment);
+long motor_get_position(int motor_idx);
+long motor_distance_to_go(int motor_idx);
 void motor_test(int motor_id);
 float motor_get_max_speed(int motor_idx);
 void motor_set_max_speed(int motor_idx, float speed);
+float motor_get_acceleration(int motor_idx);
+void motor_set_acceleration(int motor_idx, float acceleration);
 
 class Motor : public AccelStepper
 {

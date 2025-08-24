@@ -412,3 +412,13 @@ void motor_set_max_speed(const int motor_idx, const float speed)
 {
 	motors_.at(motor_idx).setMaxSpeed(speed);
 }
+
+float motor_get_acceleration(const int motor_idx)
+{
+	return motors_.at(motor_idx).acceleration();
+}
+
+void motor_set_acceleration(const int motor_idx, const float acceleration)
+{
+	motors_.at(motor_idx).setAcceleration(acceleration);
+}
