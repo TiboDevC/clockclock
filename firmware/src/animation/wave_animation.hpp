@@ -16,10 +16,6 @@ public:
 	void start() override;
 	void update(uint32_t current_time_ms) override;
 	void stop() override;
-	AnimationType getType() const override
-	{
-		return AnimationType::WAVE_PATTERN;
-	}
 
 private:
 	enum class WavePhase {

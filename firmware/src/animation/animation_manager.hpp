@@ -7,12 +7,6 @@
 #include "animation.hpp"
 #include "cfg.hpp"
 
-enum class AnimationTrigger : uint8_t {
-	QUARTER_HOUR, // Every 15 minutes (0, 15, 30, 45)
-	HOUR_CHANGE,  // Every hour change
-	MANUAL        // Manually triggered
-};
-
 class AnimationManager
 {
 public:

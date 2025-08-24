@@ -21,7 +21,6 @@ public:
 	virtual void start() = 0;
 	virtual void update(uint32_t current_time_ms) = 0;
 	virtual void stop() = 0;
-	virtual AnimationType getType() const = 0;
 
 	// Common interface
 	AnimationState getState() const

@@ -14,10 +14,6 @@ public:
 	void start() override;
 	void update(uint32_t current_time_ms) override;
 	void stop() override;
-	AnimationType getType() const override
-	{
-		return AnimationType::SYNC_ROTATION;
-	}
 
 private:
 	static constexpr uint16_t TARGET_ANGLE = 180; // 0h30 position
