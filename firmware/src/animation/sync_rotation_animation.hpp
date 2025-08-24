@@ -22,6 +22,8 @@ public:
 private:
 	static constexpr uint16_t TARGET_ANGLE = 180; // 0h30 position
 	bool rotation_started_ = false;
+
+	static constexpr float MAX_MOTOR_SPEED = 500;
 };
 
 #endif /* CLOCKCLOCK_SYNC_ROTATION_ANIMATION_HPP */

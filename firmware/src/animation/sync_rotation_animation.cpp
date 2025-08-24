@@ -61,6 +61,7 @@ void SyncRotationAnimation::update(const uint32_t current_time_ms)
 		// Calculate steps for one full rotation
 		for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
 			motor_move_to_relative(motor_id, NUM_STEPS_PER_ROT * 2);
+			motor_set_max_speed(motor_id, MAX_MOTOR_SPEED);
 		}
 	} else {
 		// Phase 2: Check if rotation is complete
