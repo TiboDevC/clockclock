@@ -101,25 +101,19 @@ void AnimationManager::checkScheduledAnimations(int current_hour, int current_mi
 		return;
 	}
 
-	// Check for hour change (special celebration) - this takes priority over quarter-hour animations
-	if (last_hour_check_ != -1 && last_hour_check_ != current_hour && current_minute == 0) {
-		DBG_ANIM_MGR_LN("Hour change detected - starting celebration");
-		startAnimation(AnimationType::SYNC_ROTATION);
-		last_hour_check_ = current_hour;
-		last_minute_check_ = current_minute;
-		return; // Exit early to prevent quarter-hour animation at minute 0
-	}
-
 	// Check for quarter-hour animations (15, 30, 45 minutes only - excluding 0 since hour change handles
 	// it)
 	if (last_minute_check_ != current_minute) {
-		static constexpr std::array QUARTER_MINUTES = {15, 30, 45};
+		static constexpr std::array QUARTER_MINUTES = {0, 15, 30, 45};
 
 		for (const auto &quarter_minute : QUARTER_MINUTES) {
 			if (current_minute == quarter_minute) {
 				// Alternate between different animation types
 				AnimationType anim_type;
 				switch (current_minute) {
+				case 0:
+					anim_type = AnimationType::BRACKET;
+					break;
 				case 15:
 					anim_type = AnimationType::WAVE_PATTERN;
 					break;
