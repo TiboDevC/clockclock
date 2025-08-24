@@ -2,7 +2,9 @@
 
 #include "../time_manager.hpp"
 #include "animation_manager.hpp"
+
 #include "motor/motor_motion.h"
+#include "one_rotation_animation.h"
 #include "sync_rotation_animation.hpp"
 #include "wave_animation.hpp"
 
@@ -124,7 +126,7 @@ void AnimationManager::checkScheduledAnimations(int current_hour, int current_mi
 					anim_type = AnimationType::SYNC_ROTATION;
 					break;
 				case 45:
-					anim_type = AnimationType::WAVE_PATTERN;
+					anim_type = AnimationType::THREE_SIXTY;
 					break;
 				default:
 					anim_type = AnimationType::SYNC_ROTATION;
@@ -152,6 +154,8 @@ std::unique_ptr<Animation> AnimationManager::createAnimation(const AnimationType
 		return std::make_unique<SyncRotationAnimation>();
 	case AnimationType::WAVE_PATTERN:
 		return std::make_unique<WaveAnimation>();
+	case AnimationType::THREE_SIXTY:
+		return std::make_unique<OneRotationAnimation>();
 	default:
 		return std::make_unique<WaveAnimation>();
 	}
