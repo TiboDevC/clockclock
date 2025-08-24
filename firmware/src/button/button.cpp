@@ -25,26 +25,26 @@
 struct button_cfg_t {
 	const uint8_t pin;
 	uint8_t last_state;
-	enum button_press_t press;
+	button_press_t press;
 	unsigned long press_start_ms;
 	uint8_t long_press_reported;
 };
 
-static struct button_cfg_t _buttons[BUTTON_MAX] = {{.pin = PIN_BUTTON_MODE,
-                                                    .last_state = BT_UNPRESSED,
-                                                    .press = NO_PRESS,
-                                                    .press_start_ms = 0,
-                                                    .long_press_reported = 0},
-                                                   {.pin = PIN_BUTTON_ENCODER,
-                                                    .last_state = BT_UNPRESSED,
-                                                    .press = NO_PRESS,
-                                                    .press_start_ms = 0,
-                                                    .long_press_reported = 0},
-                                                   {.pin = PIN_BUTTON_SHUTDOWN,
-                                                    .last_state = BT_UNPRESSED,
-                                                    .press = NO_PRESS,
-                                                    .press_start_ms = 0,
-                                                    .long_press_reported = 0}};
+static button_cfg_t _buttons[BUTTON_MAX] = {{.pin = PIN_BUTTON_MODE,
+                                             .last_state = BT_UNPRESSED,
+                                             .press = NO_PRESS,
+                                             .press_start_ms = 0,
+                                             .long_press_reported = 0},
+                                            {.pin = PIN_BUTTON_ENCODER,
+                                             .last_state = BT_UNPRESSED,
+                                             .press = NO_PRESS,
+                                             .press_start_ms = 0,
+                                             .long_press_reported = 0},
+                                            {.pin = PIN_BUTTON_SHUTDOWN,
+                                             .last_state = BT_UNPRESSED,
+                                             .press = NO_PRESS,
+                                             .press_start_ms = 0,
+                                             .long_press_reported = 0}};
 static unsigned long _last_action_ms = 0;
 static int8_t _encoder_count = 0;
 static volatile uint8_t _last_encoder_0;
@@ -119,7 +119,7 @@ void loop_buttons()
 	}
 }
 
-void button_get_state(struct button_t *button, enum button_type_t button_type)
+void button_get_state(button_t *button, const button_type_t button_type)
 {
 	if (nullptr == button || button_type >= BUTTON_MAX) {
 		return;

@@ -9,13 +9,13 @@ enum cfg_time_select_t : uint8_t {
 };
 
 static struct {
-	enum cfg_time_select_t select;
+	cfg_time_select_t select;
 	uint8_t increment;
 } _ctx = {};
 
 void loop_cfg_time()
 {
-	struct button_t bt_encoder = {};
+	button_t bt_encoder = {};
 
 	button_get_state(&bt_encoder, BUTTON_ENCODER);
 

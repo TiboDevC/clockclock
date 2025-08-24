@@ -26,7 +26,7 @@ void calib_init()
 
 void loop_calib()
 {
-	struct button_t bt_encoder = {};
+	button_t bt_encoder = {};
 
 	button_get_state(&bt_encoder, BUTTON_ENCODER);
 

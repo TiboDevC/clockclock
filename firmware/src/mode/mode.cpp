@@ -60,11 +60,11 @@ static void _exit_mode()
 
 static void _update_mode()
 {
-	struct button_t bt_mode = {};
-	struct button_t bt_shutdown = {};
+	button_t bt_mode = {};
+	button_t bt_shutdown = {};
 	const unsigned long time_ms = millis();
 	const unsigned long last_press_ms = button_last_press();
-	enum clock_mode_t new_mode = _mode;
+	clock_mode_t new_mode = _mode;
 
 	button_get_state(&bt_shutdown, BUTTON_SHUTDOWN);
 	button_get_state(&bt_mode, BUTTON_MODE);

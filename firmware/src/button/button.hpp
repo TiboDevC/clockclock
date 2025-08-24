@@ -17,7 +17,7 @@ enum button_press_t : uint8_t {
 };
 
 struct button_t {
-	enum button_press_t press;
+	button_press_t press;
 };
 
 void button_init();
