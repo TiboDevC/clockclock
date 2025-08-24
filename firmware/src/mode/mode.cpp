@@ -66,7 +66,7 @@ static void _update_mode()
 	const unsigned long last_press_ms = button_last_press();
 	clock_mode_t new_mode = _mode;
 
-	button_get_state(&bt_shutdown, BUTTON_SHUTDOWN);
+	button_get_state(&bt_shutdown, BUTTON_ENCODER);
 	button_get_state(&bt_mode, BUTTON_MODE);
 
 	if (LONG_PRESS == bt_shutdown.press) {
