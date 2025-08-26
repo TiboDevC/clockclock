@@ -12,6 +12,9 @@ void BracketAnimation::start()
 	rotation_started_ = false;
 
 	for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
+		// Speed up the initial movement to position
+		motor_set_acceleration(motor_id, 300);
+		motor_set_max_speed(motor_id, 2000);
 		const int column = motor_id / 6;
 
 		if (column % 2 == 0) {
@@ -46,6 +49,8 @@ void BracketAnimation::update(const uint32_t current_time_ms)
 	if (!rotation_started_) {
 		if (are_motors_idle()) {
 			for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
+				motor_set_acceleration(motor_id, 150);
+				motor_set_max_speed(motor_id, 500);
 				motor_move_to_relative(motor_id, angleToSteps(360));
 			}
 
