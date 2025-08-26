@@ -13,8 +13,8 @@ void BracketAnimation::start()
 
 	for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
 		// Speed up the initial movement to position
-		motor_set_acceleration(motor_id, 300);
-		motor_set_max_speed(motor_id, 2000);
+		motor_set_acceleration(motor_id, 100);
+		motor_set_max_speed(motor_id, 1500);
 		const int column = motor_id / 6;
 
 		if (column % 2 == 0) {
