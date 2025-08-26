@@ -15,16 +15,16 @@ void BracketAnimation::start()
 		// Speed up the initial movement to position
 		motor_set_acceleration(motor_id, 100);
 		motor_set_max_speed(motor_id, 1500);
-		const int column = motor_id / 6;
+		const int column = motor_id / (NUM_MOTOR_PER_CIRCLE * MOTOR_NUMBER_ROWS);
 
-		if (column % 2 == 0) {
-			if (motor_id % 2 == 0) {
+		if (column % NUM_MOTOR_PER_CIRCLE == 0) {
+			if (motor_id % NUM_MOTOR_PER_CIRCLE == 0) {
 				motor_move_to_absolute(motor_id, angleToSteps(45));
 			} else {
 				motor_move_to_absolute(motor_id, angleToSteps(45 + 90));
 			}
 		} else {
-			if (motor_id % 2 == 0) {
+			if (motor_id % NUM_MOTOR_PER_CIRCLE == 0) {
 				motor_move_to_absolute(motor_id, angleToSteps(180 + 45));
 			} else {
 				motor_move_to_absolute(motor_id, angleToSteps(180 + 45 + 90));
