@@ -53,6 +53,7 @@ void AnimationManager::startAnimation(AnimationType type)
 	if (current_animation_ && current_animation_->getState() == AnimationState::RUNNING) {
 		DBG_ANIM_MGR_LN("Stopping current animation to start new one");
 		restoreSavedSpeeds();
+		restoreSavedAcceleration();
 		current_animation_->stop();
 	}
 
@@ -62,6 +63,7 @@ void AnimationManager::startAnimation(AnimationType type)
 		DBG_ANIM_MGR_LN(static_cast<int>(type));
 
 		saveCurrentSpeeds();
+		saveCurrentAcceleration();
 		current_animation_->start();
 	}
 }
@@ -71,6 +73,7 @@ void AnimationManager::stopAnimation()
 	if (current_animation_) {
 		DBG_ANIM_MGR_LN("Stopping animation and restoring time display");
 		restoreSavedSpeeds();
+		restoreSavedAcceleration();
 		current_animation_->stop();
 		current_animation_.reset();
 
@@ -84,6 +87,7 @@ void AnimationManager::stopCurrentAnimation()
 	if (current_animation_) {
 		DBG_ANIM_MGR_LN("Force stopping current animation");
 		restoreSavedSpeeds();
+		restoreSavedAcceleration();
 		current_animation_->stop();
 		onAnimationComplete();
 	}
@@ -178,5 +182,19 @@ void AnimationManager::restoreSavedSpeeds() const
 {
 	for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
 		motor_set_max_speed(motor_id, motor_speeds_.at(motor_id));
+	}
+}
+
+void AnimationManager::saveCurrentAcceleration()
+{
+	for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
+		motor_accelerations_.at(motor_id) = motor_get_acceleration(motor_id);
+	}
+}
+
+void AnimationManager::restoreSavedAcceleration() const
+{
+	for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
+		motor_set_acceleration(motor_id, motor_accelerations_.at(motor_id));
 	}
 }

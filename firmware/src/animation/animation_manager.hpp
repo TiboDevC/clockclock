@@ -33,6 +33,8 @@ private:
 
 	void saveCurrentSpeeds();
 	void restoreSavedSpeeds() const;
+	void saveCurrentAcceleration();
+	void restoreSavedAcceleration() const;
 
 	static std::unique_ptr<Animation> createAnimation(AnimationType type);
 	void onAnimationComplete();
@@ -49,6 +51,7 @@ private:
 	uint32_t last_update_time_ = 0;
 
 	std::array<float, NUM_MOTORS> motor_speeds_{};
+	std::array<float, NUM_MOTORS> motor_accelerations_{};
 };
 
 #endif /* CLOCKCLOCK_ANIMATION_MANAGER_HPP */
