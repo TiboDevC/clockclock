@@ -1,36 +1,15 @@
 #include "sync_rotation_animation.hpp"
-#include "../motor/motion.hpp"
-#include "../motor/motor_motion.h"
 #include "cfg.hpp"
-
-#ifdef DEBUG_ANIMATION
-#define DBG_ANIM(...)    Serial.print(__VA_ARGS__)
-#define DBG_ANIM_LN(...) Serial.println(__VA_ARGS__)
-#else
-#define DBG_ANIM(...)
-#define DBG_ANIM_LN(...)
-#endif
+#include "motor/motion.hpp"
+#include "motor/motor_helper.h"
+#include "motor/motor_motion.h"
 
 void SyncRotationAnimation::start()
 {
 	state_ = AnimationState::RUNNING;
 	start_time_ms_ = millis();
-	rotation_started_ = false;
-
-	DBG_ANIM_LN("Starting sync rotation animation");
-
-	// Phase 1: Move all hands to 0h30 position (alternating 0° and 180°)
-	for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
-		static constexpr uint32_t DEGREES_PER_ROTATION = 360;
-
-		// Alternate between 0° (minute hand at 12) and 180° (hour hand at 6)
-		// This creates the 6:30 pattern where hands point in opposite directions
-		const uint16_t target_angle = (motor_id % 2 == 0) ? 0 : TARGET_ANGLE;
-
-		const auto target_steps = static_cast<uint16_t>(
-		    (static_cast<uint32_t>(target_angle) * NUM_STEPS_PER_ROT) / DEGREES_PER_ROTATION);
-		motor_move_to_absolute(motor_id, target_steps);
-	}
+	current_phase_ = AnimationPhase::ALIGNING;
+	current_rotating_motor_ = 0;
 }
 
 void SyncRotationAnimation::update(const uint32_t current_time_ms)
@@ -43,30 +22,50 @@ void SyncRotationAnimation::update(const uint32_t current_time_ms)
 
 	// Check if animation duration exceeded (safety timeout)
 	if (elapsed_time >= duration_ms_) {
-		DBG_ANIM_LN("Animation timeout reached - forcing stop");
 		stop();
 		return;
 	}
 
-	// Phase 1: Wait for all motors to reach alignment position
-	if (!rotation_started_) {
-		if (!are_motors_idle()) {
-			return; // Still moving to alignment position
+	switch (current_phase_) {
+	case AnimationPhase::ALIGNING:
+		if (constexpr int DELAY_BETWEEN_MOTORS_MS = 2000;
+		    current_rotating_motor_ < NUM_MOTORS &&
+		    current_time_ms - last_motor_start_time_ >= DELAY_BETWEEN_MOTORS_MS) {
+			for (int i = 0; i < MOTOR_NUMBER_ROWS * NUM_MOTOR_PER_CIRCLE; i++) {
+				constexpr uint16_t TARGET_ANGLE = 180; // 0h30 position
+				// The first column and last column will have a diff og 90°
+				constexpr int angle = 90 / MOTOR_NUMBER_COLUMNS;
+				const int angle_position =
+				    (current_rotating_motor_ / MOTOR_NUMBER_ROWS) * angle;
+
+				// Alternate between 0° (minute hand at 12) and 180° (hour hand at 6)
+				const uint16_t target_angle =
+				    (current_rotating_motor_ % 2 == 0) ? 0 : TARGET_ANGLE;
+
+				const auto target_steps = angleToSteps(target_angle + angle_position);
+				motor_move_to_absolute(current_rotating_motor_, target_steps);
+
+				motor_set_acceleration(current_rotating_motor_, 300);
+
+				current_rotating_motor_++;
+			}
+
+			last_motor_start_time_ = current_time_ms;
 		}
-
-		// Phase 2: Start synchronized rotation
-		rotation_started_ = true;
-		DBG_ANIM_LN("Starting synchronized rotation");
-
-		// Calculate steps for one full rotation
+		if (current_rotating_motor_ >= NUM_MOTORS && are_motors_idle()) {
+			current_phase_ = AnimationPhase::ROTATING;
+		}
+		break;
+	case AnimationPhase::ROTATING:
 		for (int motor_id = 0; motor_id < NUM_MOTORS; motor_id++) {
-			motor_move_to_relative(motor_id, NUM_STEPS_PER_ROT * 2);
+			motor_move_to_relative(motor_id, angleToSteps(360 * 2));
 			motor_set_max_speed(motor_id, MAX_MOTOR_SPEED);
+			motor_set_acceleration(motor_id, 100);
 		}
-	} else {
-		// Phase 2: Check if rotation is complete
+		current_phase_ = AnimationPhase::WAIT_ENDING;
+		break;
+	case AnimationPhase::WAIT_ENDING:
 		if (are_motors_idle()) {
-			DBG_ANIM_LN("All motors finished rotation - animation complete");
 			stop();
 		}
 	}
@@ -75,5 +74,4 @@ void SyncRotationAnimation::update(const uint32_t current_time_ms)
 void SyncRotationAnimation::stop()
 {
 	state_ = AnimationState::FINISHED;
-	DBG_ANIM_LN("Sync rotation animation finished");
 }

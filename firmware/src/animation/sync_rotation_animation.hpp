@@ -16,10 +16,16 @@ public:
 	void stop() override;
 
 private:
-	static constexpr uint16_t TARGET_ANGLE = 180; // 0h30 position
-	bool rotation_started_ = false;
+	static constexpr float MAX_MOTOR_SPEED = 400;
 
-	static constexpr float MAX_MOTOR_SPEED = 500;
+	enum class AnimationPhase {
+		ALIGNING,
+		ROTATING,
+		WAIT_ENDING,
+	};
+	AnimationPhase current_phase_ = AnimationPhase::ALIGNING;
+	uint32_t last_motor_start_time_ = 0;
+	int current_rotating_motor_ = 0;
 };
 
 #endif /* CLOCKCLOCK_SYNC_ROTATION_ANIMATION_HPP */

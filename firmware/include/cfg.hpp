@@ -11,4 +11,8 @@
 #define NUM_MOTORS_PER_DIGIT 12
 #define NUM_DIGITS           4
 
+static constexpr int MOTOR_NUMBER_COLUMNS = 8;
+static constexpr int MOTOR_NUMBER_ROWS = 3;
+static constexpr int NUM_MOTOR_PER_CIRCLE = 2;
+
 #endif /* SOFT_CFG_HPP */
